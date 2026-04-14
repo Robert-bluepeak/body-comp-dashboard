@@ -143,6 +143,51 @@
     .projection-banner { display:flex; align-items:center; gap:2rem; padding:1.25rem 1.5rem; }
     .projection-banner > div { text-align:left; }
   }
+
+/* Recipe modal overlay */
+.recipe-modal-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.85); z-index:9999; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+.recipe-modal-overlay.active { display:block; }
+.recipe-modal { max-width:900px; margin:20px auto; padding:24px; position:relative; }
+.recipe-modal h1 { font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:4px; }
+.recipe-modal h2 { font-size:1.05rem; font-weight:600; color:#fff; margin:24px 0 10px; padding-bottom:6px; border-bottom:1px solid #2a2d35; }
+.recipe-modal h3 { font-size:0.9rem; font-weight:600; color:#d1d5db; margin:14px 0 8px; }
+.recipe-modal .subtitle { color:#9ca3af; font-size:0.85rem; margin-bottom:20px; }
+.recipe-modal .macro-row { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin:12px 0; }
+.recipe-modal .macro-card { background:#1a1d23; border-radius:8px; padding:10px 8px; text-align:center; border:1px solid #2a2d35; }
+.recipe-modal .macro-card .value { font-size:1.2rem; font-weight:700; }
+.recipe-modal .macro-card .label { font-size:0.65rem; color:#9ca3af; text-transform:uppercase; }
+.recipe-modal .cal .value { color:#f59e0b; } .recipe-modal .pro .value { color:#ef4444; }
+.recipe-modal .fat .value { color:#3b82f6; } .recipe-modal .carb .value { color:#22c55e; }
+.recipe-modal .fiber .value { color:#a78bfa; }
+.recipe-modal .serving-section { background:#1a1d23; border-radius:8px; padding:14px; margin:12px 0; border:1px solid #2a2d35; }
+.recipe-modal .serving-tabs { display:flex; gap:6px; margin-bottom:10px; flex-wrap:wrap; }
+.recipe-modal .serving-tab { background:#2a2d35; border:none; color:#9ca3af; padding:6px 14px; border-radius:6px; cursor:pointer; font-size:0.8rem; }
+.recipe-modal .serving-tab.active { background:#3b82f6; color:#fff; }
+.recipe-modal .serving-detail { display:none; } .recipe-modal .serving-detail.active { display:block; }
+.recipe-modal .remaining-label { font-size:0.75rem; color:#9ca3af; margin-top:10px; }
+.recipe-modal .remaining-row { display:flex; gap:12px; font-size:0.8rem; color:#6b7280; flex-wrap:wrap; }
+.recipe-modal .ingredient-table { width:100%; border-collapse:collapse; font-size:0.75rem; margin:8px 0; }
+.recipe-modal .ingredient-table th { text-align:right; color:#6b7280; padding:5px 6px; border-bottom:1px solid #2a2d35; }
+.recipe-modal .ingredient-table th:first-child { text-align:left; }
+.recipe-modal .ingredient-table td { padding:5px 6px; text-align:right; border-bottom:1px solid #1e2028; }
+.recipe-modal .ingredient-table td:first-child { text-align:left; color:#d1d5db; }
+.recipe-modal .ingredient-table tr.section-header td { color:#9ca3af; font-weight:600; font-size:0.7rem; text-transform:uppercase; padding-top:12px; border-bottom:none; }
+.recipe-modal .ingredient-table tr.total td { font-weight:700; color:#fff; border-top:2px solid #3b82f6; }
+.recipe-modal .steps { counter-reset:step; }
+.recipe-modal .step { display:flex; gap:10px; margin-bottom:10px; font-size:0.82rem; color:#d1d5db; }
+.recipe-modal .step::before { counter-increment:step; content:counter(step); min-width:24px; height:24px; background:#3b82f622; color:#3b82f6; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:0.75rem; flex-shrink:0; }
+.recipe-modal .step-text { flex:1; }
+.recipe-modal .tip { font-size:0.75rem; color:#f59e0b99; margin-top:4px; }
+.recipe-modal .note { font-size:0.78rem; color:#9ca3af; background:#1a1d23; padding:10px 14px; border-radius:8px; border-left:3px solid #3b82f6; margin:14px 0; }
+.recipe-modal .correction-box { background:#1a1d23; border:1px solid #f59e0b33; border-radius:8px; padding:14px; margin:12px 0; }
+.recipe-close { position:sticky; top:0; z-index:10; display:flex; justify-content:space-between; align-items:center; padding:8px 0 16px; }
+.recipe-close-btn { background:#3b82f6; color:#fff; border:none; padding:8px 20px; border-radius:8px; cursor:pointer; font-size:0.85rem; font-weight:500; }
+.recipe-close-btn:hover { background:#2563eb; }
+@media(max-width:640px) {
+  .recipe-modal .macro-row { grid-template-columns:repeat(3,1fr); }
+  .recipe-modal { padding:16px; margin:10px; }
+}
+
 </style>
 </head>
 
@@ -1023,21 +1068,21 @@ new Chart(document.getElementById('volumeChart'),{type:'bar',data:{labels:liftDa
 const recipes = [
   {
     name: 'Slow Cooker Smoky Pulled Chicken',
-    file: 'Recipes/Slow Cooker Smoky Pulled Chicken.html',
+    modal: 'recipe-chicken',
     cal: 1216, pro: 210, fat: 27, carb: 24,
     servings: 8,
     desc: 'Low-fat slow cooker pulled chicken with smoky paprika & chili rub. ~800g cooked. Per 100g: 152 cal / 26g P / 3g F.'
   },
   {
     name: 'Low-Fat Baked Penne Bolognese',
-    file: 'Recipes/Low-Fat Baked Penne Bolognese.html',
+    modal: 'recipe-bolognese',
     cal: 4031, pro: 309, fat: 115, carb: 440,
     servings: 8,
     desc: 'Drained 90/10 beef bolognese with sofrito, baked with mozzarella & parmesan. ~3,000g cooked.'
   },
   {
     name: 'Kimchi Egg Scramble with Steel Cut Oats',
-    file: 'Recipes/Kimchi Egg Scramble with Steel Cut Oats.html',
+    modal: 'recipe-kimchi',
     cal: 466, pro: 46, fat: 13, carb: 39,
     servings: 1,
     desc: 'Pre-workout breakfast: eggs, egg whites, roasted peppers, onion, kimchi, and steel cut oats.'
@@ -1052,7 +1097,8 @@ const recipes = [
     const s = r.servings;
     const a = document.createElement('div');
     a.className = 'recipe-card';
-    a.style.cursor = 'default';
+    a.style.cursor = 'pointer';
+    a.onclick = function(){ openRecipe(r.modal); };
     a.innerHTML = `
       <div class="recipe-name">${r.name}</div>
       <div style="font-size:0.75rem; color:var(--muted); margin-bottom:0.4rem;">Per serving (${s} servings)</div>
@@ -1063,12 +1109,399 @@ const recipes = [
         <span class="recipe-macro carb">${Math.round(r.carb/s)}g C</span>
       </div>
       <div class="recipe-desc">${r.desc}</div>
-      <div style="font-size:0.7rem; color:var(--muted); margin-top:0.5rem; opacity:0.6;">Whole recipe: ${r.cal} cal &bull; ${r.pro}g P &bull; ${r.fat}g F &bull; ${r.carb}g C</div>
+      <div style="font-size:0.7rem; color:var(--accent); margin-top:0.5rem;">Tap to view full recipe &rarr;</div>
     `;
     list.appendChild(a);
   });
 })();
 
+
+function openRecipe(id) {
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeRecipe() {
+  document.querySelectorAll('.recipe-modal-overlay').forEach(el => el.classList.remove('active'));
+  document.body.style.overflow = '';
+}
 </script>
+
+<!-- RECIPE MODALS -->
+<div class="recipe-modal-overlay" id="recipe-chicken">
+  <div class="recipe-modal">
+    <div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Recipe Detail</span><button class="recipe-close-btn" onclick="closeRecipe()">&#x2715; Close</button></div>
+    
+<h1>Slow Cooker Smoky Pulled Chicken</h1>
+<p class="subtitle">Est. ~800g cooked &bull; Low-fat, high-protein &bull; CPB-ready</p>
+
+<!-- WHOLE RECIPE MACROS -->
+<h2>Whole Recipe Totals</h2>
+<div class="macro-row">
+  <div class="macro-card cal"><div class="value">1,216</div><div class="label">Calories</div></div>
+  <div class="macro-card pro"><div class="value">210g</div><div class="label">Protein</div></div>
+  <div class="macro-card fat"><div class="value">26.5g</div><div class="label">Fat</div></div>
+  <div class="macro-card carb"><div class="value">24.3g</div><div class="label">Carbs</div></div>
+  <div class="macro-card fiber"><div class="value">6.2g</div><div class="label">Fiber</div></div>
+</div>
+
+<!-- PER-SERVING BREAKDOWN -->
+<h2>Per-Serving vs. Daily Targets</h2>
+<p style="font-size:0.82rem; color:#6b7280; margin-bottom:12px;">Daily: 1,700 cal &bull; 155g P &bull; ~55g F &bull; ~146g C &nbsp;&nbsp;|&nbsp;&nbsp; Macros based on ~800g estimated cooked weight</p>
+
+<div class="serving-section">
+  <div class="serving-tabs">
+    <button class="serving-tab active" onclick="showServing_chicken(100)">100g</button>
+    <button class="serving-tab" onclick="showServing_chicken(150)">150g</button>
+    <button class="serving-tab" onclick="showServing_chicken(200)">200g</button>
+  </div>
+
+  <div id="chicken_s100" class="serving-detail active">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">152</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">26.2g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">3.3g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">3.0g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">0.8g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>1,548 cal</span> <span>128.8g P</span> <span>51.7g F</span> <span>143.0g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Very lean — only 9% of daily calories and 17% of protein. Stack with potatoes and broccoli for a complete CPB meal.</p>
+  </div>
+
+  <div id="chicken_s150" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">228</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">39.3g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">5.0g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">4.6g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">1.2g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>1,472 cal</span> <span>115.7g P</span> <span>50.0g F</span> <span>141.4g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Good main-course portion — 25% of daily protein in one hit, leaves plenty of room for two more meals to hit targets.</p>
+  </div>
+
+  <div id="chicken_s200" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">304</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">52.4g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">6.6g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">6.1g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">1.6g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>1,396 cal</span> <span>102.6g P</span> <span>48.4g F</span> <span>139.9g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Large portion — 34% of daily protein. Excellent post-workout meal. Pair with potatoes for carb refuel, skip the fat-heavy sides.</p>
+  </div>
+</div>
+
+<!-- INGREDIENT BREAKDOWN -->
+<h2>Ingredient-by-Ingredient Breakdown</h2>
+<table class="ingredient-table">
+  <tr><th>Ingredient</th><th>Cal</th><th>Pro</th><th>Fat</th><th>Carbs</th><th>Fiber</th></tr>
+
+  <tr class="section-header"><td colspan="6">Base</td></tr>
+  <tr><td>Boneless Skinless Chicken Breast, 907g raw</td><td>1,088</td><td>204.1g</td><td>23.8g</td><td>0g</td><td>0g</td></tr>
+  <tr><td>Low-Sodium Chicken Broth, 120g (½ cup)</td><td>8</td><td>1.0g</td><td>0.1g</td><td>0.6g</td><td>0g</td></tr>
+  <tr><td>Apple Cider Vinegar, 30g (2 tbsp)</td><td>7</td><td>0g</td><td>0g</td><td>0.3g</td><td>0g</td></tr>
+  <tr><td>Garlic, 12g (4 cloves, smashed)</td><td>18</td><td>0.8g</td><td>0.1g</td><td>4.0g</td><td>0.3g</td></tr>
+
+  <tr class="section-header"><td colspan="6">Spice Build #1 — Smoky</td></tr>
+  <tr><td>Smoked Paprika, 10.5g (1.5 tbsp)</td><td>30</td><td>1.5g</td><td>1.4g</td><td>5.7g</td><td>3.7g</td></tr>
+  <tr><td>Cumin, 2.5g (1 tsp)</td><td>9</td><td>0.4g</td><td>0.6g</td><td>1.1g</td><td>0.3g</td></tr>
+  <tr><td>Onion Powder, 2.5g (1 tsp)</td><td>9</td><td>0.3g</td><td>0g</td><td>2.0g</td><td>0.2g</td></tr>
+  <tr><td>Chili Powder, 2.5g (1 tsp)</td><td>7</td><td>0.3g</td><td>0.4g</td><td>1.2g</td><td>0.9g</td></tr>
+  <tr><td>Worcestershire Sauce, 17g (1 tbsp)</td><td>13</td><td>0g</td><td>0g</td><td>3.2g</td><td>0g</td></tr>
+  <tr><td>Tomato Paste, 32g (2 tbsp)</td><td>26</td><td>1.2g</td><td>0.1g</td><td>6.0g</td><td>0.7g</td></tr>
+  <tr><td>Cayenne, pinch (0.3g)</td><td>1</td><td>0g</td><td>0g</td><td>0.2g</td><td>0.1g</td></tr>
+
+  <tr class="total"><td>TOTAL</td><td>1,216</td><td>209.6g</td><td>26.5g</td><td>24.3g</td><td>6.2g</td></tr>
+</table>
+<p style="font-size:0.75rem; color:#6b7280; margin-top:6px;">Salt, black pepper listed in recipe but zero-calorie — not included in totals.</p>
+
+<!-- RECIPE INSTRUCTIONS -->
+<h2>Recipe</h2>
+
+<h3>1. Base</h3>
+<div class="steps">
+  <div class="step"><div class="step-text">Add 2 lbs boneless skinless chicken breast to the slow cooker.</div></div>
+  <div class="step"><div class="step-text">Add ½ cup low-sodium chicken broth, 2 tbsp apple cider vinegar, 1 tsp salt, 1 tsp black pepper, and 4 smashed garlic cloves.</div></div>
+</div>
+
+<h3>2. Spice Build #1 — Smoky (Adjusted)</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Add 1.5 tbsp smoked paprika, 1 tsp cumin, 1 tsp onion powder, 1 tsp chili powder, and a pinch of cayenne directly to the slow cooker.</div></div>
+  <div class="step"><div class="step-text">Add 1 tbsp Worcestershire sauce and 2 tbsp tomato paste.</div></div>
+  <div class="step"><div class="step-text">Stir or turn the chicken to coat evenly in the spices and liquids.</div></div>
+</div>
+
+<h3>3. Cook &amp; Shred</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Cook on LOW for 6–7 hours or HIGH for 3–4 hours.</div></div>
+  <div class="step"><div class="step-text">Shred the chicken directly in the slow cooker using two forks.</div></div>
+  <div class="step"><div class="step-text">Let the shredded chicken sit for 10 minutes to reabsorb the cooking liquid before serving.</div></div>
+</div>
+
+<div class="note" style="margin-top:24px;">
+  <strong>Tip for accurate tracking:</strong> Weigh the finished batch after shredding. Divide the whole-recipe totals (1,216 cal / 209.6g P / 26.5g F / 24.3g C) by the actual cooked weight in hundreds to get your true per-100g values. Slow cooker moisture retention varies — actual yield typically falls between 750–850g.
+</div>
+  </div>
+</div>
+<div class="recipe-modal-overlay" id="recipe-bolognese">
+  <div class="recipe-modal">
+    <div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Recipe Detail</span><button class="recipe-close-btn" onclick="closeRecipe()">&#x2715; Close</button></div>
+    
+<h1>Low-Fat Baked Penne Bolognese</h1>
+<p class="subtitle">Est. ~3,000g cooked &bull; High-protein, drained-beef bolognese bake</p>
+
+<!-- WHOLE RECIPE MACROS -->
+<h2>Whole Recipe Totals</h2>
+<div class="macro-row">
+  <div class="macro-card cal"><div class="value">4,031</div><div class="label">Calories</div></div>
+  <div class="macro-card pro"><div class="value">309g</div><div class="label">Protein</div></div>
+  <div class="macro-card fat"><div class="value">115g</div><div class="label">Fat</div></div>
+  <div class="macro-card carb"><div class="value">440g</div><div class="label">Carbs</div></div>
+  <div class="macro-card fiber"><div class="value">41g</div><div class="label">Fiber</div></div>
+</div>
+
+<!-- PER-SERVING BREAKDOWN -->
+<h2>Per-Serving vs. Daily Targets</h2>
+<p style="font-size:0.82rem; color:#6b7280; margin-bottom:12px;">Daily: 1,700 cal &bull; 155g P &bull; ~55g F &bull; ~146g C</p>
+
+<div class="serving-section">
+  <div class="serving-tabs">
+    <button class="serving-tab" onclick="showServing_bolognese(6)">6 servings</button>
+    <button class="serving-tab active" onclick="showServing_bolognese(8)">8 servings</button>
+    <button class="serving-tab" onclick="showServing_bolognese(10)">10 servings</button>
+  </div>
+
+  <div id="bolognese_s6" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">672</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">51.5g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">19.2g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">73.4g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">6.9g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>1,028 cal</span> <span>103.5g P</span> <span>35.8g F</span> <span>72.6g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Big meal — eats 40% of daily calories and half your carbs. Works if this is your only carb-heavy meal.</p>
+  </div>
+
+  <div id="bolognese_s8" class="serving-detail active">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">504</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">38.6g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">14.4g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">55.1g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">5.1g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>1,196 cal</span> <span>116.4g P</span> <span>40.6g F</span> <span>90.9g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Sweet spot — 30% of daily calories, leaves plenty of room for two more protein-forward meals.</p>
+  </div>
+
+  <div id="bolognese_s10" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">403</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">30.9g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">11.5g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">44.0g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">4.1g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>1,297 cal</span> <span>124.1g P</span> <span>43.5g F</span> <span>102.0g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Small portions — only 24% of daily calories. You'll need to make up 124g protein across other meals.</p>
+  </div>
+</div>
+
+<!-- INGREDIENT BREAKDOWN -->
+<h2>Ingredient-by-Ingredient Breakdown</h2>
+<table class="ingredient-table">
+  <tr><th>Ingredient</th><th>Cal</th><th>Pro</th><th>Fat</th><th>Carbs</th><th>Fiber</th></tr>
+  <tr class="section-header"><td colspan="6">Base</td></tr>
+  <tr><td>Penne Rigate, 454g dry</td><td>1,616</td><td>56.8g</td><td>6.8g</td><td>326.9g</td><td>13.6g</td></tr>
+  <tr><td>90/10 Ground Beef, 907g (drained)</td><td>1,256</td><td>181.4g</td><td>59.0g</td><td>0g</td><td>0g</td></tr>
+  <tr><td>Part-Skim Mozzarella, 100g</td><td>302</td><td>25.0g</td><td>20.0g</td><td>3.5g</td><td>0g</td></tr>
+  <tr><td>Parmesan, 33g</td><td>139</td><td>11.8g</td><td>9.4g</td><td>1.1g</td><td>0g</td></tr>
+  <tr class="section-header"><td colspan="6">Sofrito</td></tr>
+  <tr><td>Onion, 250–300g</td><td>116</td><td>3.2g</td><td>0.3g</td><td>27.0g</td><td>4.9g</td></tr>
+  <tr><td>Carrots, 250–300g</td><td>119</td><td>2.6g</td><td>0.6g</td><td>27.8g</td><td>8.1g</td></tr>
+  <tr><td>Celery, 250–300g</td><td>41</td><td>2.0g</td><td>0.6g</td><td>8.7g</td><td>4.6g</td></tr>
+  <tr><td>Garlic, 3 cloves (~9g)</td><td>13</td><td>0.6g</td><td>0.0g</td><td>3.0g</td><td>0.2g</td></tr>
+  <tr class="section-header"><td colspan="6">Sauce &amp; Flavor</td></tr>
+  <tr><td>EVOO, ~16g retained</td><td>141</td><td>0g</td><td>16.0g</td><td>0g</td><td>0g</td></tr>
+  <tr><td>Tomato Paste, 20g</td><td>16</td><td>0.9g</td><td>0.1g</td><td>3.8g</td><td>0.8g</td></tr>
+  <tr><td>Mutti Crushed Tomatoes, 732g</td><td>190</td><td>9.5g</td><td>0.7g</td><td>37.3g</td><td>8.8g</td></tr>
+  <tr><td>Beef Bouillon, 20g</td><td>34</td><td>3.4g</td><td>1.6g</td><td>1.4g</td><td>0g</td></tr>
+  <tr><td>Dry Gelatin, 14g</td><td>47</td><td>12.0g</td><td>0.0g</td><td>0g</td><td>0g</td></tr>
+  <tr><td>Water, 512g</td><td>0</td><td>0g</td><td>0g</td><td>0g</td><td>0g</td></tr>
+  <tr class="total"><td>TOTAL</td><td>4,031</td><td>309.1g</td><td>115.1g</td><td>440.4g</td><td>41.1g</td></tr>
+</table>
+<p style="font-size:0.75rem; color:#6b7280; margin-top:6px;">Veggie weights are flexible (250–300g each) — per-100g macros shift &lt;0.1g across that range.</p>
+
+<!-- RECIPE INSTRUCTIONS -->
+<h2>Recipe</h2>
+
+<h3>1. Pasta Preparation</h3>
+<div class="steps">
+  <div class="step"><div class="step-text">Bring a large pot of salted water to a boil.</div></div>
+  <div class="step"><div class="step-text">Add the 454g of penne and cook for 11 minutes until al dente.</div></div>
+  <div class="step"><div class="step-text">Drain and set aside.</div></div>
+</div>
+
+<h3>2. Sauté the Sofrito</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Heat 14g of olive oil in a large pan over medium heat.</div></div>
+  <div class="step"><div class="step-text">Add the 290g each of onions, carrots, and celery.</div></div>
+  <div class="step"><div class="step-text">Cook slowly for approximately 20 minutes, stirring occasionally, until the vegetables are soft and caramelized.</div></div>
+  <div class="step"><div class="step-text">Remove the vegetables from the pan and set them aside.</div></div>
+</div>
+
+<h3>3. The Lean Meat Sear</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Add another 14g of olive oil to the pan and increase heat to medium-high.</div></div>
+  <div class="step"><div class="step-text">Add the 2 lbs of ground beef. Let it sit untouched for 1 minute to brown, then flip and break it up with a spatula.</div></div>
+  <div class="step"><div class="step-text">Once the beef is mostly browned, add the final 3g of olive oil to a small cleared spot in the pan and sauté the minced garlic for 30 seconds.</div></div>
+  <div class="step"><div class="step-text"><strong>The Lean Trick:</strong> Before adding any other ingredients, use a spoon or tilt the pan to pour off and remove all excess grease and oil from the beef and garlic mixture.
+    <div class="tip">Draining removes ~35% of the rendered fat, cutting beef fat from 10g to ~6.5g per 100g.</div></div></div>
+</div>
+
+<h3>4. Building the Sauce</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Add the 20g of tomato paste to the beef and stir for 1 minute.</div></div>
+  <div class="step"><div class="step-text">Add the sautéed vegetables back into the pan.</div></div>
+  <div class="step"><div class="step-text">Pour in the 732g of crushed tomatoes, 512g of water, 20g of bouillon, and 14g of gelatin.</div></div>
+  <div class="step"><div class="step-text"><strong>Simmering:</strong> Let the sauce simmer uncovered. Because you used crushed tomatoes, reduce the sauce until it is thick and "jammy" — it should leave a clear trail on the bottom of the pan when you move a spoon through it.</div></div>
+  <div class="step"><div class="step-text">Season with salt, oregano, and crushed red pepper to taste.</div></div>
+</div>
+
+<h3>5. Assembly and Broil</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Preheat your oven's broiler.</div></div>
+  <div class="step"><div class="step-text">In a large baking dish, combine the cooked pasta and the thickened meat sauce.</div></div>
+  <div class="step"><div class="step-text">Evenly top with the 100g of mozzarella and 33g of grated Parmesan.</div></div>
+  <div class="step"><div class="step-text">Place under the broiler for about 2 minutes until the cheese is bubbly and golden and some pasta tips are slightly crispy.</div></div>
+</div>
+
+<div class="note" style="margin-top:24px;">
+  <strong>Tip for accurate tracking:</strong> Weigh the finished casserole, then divide the whole-recipe totals (4,031 cal / 309g P / 115g F / 440g C / 41g fiber) by the weight in hundreds to get your true per-100g values.
+</div>
+  </div>
+</div>
+<div class="recipe-modal-overlay" id="recipe-kimchi">
+  <div class="recipe-modal">
+    <div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Recipe Detail</span><button class="recipe-close-btn" onclick="closeRecipe()">&#x2715; Close</button></div>
+    
+<h1>Kimchi Egg Scramble with Steel Cut Oats</h1>
+<p class="subtitle">Single-serving pre-workout breakfast &bull; High-protein, low-fat &bull; ~540g total</p>
+
+<!-- WHOLE RECIPE MACROS -->
+<h2>Whole Recipe Totals</h2>
+<div class="macro-row">
+  <div class="macro-card cal"><div class="value">466</div><div class="label">Calories</div></div>
+  <div class="macro-card pro"><div class="value">45.7g</div><div class="label">Protein</div></div>
+  <div class="macro-card fat"><div class="value">12.9g</div><div class="label">Fat</div></div>
+  <div class="macro-card carb"><div class="value">38.9g</div><div class="label">Carbs</div></div>
+  <div class="macro-card fiber"><div class="value">7.2g</div><div class="label">Fiber</div></div>
+</div>
+
+<!-- PER-SERVING BREAKDOWN -->
+<h2>Per-Serving vs. Daily Targets</h2>
+<p style="font-size:0.82rem; color:#6b7280; margin-bottom:12px;">Daily (workout day): 1,700 cal &bull; 155g P &bull; ~62g F &bull; ~127g C</p>
+
+<div class="serving-section">
+  <div class="serving-tabs">
+    <button class="serving-tab active" onclick="showServing_kimchi(1)">1 serving</button>
+    <button class="serving-tab" onclick="showServing_kimchi(2)">2 servings</button>
+  </div>
+
+  <div id="kimchi_s1" class="serving-detail active">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">466</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">45.7g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">12.9g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">38.9g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">7.2g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>1,234 cal</span> <span>109.3g P</span> <span>49.1g F</span> <span>88.1g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Uses 27% of daily calories and 29% of protein target.</p>
+  </div>
+
+  <div id="kimchi_s2" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">932</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">91.4g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">25.8g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">77.8g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">14.4g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row">
+      <span>768 cal</span> <span>63.6g P</span> <span>36.2g F</span> <span>49.2g C</span>
+    </div>
+    <p class="note" style="margin-top:14px;">Double portion eats 55% of daily calories and 61% of carbs. Only makes sense if this is your main meal of the day.</p>
+  </div>
+</div>
+
+<!-- INGREDIENT BREAKDOWN -->
+<h2>Ingredient-by-Ingredient Breakdown</h2>
+<table class="ingredient-table">
+  <tr><th>Ingredient</th><th>Cal</th><th>Pro</th><th>Fat</th><th>Carbs</th><th>Fiber</th></tr>
+  <tr class="section-header"><td colspan="6">Eggs &amp; Protein</td></tr>
+  <tr><td>Whole eggs (2 large), 100g</td><td>143</td><td>12.6g</td><td>9.5g</td><td>0.7g</td><td>0g</td></tr>
+  <tr><td>Liquid egg whites, 240g</td><td>125</td><td>26.2g</td><td>0.4g</td><td>1.8g</td><td>0g</td></tr>
+  <tr class="section-header"><td colspan="6">Vegetables &amp; Sides</td></tr>
+  <tr><td>Roasted bell peppers, 75g</td><td>23</td><td>0.7g</td><td>0.2g</td><td>4.5g</td><td>1.6g</td></tr>
+  <tr><td>Red onion, diced, 40g</td><td>16</td><td>0.4g</td><td>0.0g</td><td>3.7g</td><td>0.7g</td></tr>
+  <tr><td>Kimchi, 45g</td><td>7</td><td>0.5g</td><td>0.2g</td><td>1.1g</td><td>0.7g</td></tr>
+  <tr class="section-header"><td colspan="6">Oats</td></tr>
+  <tr><td>Bob's Red Mill Steel Cut Oats, 40g dry</td><td>152</td><td>5.3g</td><td>2.6g</td><td>27.1g</td><td>4.2g</td></tr>
+  <tr class="total"><td>TOTAL</td><td>466</td><td>45.7g</td><td>12.9g</td><td>38.9g</td><td>7.2g</td></tr>
+</table>
+<p style="font-size:0.75rem; color:#6b7280; margin-top:6px;">Seasonings (salt, pepper, garlic powder) not listed &mdash; effectively zero calories.</p>
+
+<!-- RECIPE INSTRUCTIONS -->
+<h2>Recipe</h2>
+
+<h3>1. Steel Cut Oats</h3>
+<div class="steps">
+  <div class="step"><div class="step-text">Bring water to a boil in a small saucepan. Add 40g Bob's Red Mill steel cut oats and a pinch of salt.</div></div>
+  <div class="step"><div class="step-text">Reduce heat to low, cover, and simmer for 20&ndash;25 minutes, stirring occasionally, until oats are tender and water is absorbed.</div></div>
+</div>
+
+<h3>2. Egg Scramble</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Crack 2 whole eggs into a bowl and add 240g liquid egg whites. Season with salt, pepper, and garlic powder. Whisk to combine.</div></div>
+  <div class="step"><div class="step-text">Heat a nonstick skillet over medium heat. Add 75g roasted bell peppers and 40g diced red onion. Saut&eacute; for 2&ndash;3 minutes until the onion is softened and peppers are warmed through.</div></div>
+  <div class="step"><div class="step-text">Pour in the egg mixture. Let it set for about 30 seconds, then gently fold and scramble until eggs are just cooked through &mdash; don't overcook.</div></div>
+</div>
+
+<h3>3. Plate</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Transfer the scramble to a plate. Serve the steel cut oats alongside. Top or side with 45g kimchi.</div></div>
+</div>
+
+<div class="note" style="margin-top:24px;">
+  <strong>Timing note:</strong> Start the oats first &mdash; they take 20&ndash;25 minutes. Begin the scramble when the oats have about 5 minutes left. Everything finishes at the same time.
+</div>
+  </div>
+</div>
+
 </body>
 </html>
