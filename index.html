@@ -1050,9 +1050,9 @@ const recipes = [
   if(!recipes.length){ empty.style.display='block'; return; }
   recipes.forEach(r=>{
     const s = r.servings;
-    const a = document.createElement('a');
+    const a = document.createElement('div');
     a.className = 'recipe-card';
-    a.href = r.file;
+    a.style.cursor = 'default';
     a.innerHTML = `
       <div class="recipe-name">${r.name}</div>
       <div style="font-size:0.75rem; color:var(--muted); margin-bottom:0.4rem;">Per serving (${s} servings)</div>
@@ -1063,6 +1063,7 @@ const recipes = [
         <span class="recipe-macro carb">${Math.round(r.carb/s)}g C</span>
       </div>
       <div class="recipe-desc">${r.desc}</div>
+      <div style="font-size:0.7rem; color:var(--muted); margin-top:0.5rem; opacity:0.6;">Whole recipe: ${r.cal} cal &bull; ${r.pro}g P &bull; ${r.fat}g F &bull; ${r.carb}g C</div>
     `;
     list.appendChild(a);
   });
