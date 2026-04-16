@@ -143,6 +143,14 @@
   /* Garlic-Paprika Trio recipe variant boxes */
   .variant-box { background: #1a1d23; border: 1px solid #2a2d35; border-radius: 10px; padding: 16px 20px; margin: 14px 0; }
   .variant-box .variant-title { font-weight: 600; color: #60a5fa; font-size: 0.9rem; margin-bottom: 8px; }
+  /* Magee Spaghetti & Meatballs component headers */
+  .component-header { background: linear-gradient(90deg, #0e1a2a 0%, #1a1d23 100%); border-left: 4px solid #60a5fa; padding: 10px 16px; margin: 20px 0 12px; border-radius: 6px; }
+  .component-header h2 { border-bottom: none; margin: 0; padding: 0; font-size: 1.2rem; color: #fff; }
+  .component-header .tag { display: inline-block; background: #3b82f622; color: #60a5fa; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; text-transform: uppercase; }
+  .note.warn { border-left-color: #f59e0b; }
+  .note.migration { border-left-color: #22c55e; background: #0e1a14; }
+  .ingredient-table tr.migration td { color: #f59e0b; font-style: italic; font-size: 0.78rem; }
+  .ingredient-table tr.adj-total td { font-weight: 700; color: #60a5fa; border-top: 1px solid #3b82f655; padding-top: 8px; }
 </style>
 </head>
 <body>
@@ -1063,6 +1071,14 @@ const recipes = [
     cal: 674, pro: 16.4, fat: 29.8, carb: 94.7,
     servings: 7,
     desc: 'Sheet-pan potatoes, carrots & broccoli with garlic + smoked paprika + rosemary. Chicken/sirloin side. ~700g cooked — per 100g: 96 cal / 2.3g P / 4.3g F / 13.5g C.'
+  },
+  {
+    name: 'Magee Family Spaghetti & Meatballs',
+    modal: 'recipe-spaghetti-meatballs',
+    perHundred: true,
+    cal: 2268, pro: 227.4, fat: 107.5, carb: 81,
+    servings: 9.5,
+    desc: "Mom's heirloom recipe. Card shows per 100g meatball (migration-adjusted). Sauce per 100g: 71 cal / 4.1g P / 2.5g F / 10.3g C. 3hr-simmer fat migration (~12.5%) baked into both values."
   }
 ];
 
@@ -1131,6 +1147,32 @@ function showServing_kimchi(n) {
   document.getElementById('kimchi_s' + n).classList.add('active');
   document.querySelectorAll('#recipe-kimchi .serving-tab').forEach(el => {
     if (el.textContent.startsWith(n + ' serving')) el.classList.add('active');
+  });
+}
+function showServing_sauce(n) {
+  var modal = document.getElementById('recipe-spaghetti-meatballs');
+  if (!modal) return;
+  var target = document.getElementById('sauce_s' + n);
+  if (!target) return;
+  var section = target.closest('.serving-section');
+  section.querySelectorAll('.serving-detail').forEach(el => el.classList.remove('active'));
+  section.querySelectorAll('.serving-tab').forEach(el => el.classList.remove('active'));
+  target.classList.add('active');
+  section.querySelectorAll('.serving-tab').forEach(el => {
+    if (el.textContent.startsWith(n + 'g')) el.classList.add('active');
+  });
+}
+function showServing_meatball(n) {
+  var modal = document.getElementById('recipe-spaghetti-meatballs');
+  if (!modal) return;
+  var target = document.getElementById('meatball_s' + n);
+  if (!target) return;
+  var section = target.closest('.serving-section');
+  section.querySelectorAll('.serving-detail').forEach(el => el.classList.remove('active'));
+  section.querySelectorAll('.serving-tab').forEach(el => el.classList.remove('active'));
+  target.classList.add('active');
+  section.querySelectorAll('.serving-tab').forEach(el => {
+    if (el.textContent.startsWith(n + 'g')) el.classList.add('active');
   });
 }
 </script>
@@ -1710,6 +1752,252 @@ function showServing_kimchi(n) {
 
 <div class="note" style="margin-top:24px;">
   <strong>Tip for accurate tracking:</strong> Log the recipe in your macro app at <strong>96 cal / 2.3g P / 4.3g F / 13.5g C / 2.7g fiber per 100g cooked</strong>. Weigh the finished sheet-pan yield on your first cook and divide the whole-recipe totals (674 / 16.4 / 29.8 / 94.7 / 19.2) by the actual gram weight &divide; 100 to calibrate &mdash; estimated here at ~700g, but your real yield may shift &plusmn;50g depending on oven temp and roast time. Then weigh your plate to the gram every time and multiply by the per-100g values.
+</div>
+
+  </div>
+</div>
+
+
+<div class="recipe-modal-overlay" id="recipe-spaghetti-meatballs">
+  <div class="recipe-modal">
+    <div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Recipe Detail</span><button class="recipe-close-btn" onclick="closeRecipe()">&#x2715; Close</button></div>
+
+<h1>Magee Family Spaghetti &amp; Meatballs</h1>
+<p class="subtitle">Mom&rsquo;s heirloom recipe &bull; Simmered sauce + 90/10 beef meatballs &bull; Tracked per 100g cooked with cross-contamination adjustment</p>
+
+<div class="note migration" style="margin-top:0;">
+  <strong>Cut-phase note:</strong> The per-100g values below have the 3-hour-simmer fat migration already baked in (~12.5% of meatball fat migrates into sauce during cooking). Log these numbers directly in your macro app &mdash; no further adjustment needed.
+</div>
+
+<h2>Whole Recipe Totals (combined)</h2>
+<div class="macro-row">
+  <div class="macro-card cal"><div class="value">3,554</div><div class="label">Calories</div></div>
+  <div class="macro-card pro"><div class="value">301g</div><div class="label">Protein</div></div>
+  <div class="macro-card fat"><div class="value">152g</div><div class="label">Fat</div></div>
+  <div class="macro-card carb"><div class="value">266g</div><div class="label">Carbs</div></div>
+  <div class="macro-card fiber"><div class="value">34g</div><div class="label">Fiber</div></div>
+</div>
+<p style="font-size:0.78rem; color:#6b7280; margin-top:6px;">Combined cooked yield: ~2,750g (sauce ~1,800g + meatballs ~950g). Feeds roughly 10&ndash;12 plates. Daily targets: 1,700 cal &bull; 155g P &bull; ~60g F &bull; ~135g C (rest-day carb ceiling 97g; workout-day 127g). Fat migration just redistributes between components &mdash; combined totals are conserved.</p>
+
+<div class="component-header">
+  <h2>Sauce <span class="tag">Component 1 &bull; migration-adjusted</span></h2>
+</div>
+
+<div style="background:#0e1a2a; border:1px solid #3b82f655; border-radius:10px; padding:14px 18px; margin:10px 0 16px;">
+  <div style="font-size:0.75rem; color:#60a5fa; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; margin-bottom:8px;">Per 100g sauce (cooked, +migrated fat) &mdash; base reference</div>
+  <div class="macro-row">
+    <div class="macro-card cal"><div class="value">71</div><div class="label">Calories</div></div>
+    <div class="macro-card pro"><div class="value">4.1g</div><div class="label">Protein</div></div>
+    <div class="macro-card fat"><div class="value">2.5g</div><div class="label">Fat</div></div>
+    <div class="macro-card carb"><div class="value">10.3g</div><div class="label">Carbs</div></div>
+    <div class="macro-card fiber"><div class="value">1.6g</div><div class="label">Fiber</div></div>
+  </div>
+  <p style="font-size:0.78rem; color:#9ca3af; margin-top:8px;">Log this as your per-100g sauce value. Fat is 2.5g (up from 2.1g ingredient-only) because 15.4g of meatball fat renders into the sauce during simmer. Parmesan still gives meaningful protein density (~4g per 100g) for a tomato sauce.</p>
+</div>
+
+<div class="serving-section">
+  <div class="serving-tabs">
+    <button class="serving-tab" onclick="showServing_sauce(100)">100g (light ladle)</button>
+    <button class="serving-tab active" onclick="showServing_sauce(200)">200g (standard)</button>
+    <button class="serving-tab" onclick="showServing_sauce(300)">300g (generous)</button>
+  </div>
+
+  <div id="sauce_s100" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">71</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">4.1g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">2.5g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">10.3g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">1.6g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row"><span>1,629 cal</span> <span>150.9g P</span> <span>57.5g F</span> <span>124.7g C</span></div>
+    <p class="note" style="margin-top:14px;">Light ladle &mdash; 4% of daily cal. Good for a protein-focused plate where sauce is seasoning more than drowning.</p>
+  </div>
+
+  <div id="sauce_s200" class="serving-detail active">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">143</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">8.2g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">5.0g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">20.5g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">3.2g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row"><span>1,557 cal</span> <span>146.8g P</span> <span>55.0g F</span> <span>114.5g C</span></div>
+    <p class="note" style="margin-top:14px;">Standard sauce &mdash; 8% of daily cal. Carbs at 21g leave plenty of room under both rest- and workout-day ceilings. Fiber 3.2g is notable.</p>
+  </div>
+
+  <div id="sauce_s300" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">214</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">12.2g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">7.4g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">30.8g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">4.8g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row"><span>1,486 cal</span> <span>142.8g P</span> <span>52.6g F</span> <span>104.2g C</span></div>
+    <p class="note" style="margin-top:14px;">Generous sauce &mdash; 13% of daily cal, almost 5g fiber. Italian-grandma drowning plate.</p>
+  </div>
+</div>
+
+<h3>Sauce Ingredient Breakdown</h3>
+<table class="ingredient-table">
+  <tr><th>Ingredient</th><th>Cal</th><th>Pro</th><th>Fat</th><th>Carbs</th><th>Fiber</th></tr>
+  <tr><td>Tomato paste, 18 oz (510g)</td><td>418</td><td>21.9g</td><td>2.5g</td><td>96.4g</td><td>20.9g</td></tr>
+  <tr><td>Tomato juice, 64 oz (~1,950g)</td><td>332</td><td>16.6g</td><td>1.0g</td><td>82.5g</td><td>7.8g</td></tr>
+  <tr><td>Parmesan cheese, grated, 1 cup (90g)</td><td>388</td><td>34.6g</td><td>25.7g</td><td>3.7g</td><td>0g</td></tr>
+  <tr><td>Garlic, 2 cloves whole (~6g)</td><td>9</td><td>0.4g</td><td>0.0g</td><td>2.0g</td><td>0.1g</td></tr>
+  <tr class="section-header"><td colspan="6">Seasonings (not counted &mdash; zero-cal)</td></tr>
+  <tr><td style="color:#6b7280;">3 bay leaves, 1&frac12; tsp red pepper seeds, &frac12; tsp salt</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+  <tr class="total"><td>Sauce raw totals (from ingredients)</td><td>1,147</td><td>73.5g</td><td>29.2g</td><td>184.6g</td><td>28.8g</td></tr>
+  <tr class="migration"><td>+ migrated from meatballs during simmer</td><td>+139</td><td>&mdash;</td><td>+15.4g</td><td>&mdash;</td><td>&mdash;</td></tr>
+  <tr class="adj-total"><td>Adjusted sauce totals (in final pot)</td><td>1,286</td><td>73.5g</td><td>44.6g</td><td>184.6g</td><td>28.8g</td></tr>
+</table>
+
+<div class="component-header">
+  <h2>Meatballs <span class="tag">Component 2 &bull; migration-adjusted</span></h2>
+</div>
+
+<div style="background:#1a0e0e; border:1px solid #ef444455; border-radius:10px; padding:14px 18px; margin:10px 0 16px;">
+  <div style="font-size:0.75rem; color:#f87171; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; margin-bottom:8px;">Per 100g meatball (cooked, &minus;migrated fat) &mdash; base reference</div>
+  <div class="macro-row">
+    <div class="macro-card cal"><div class="value">239</div><div class="label">Calories</div></div>
+    <div class="macro-card pro"><div class="value">23.9g</div><div class="label">Protein</div></div>
+    <div class="macro-card fat"><div class="value">11.3g</div><div class="label">Fat</div></div>
+    <div class="macro-card carb"><div class="value">8.5g</div><div class="label">Carbs</div></div>
+    <div class="macro-card fiber"><div class="value">0.5g</div><div class="label">Fiber</div></div>
+  </div>
+  <p style="font-size:0.78rem; color:#9ca3af; margin-top:8px;">Log this as your per-100g meatball value. Fat is 11.3g (down from 12.9g ingredient-only) because 15.4g renders into the sauce. Protein unchanged at 24% by weight &mdash; still a high-protein meatball. Typical size ~50g cooked (2 meatballs &asymp; 100g).</p>
+</div>
+
+<div class="serving-section">
+  <div class="serving-tabs">
+    <button class="serving-tab" onclick="showServing_meatball(50)">50g (1 meatball)</button>
+    <button class="serving-tab" onclick="showServing_meatball(100)">100g (2 meatballs)</button>
+    <button class="serving-tab active" onclick="showServing_meatball(150)">150g (3 meatballs)</button>
+    <button class="serving-tab" onclick="showServing_meatball(200)">200g (4 meatballs)</button>
+  </div>
+
+  <div id="meatball_s50" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">119</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">12.0g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">5.7g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">4.3g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">0.3g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row"><span>1,581 cal</span> <span>143.0g P</span> <span>54.3g F</span> <span>130.7g C</span></div>
+    <p class="note" style="margin-top:14px;">Single meatball &mdash; 7% of daily cal. 12g protein for 119 cal is solid. Protein topper on a veg-forward plate.</p>
+  </div>
+
+  <div id="meatball_s100" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">239</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">23.9g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">11.3g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">8.5g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">0.5g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row"><span>1,461 cal</span> <span>131.1g P</span> <span>48.7g F</span> <span>126.5g C</span></div>
+    <p class="note" style="margin-top:14px;">Two meatballs &mdash; 14% of daily cal, 24g protein. Combined with 200g sauce: ~382 cal / 32.1g P / 16.3g F / 29g C.</p>
+  </div>
+
+  <div id="meatball_s150" class="serving-detail active">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">358</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">35.9g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">17.0g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">12.8g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">0.8g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row"><span>1,342 cal</span> <span>119.1g P</span> <span>43.0g F</span> <span>122.2g C</span></div>
+    <p class="note" style="margin-top:14px;">Standard serving &mdash; 21% of daily cal, 36g protein. Combined with 200g sauce: <strong>501 cal / 44.1g P / 22.0g F / 33.3g C</strong> &mdash; full meal hitting ~28% of protein target. Cut-phase friendly.</p>
+  </div>
+
+  <div id="meatball_s200" class="serving-detail">
+    <div class="macro-row">
+      <div class="macro-card cal"><div class="value">477</div><div class="label">Calories</div></div>
+      <div class="macro-card pro"><div class="value">47.9g</div><div class="label">Protein</div></div>
+      <div class="macro-card fat"><div class="value">22.6g</div><div class="label">Fat</div></div>
+      <div class="macro-card carb"><div class="value">17.1g</div><div class="label">Carbs</div></div>
+      <div class="macro-card fiber"><div class="value">1.1g</div><div class="label">Fiber</div></div>
+    </div>
+    <p class="remaining-label">Remaining for rest of day:</p>
+    <div class="remaining-row"><span>1,223 cal</span> <span>107.1g P</span> <span>37.4g F</span> <span>117.9g C</span></div>
+    <p class="note" style="margin-top:14px;">4 meatballs &mdash; 28% of daily cal, 48g protein (31% of target). Protein anchor of a workout day.</p>
+  </div>
+</div>
+
+<h3>Meatball Ingredient Breakdown</h3>
+<table class="ingredient-table">
+  <tr><th>Ingredient</th><th>Cal</th><th>Pro</th><th>Fat</th><th>Carbs</th><th>Fiber</th></tr>
+  <tr><td>Ground beef, 90/10, 2 lb (907g)</td><td>1,596</td><td>181.4g</td><td>90.7g</td><td>0g</td><td>0g</td></tr>
+  <tr><td>Mozzarella, grated/shredded, &frac12; cup (55g)</td><td>166</td><td>12.2g</td><td>12.3g</td><td>1.2g</td><td>0g</td></tr>
+  <tr><td>Bread crumbs, 1 cup (108g)</td><td>427</td><td>14.7g</td><td>5.7g</td><td>77.7g</td><td>4.9g</td></tr>
+  <tr><td>Garlic, 1 clove cut fine (~3g)</td><td>4</td><td>0.2g</td><td>0.0g</td><td>1.0g</td><td>0.1g</td></tr>
+  <tr><td>Eggs, 3 large (150g)</td><td>214</td><td>18.9g</td><td>14.2g</td><td>1.1g</td><td>0g</td></tr>
+  <tr class="section-header"><td colspan="6">Seasoning (not counted &mdash; zero-cal)</td></tr>
+  <tr><td style="color:#6b7280;">1 tsp salt</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+  <tr class="total"><td>Meatball raw totals (from ingredients)</td><td>2,407</td><td>227.4g</td><td>122.9g</td><td>81.0g</td><td>5.0g</td></tr>
+  <tr class="migration"><td>&minus; migrated to sauce during simmer</td><td>&minus;139</td><td>&mdash;</td><td>&minus;15.4g</td><td>&mdash;</td><td>&mdash;</td></tr>
+  <tr class="adj-total"><td>Adjusted meatball totals (final, in pot)</td><td>2,268</td><td>227.4g</td><td>107.5g</td><td>81.0g</td><td>5.0g</td></tr>
+</table>
+
+<h2>Recipe Instructions</h2>
+
+<h3>1. Sauce</h3>
+<div class="steps">
+  <div class="step"><div class="step-text">Combine 18 oz tomato paste, 64 oz tomato juice, 1 cup grated parmesan cheese, 3 bay leaves, 1&frac12; tsp red pepper seeds, 2 whole cloves garlic, and &frac12; tsp salt in a heavy pot.</div></div>
+  <div class="step"><div class="step-text">Just put all together.</div></div>
+  <div class="step"><div class="step-text">Cook on medium until boiling, then lower to low.</div></div>
+</div>
+
+<h3>2. Meatballs</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Combine 2 pounds 90/10 ground beef, &frac12; cup grated Italian cheese (mozzarella &mdash; shredded is fine), 1 cup bread crumbs, 1 clove garlic (cut fine), 1 tsp salt, and 3 eggs.</div></div>
+  <div class="step"><div class="step-text">Shape into meatballs.</div></div>
+  <div class="step"><div class="step-text"><strong>Option A (brown first):</strong> In a heavy frypan over medium heat, brown meatballs on all sides in olive oil, 3 minutes each side. Simmer first.</div></div>
+  <div class="step"><div class="step-text"><strong>Option B (raw into sauce):</strong> Just put raw meatballs in the sauce and cook &mdash; use enough sauce to cover &frac12; of each meatball.</div></div>
+</div>
+
+<h3>3. Combine &amp; Simmer</h3>
+<div class="steps" style="counter-reset: step;">
+  <div class="step"><div class="step-text">Add meatballs to sauce.</div></div>
+  <div class="step"><div class="step-text">Simmer uncovered for at least 3 hours.</div></div>
+</div>
+
+<p style="font-size:0.85rem; color:#9ca3af; font-style:italic; margin-top:20px; text-align:right;">Love, Mom</p>
+
+<h2>Tracking Tips</h2>
+
+<div class="note">
+  <strong>Macro-app entries (per 100g cooked, migration-adjusted):</strong>
+  <ul style="margin:8px 0 0 20px; font-size:0.85rem;">
+    <li><strong>Magee Sauce:</strong> 71 cal / 4.1g P / 2.5g F / 10.3g C / 1.6g fiber</li>
+    <li><strong>Magee Meatballs:</strong> 239 cal / 23.9g P / 11.3g F / 8.5g C / 0.5g fiber</li>
+  </ul>
+</div>
+
+<div class="note migration">
+  <strong>How the migration adjustment works:</strong> During the 3-hour simmer, ~12.5% of the meatball fat (~15.4g of ~123g) renders into the sauce. Already factored into the values above:
+  <div style="margin-top:6px; font-family: ui-monospace, monospace; font-size:0.8rem;">
+    Sauce:     29.2g F &rarr; 44.6g F (raw + migrated), &divide; 18 = 2.5g per 100g<br>
+    Meatballs: 122.9g F &rarr; 107.5g F (raw &minus; migrated), &divide; 9.5 = 11.3g per 100g
+  </div>
+  Protein, carbs, and fiber don&rsquo;t migrate &mdash; only fat does. Calories shift with the fat (~139 cal from meatballs to sauce).
+</div>
+
+<div class="note warn">
+  <strong>Calibration on first cook:</strong> Cooked weights assume ~1,800g final sauce (30% water loss) and ~950g final meatballs (20% shrinkage). Weigh each separately right after cooking and recompute if your yield differs significantly:
+  <div style="margin-top:6px; font-family: ui-monospace, monospace; font-size:0.8rem;">
+    Sauce per 100g    = 1,286 cal &divide; (actual sauce weight &divide; 100)<br>
+    Meatball per 100g = 2,268 cal &divide; (actual meatball weight &divide; 100)
+  </div>
 </div>
 
   </div>
