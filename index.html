@@ -1051,6 +1051,13 @@ const recipes = [
     cal: 564, pro: 95.7, fat: 13.4, carb: 12.4,
     servings: 2,
     desc: 'No-cook protein bomb \u2014 Wild Planet canned wild sockeye, Greek yogurt, dijon, fresh dill, capers, red onion. Per serving: 282 cal / 48g P / 6.7g F. Ratio 5.9 cal/g protein \u2014 lowest in your library.'
+  },
+  {
+    name: 'Greek Yogurt Pulled Chicken Salad',
+    modal: 'recipe-chickensalad',
+    cal: 601, pro: 100.7, fat: 11.4, carb: 21.5,
+    servings: 2,
+    desc: 'No-cook lunch \u2014 batch pulled chicken + Greek yogurt dressing (dijon, dill, capers, red onion). Per serving: 300 cal / 50g P / 5.7g F. Same dressing template as the salmon salad; rotate across the week to vary protein source.'
   }
 ];
 
@@ -1083,6 +1090,14 @@ const recipes = [
 function openRecipe(id) {
   document.getElementById(id).classList.add('active');
   document.body.style.overflow = 'hidden';
+}
+function showServing_chickensalad(n) {
+  document.querySelectorAll('#recipe-chickensalad .serving-detail').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('#recipe-chickensalad .serving-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('chickensalad_s' + n).classList.add('active');
+  document.querySelectorAll('#recipe-chickensalad .serving-tab').forEach(el => {
+    if (el.textContent.startsWith(n + ' ')) el.classList.add('active');
+  });
 }
 function showServing_salmon(n) {
   document.querySelectorAll('#recipe-salmon .serving-detail').forEach(el => el.classList.remove('active'));
@@ -2114,6 +2129,134 @@ function showServing_meatball(n) {
 
 <div class="note" style="margin-top:14px;">
 <strong>Tracking tip:</strong> If you log this in your macros app, use 100g = 107 cal / 18.2g P / 2.6g F / 2.4g C. A standard 263g serving (half the recipe) is 282 cal / 48g P / 6.7g F.
+</div>
+
+</div>
+</div>
+
+<div class="recipe-modal-overlay" id="recipe-chickensalad">
+<div class="recipe-modal">
+<div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Recipe Detail</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
+<h1>Greek Yogurt Pulled Chicken Salad</h1>
+<p class="subtitle">~525g total • No-cook lunch • Uses your batch-cooked smoky pulled chicken + Greek yogurt dressing</p>
+
+<h2>Whole Recipe Totals (2 servings)</h2>
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">601</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">100.7g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">11.4g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">21.5g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">3.3g</div><div class="label">Fiber</div></div>
+</div>
+
+<h2>Per-Serving vs. Daily Targets</h2>
+<p style="font-size:0.82rem; color:#6b7280; margin-bottom:12px;">Daily: 1,700 cal • 155g P • ~60g F • ~135g C (rest-day carb ceiling 97g; workout-day 127g) • Recipe makes 2 lunch portions; halve everything for 1 portion.</p>
+
+<div class="serving-section">
+<div class="serving-tabs">
+<button class="serving-tab" onclick="showServing_chickensalad(1)">1 serving (whole recipe)</button>
+<button class="serving-tab active" onclick="showServing_chickensalad(2)">2 servings (default)</button>
+<button class="serving-tab" onclick="showServing_chickensalad(3)">3 servings (smaller)</button>
+</div>
+
+<div id="chickensalad_s1" class="serving-detail">
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">601</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">100.7g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">11.4g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">21.5g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">3.3g</div><div class="label">Fiber</div></div>
+</div>
+<p class="remaining-label">Remaining for rest of day:</p>
+<div class="remaining-row">
+<span>1,099 cal</span> <span>54.3g P</span> <span>48.6g F</span> <span>75.5g C</span>
+</div>
+<p class="note" style="margin-top:14px;"><strong>Whole recipe in one sitting — 35% of daily calories.</strong> Single-meal protein hit of 101g (65% of daily target) clears the floor with one sitting. Use when you woke up late, missed breakfast, or know dinner will be light. Macros remain extremely clean: 14% fat-cal share is half what most "full meal" entrees hit.</p>
+</div>
+
+<div id="chickensalad_s2" class="serving-detail active">
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">300</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">50.4g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">5.7g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">10.7g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">1.7g</div><div class="label">Fiber</div></div>
+</div>
+<p class="remaining-label">Remaining for rest of day:</p>
+<div class="remaining-row">
+<span>1,400 cal</span> <span>104.6g P</span> <span>54.3g F</span> <span>86.3g C</span>
+</div>
+<p class="note" style="margin-top:14px;"><strong>Default lunch serving — 18% of daily calories at 50g protein.</strong> 6.0 cal per gram of protein — matches the salmon salad almost exactly, but uses chicken from your existing slow-cooker batch. Eat one serving for lunch, save the second portion for tomorrow's lunch (sealed container, 2–3 days). Carbs at 10.7g leave 86g of headroom under the rest-day ceiling.</p>
+</div>
+
+<div id="chickensalad_s3" class="serving-detail">
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">200</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">33.6g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">3.8g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">7.2g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">1.1g</div><div class="label">Fiber</div></div>
+</div>
+<p class="remaining-label">Remaining for rest of day:</p>
+<div class="remaining-row">
+<span>1,500 cal</span> <span>121.4g P</span> <span>56.2g F</span> <span>89.8g C</span>
+</div>
+<p class="note" style="margin-top:14px;"><strong>Snack-size portion — 12% of daily calories.</strong> 34g protein in 200 calories. Useful as a mid-afternoon protein top-up between lunch and dinner, or as a "side protein" alongside a salad with a different anchor.</p>
+</div>
+</div>
+
+<h2>Ingredient-by-Ingredient Breakdown (whole recipe)</h2>
+<table class="ingredient-table">
+<tr><th>Ingredient</th><th>Cal</th><th>Pro</th><th>Fat</th><th>Carbs</th><th>Fiber</th></tr>
+<tr class="section-header"><td colspan="6">Protein</td></tr>
+<tr><td>Slow Cooker Smoky Pulled Chicken, 300g</td><td>456</td><td>78.8g</td><td>9.9g</td><td>9.1g</td><td>2.3g</td></tr>
+<tr><td>Plain nonfat Greek yogurt (Fage 0%), 200g</td><td>118</td><td>20.6g</td><td>0.8g</td><td>7.2g</td><td>0g</td></tr>
+<tr class="section-header"><td colspan="6">Flavor &amp; Tang</td></tr>
+<tr><td>Dijon mustard, 15g (~1 tbsp)</td><td>9</td><td>0.7g</td><td>0.5g</td><td>1.0g</td><td>0.1g</td></tr>
+<tr><td>Lemon juice, 15g (~1 tbsp)</td><td>3</td><td>0g</td><td>0g</td><td>1.0g</td><td>0.05g</td></tr>
+<tr><td>Capers, 10g (~1 tsp drained)</td><td>2</td><td>0.2g</td><td>0.1g</td><td>0.5g</td><td>0.3g</td></tr>
+<tr class="section-header"><td colspan="6">Aromatics</td></tr>
+<tr><td>Red onion, 25g (~2 tbsp finely diced)</td><td>10</td><td>0.3g</td><td>0g</td><td>2.3g</td><td>0.4g</td></tr>
+<tr><td>Fresh dill, 6g (~2 tsp chopped)</td><td>3</td><td>0.2g</td><td>0.1g</td><td>0.4g</td><td>0.1g</td></tr>
+<tr class="section-header"><td colspan="6">Seasonings (not counted — zero-cal)</td></tr>
+<tr><td>Black pepper, smoked paprika, garlic powder (optional)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr class="total"><td>TOTAL (whole recipe, ~525g)</td><td>601</td><td>100.7g</td><td>11.4g</td><td>21.5g</td><td>3.3g</td></tr>
+</table>
+<p style="font-size:0.75rem; color:#6b7280; margin-top:6px;">Per 100g of finished salad: 114 cal / 19.2g P / 2.2g F / 4.1g C. Pulled chicken values pulled from your Slow Cooker Smoky Pulled Chicken recipe (152 cal / 26.25g P / 3.31g F per 100g cooked).</p>
+
+<h2>Recipe</h2>
+
+<h3>1. Pull from the Batch</h3>
+<div class="steps">
+<div class="step"><div class="step-text">Pull 300g of pre-cooked smoky pulled chicken from the fridge (or thaw if frozen). The chicken should already be shredded from the slow-cooker batch.<div class="tip">If you don't have pre-cooked pulled chicken on hand, you can sub a 200g grilled chicken breast diced small — the macros shift slightly higher in protein and lower in fat, but the recipe works either way.</div></div></div>
+<div class="step"><div class="step-text">Empty into a medium mixing bowl. Break up any large clumps with a fork — you want bite-sized pieces evenly distributed.</div></div>
+</div>
+
+<h3>2. Build the Dressing</h3>
+<div class="steps" style="counter-reset: step;">
+<div class="step"><div class="step-text">In a small bowl, whisk together 200g of plain nonfat Greek yogurt, 15g (~1 tbsp) of Dijon mustard, and 15g (~1 tbsp) of fresh lemon juice.</div></div>
+<div class="step"><div class="step-text">Season with freshly cracked black pepper to taste. Add a pinch of smoked paprika to echo the BBQ rub on the chicken, or garlic powder if you want extra bite.<div class="tip">Skip salt initially — the pulled chicken's rub plus the capers will already deliver salt. Taste before adjusting.</div></div></div>
+</div>
+
+<h3>3. Combine &amp; Fold</h3>
+<div class="steps" style="counter-reset: step;">
+<div class="step"><div class="step-text">Finely dice 25g of red onion (~2 tbsp). Drain and roughly chop 10g of capers (~1 tsp). Finely chop 6g of fresh dill (~2 tsp loosely packed).</div></div>
+<div class="step"><div class="step-text">Add the dressing to the pulled chicken. Fold gently with a spatula until the chicken is evenly coated. Add red onion, capers, and chopped dill. Fold once more.</div></div>
+<div class="step"><div class="step-text">Taste and adjust: more lemon if it needs brightness, more pepper if it needs sharpness, more dill if you want it to lean Scandinavian, more smoked paprika if you want the BBQ-rub character to come through.</div></div>
+</div>
+
+<h3>4. Serve or Store</h3>
+<div class="steps" style="counter-reset: step;">
+<div class="step"><div class="step-text"><strong>Eat immediately:</strong> Serve over a bed of mixed greens, scoop with cucumber slices, wrap in butter lettuce leaves, or spread on whole-grain toast.</div></div>
+<div class="step"><div class="step-text"><strong>Store for later:</strong> Transfer to a sealed container. Refrigerate 2–3 days. Flavors deepen overnight — the next-day version is arguably better than fresh.<div class="tip">Doubles cleanly. A 4-serving batch of this + 4 servings of the salmon salad = 8 lunches prepped on Sunday. Mix-and-match across the week for variety.</div></div></div>
+</div>
+
+<div class="note" style="margin-top:24px;">
+<strong>Why this works for the cut:</strong> Per-serving cal-to-protein ratio is 6.0:1, basically tied with the Greek Yogurt Salmon Salad as the lowest in your recipe library. Uses chicken from your existing slow-cooker batch (zero new prep effort) plus the same yogurt-based dressing template — one set of dressing ingredients, two completely different lunch options. Pair this and the salmon salad in rotation to get fish 3–4 days/week and chicken 2–3 days/week without your lunch slot ever feeling repetitive.
+</div>
+
+<div class="note" style="margin-top:14px;">
+<strong>Tracking tip:</strong> If you log this in your macros app, use 100g = 114 cal / 19.2g P / 2.2g F / 4.1g C. A standard 263g serving (half the recipe) is 300 cal / 50.4g P / 5.7g F.
 </div>
 
 </div>
