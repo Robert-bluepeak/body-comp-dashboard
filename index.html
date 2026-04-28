@@ -174,6 +174,7 @@
 <button class="tab-btn" onclick="showTab('journey',this)">Full Journey</button>
 <button class="tab-btn" onclick="showTab('photos',this)">Photo Comparison</button>
 <button class="tab-btn" onclick="showTab('recipes',this)">Recipes</button>
+<button class="tab-btn" onclick="showTab('dayplans',this)">Day Plans</button>
 </div>
 <!-- ══════════════ OVERVIEW ══════════════ -->
 <div class="tab-panel active" id="tab-overview">
@@ -578,6 +579,15 @@
 <div id="recipe-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1rem;">
 </div>
 <p id="recipe-empty" style="display:none; font-size:0.9rem; color:var(--muted); text-align:center; padding:3rem 0;">No recipes in this category.</p>
+</div>
+</div>
+
+<!-- ══════════════ DAY PLANS ══════════════ -->
+<div class="tab-panel" id="tab-dayplans">
+<div class="table-card">
+<h3>Day Plans (1,500 Plan)</h3>
+<p style="font-size:0.85rem; color:var(--muted); margin-bottom:1rem;">Two suggested rest-day templates and two workout-day templates. Same Kimchi Lean Scramble breakfast every day; the rest of the day rotates protein anchors and recipes. Click any plan to view the full meal-by-meal breakdown.</p>
+<div id="dayplan-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1rem;"></div>
 </div>
 </div>
 </div>
@@ -1125,6 +1135,65 @@ function renderRecipes(){
     list.appendChild(a);
   });
 }
+const dayplans = [
+  {id:'rest-a', title:'Rest Day A', kind:'rest', anchor:'Chicken + beef', cal:1478, pro:178, fat:45, carb:87, target:[1500,170,55,80],
+   desc:'Eggs · chicken · beef · yogurt · almonds. Cleanest macro fit (−22 cal, +8 P, −10 F, +7 C). Almond-based snack covers most of the fat budget.'},
+  {id:'rest-b', title:'Rest Day B', kind:'rest', anchor:'Salmon + chicken', cal:1496, pro:179, fat:49, carb:86, target:[1500,170,55,80],
+   desc:'Eggs · salmon · chicken · cottage cheese · pistachios. Salmon salad lunch + leaner chicken/trio dinner. Add 5g olive oil to salad to hit fat target exactly.'},
+  {id:'workout-a', title:'Workout Day A', kind:'workout', anchor:'Salmon dinner', cal:1486, pro:171, fat:46, carb:88, target:[1500,170,45,105],
+   desc:'Eggs · chicken · salmon · whey. Sheet-Pan Salmon eats 47% of fat budget, so snack is whey-only. Carbs 17 under target — bump trio to 200g if you want more.'},
+  {id:'workout-b', title:'Workout Day B', kind:'workout', anchor:'Burger lunch', cal:1505, pro:174, fat:37, carb:105, target:[1500,170,45,105],
+   desc:'Eggs · beef · chicken · whey · almonds. Carbs land exactly on the 105g target via burger bun + rice. Lowest-fat day; everything is naturally lean.'}
+];
+
+(function renderDayplans(){
+  const list = document.getElementById('dayplan-list');
+  if(!list) return;
+  dayplans.forEach(p => {
+    const a = document.createElement('div');
+    a.className = 'recipe-card';
+    a.style.cursor = 'pointer';
+    a.onclick = function(){ openRecipe('dayplan-' + p.id); };
+    const badge_color = p.kind === 'rest' ? '#22c55e' : '#f59e0b';
+    const badge_label = p.kind === 'rest' ? 'REST' : 'WORKOUT';
+    a.innerHTML = `
+      <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+        <span style="background:${badge_color}; color:#000; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:5px; letter-spacing:0.5px;">${badge_label}</span>
+        <div class="recipe-name" style="margin:0;">${p.title}</div>
+      </div>
+      <div style="font-size:0.75rem; color:var(--muted); margin-bottom:0.4rem;">${p.anchor}</div>
+      <div class="recipe-macros">
+        <span class="recipe-macro cal">${p.cal} cal</span>
+        <span class="recipe-macro pro">${p.pro}g P</span>
+        <span class="recipe-macro fat">${p.fat}g F</span>
+        <span class="recipe-macro carb">${p.carb}g C</span>
+      </div>
+      <div class="recipe-desc">${p.desc}</div>
+      <div style="font-size:0.7rem; color:var(--accent); margin-top:0.5rem;">Click to view full plan &rarr;</div>
+    `;
+    list.appendChild(a);
+  });
+  // Append shopping list card
+  const shop = document.createElement('div');
+  shop.className = 'recipe-card';
+  shop.style.cursor = 'pointer';
+  shop.onclick = function(){ openRecipe('dayplan-shopping-list'); };
+  shop.innerHTML = `
+    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.4rem;">
+      <span style="background:#3b82f6; color:#fff; font-size:0.65rem; font-weight:700; padding:2px 8px; border-radius:5px; letter-spacing:0.5px;">SHOPPING LIST</span>
+      <div class="recipe-name" style="margin:0;">Weekly Shopping List</div>
+    </div>
+    <div style="font-size:0.75rem; color:var(--muted); margin-bottom:0.4rem;">8-day rotation, all four day plans</div>
+    <div class="recipe-macros">
+      <span class="recipe-macro" style="background:#3b82f622; color:#3b82f6;">~50 items</span>
+      <span class="recipe-macro" style="background:#22c55e22; color:#22c55e;">5 categories</span>
+    </div>
+    <div class="recipe-desc">Mobile-friendly checklist grouped by store section. Tap to check off items as you shop. Includes a Sunday prep plan.</div>
+    <div style="font-size:0.7rem; color:var(--accent); margin-top:0.5rem;">Click to view list &rarr;</div>
+  `;
+  list.appendChild(shop);
+})();
+
 function filterRecipes(cat, btn){
   _activeRecipeCat = cat;
   document.querySelectorAll('.recipe-subtab').forEach(el=>{
@@ -1153,6 +1222,25 @@ function showServing_kimchilean(n) {
   document.querySelectorAll('#recipe-kimchi-lean .serving-tab').forEach(el => {
     if (el.textContent.trim() === labels[n]) el.classList.add('active');
   });
+}
+function shoppingToggle(el){
+  el.classList.toggle('checked');
+  shoppingUpdateProgress();
+}
+function shoppingCheckAll(){
+  document.querySelectorAll('#dayplan-shopping-list ul.shopping-list li').forEach(el => el.classList.add('checked'));
+  shoppingUpdateProgress();
+}
+function shoppingUncheckAll(){
+  document.querySelectorAll('#dayplan-shopping-list ul.shopping-list li').forEach(el => el.classList.remove('checked'));
+  shoppingUpdateProgress();
+}
+function shoppingUpdateProgress(){
+  const total = document.querySelectorAll('#dayplan-shopping-list ul.shopping-list li').length;
+  const done = document.querySelectorAll('#dayplan-shopping-list ul.shopping-list li.checked').length;
+  const pct = total ? Math.round(done * 100 / total) : 0;
+  const bar = document.getElementById('shopping-progress');
+  if (bar) bar.style.width = pct + '%';
 }
 function showVariant_burger(n) {
   document.querySelectorAll('#recipe-bobby-burger .serving-detail').forEach(el => el.classList.remove('active'));
@@ -1915,6 +2003,255 @@ function showServing_meatball(n) {
 </div>
 </div>
 </div>
+<div class="recipe-modal-overlay" id="dayplan-rest-a">
+<div class="recipe-modal">
+<div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Day Plan</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
+<div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:6px;">
+<span style="background:#22c55e; color:#000; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:6px;">Rest day</span>
+<h1 style="margin:0;">Rest Day A</h1>
+</div>
+<p class="subtitle">Chicken + beef anchored • 5 protein sources (eggs, chicken, beef, yogurt, almonds)</p>
+
+<div style="font-size:0.82rem; color:#d1d5db; background:#1f2730; padding:12px 16px; border-radius:8px; border-left:3px solid #22c55e; margin:16px 0;">
+<strong>Target:</strong> 1500 cal • 170g P • 55g F • 80g C
+</div>
+
+<h2>Meals</h2>
+<table class="ingredient-table">
+<tr><th style="width:14%;">Meal</th><th style="text-align:left;">Items</th><th>Cal</th><th>P</th><th>F</th><th>C</th></tr>
+<tr><td>Breakfast</td><td>Kimchi Egg Scramble (Lean) — 1,500 Plan</td><td>444</td><td>50</td><td>12</td><td>31</td></tr>
+<tr><td>Lunch</td><td>Greek Yogurt Pulled Chicken Salad (1 serving)</td><td>300</td><td>50</td><td>6</td><td>11</td></tr>
+<tr><td>Dinner</td><td>Bobby Burger (45-cal thin bun)</td><td>369</td><td>46</td><td>12</td><td>16</td></tr>
+<tr><td>Snack</td><td>250g Fage 0% + 100g blueberries + 30g almonds</td><td>365</td><td>32</td><td>15</td><td>29</td></tr>
+<tr class="total"><td colspan="2">TOTAL</td><td>1478</td><td>178g</td><td>45g</td><td>87g</td></tr>
+</table>
+
+<h2>vs. Target</h2>
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">-22</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">+8g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">-10g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">+7g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">✓</div><div class="label">Fit</div></div>
+</div>
+
+<h2>Notes</h2>
+<div class="note">Cleanest fit of the four. Protein 8g over the 170 floor, fat 10g under the 55g target — fine since the burger and chicken salad are both naturally lean. 30g almonds in the snack covers most of the day’s fat allowance. Carbs 7g over the 80g rest-day target but well within tolerance.</div>
+</div>
+</div>
+<div class="recipe-modal-overlay" id="dayplan-rest-b">
+<div class="recipe-modal">
+<div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Day Plan</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
+<div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:6px;">
+<span style="background:#22c55e; color:#000; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:6px;">Rest day</span>
+<h1 style="margin:0;">Rest Day B</h1>
+</div>
+<p class="subtitle">Salmon + chicken anchored • 5 protein sources (eggs, salmon, chicken, cottage cheese, pistachios)</p>
+
+<div style="font-size:0.82rem; color:#d1d5db; background:#1f2730; padding:12px 16px; border-radius:8px; border-left:3px solid #22c55e; margin:16px 0;">
+<strong>Target:</strong> 1500 cal • 170g P • 55g F • 80g C
+</div>
+
+<h2>Meals</h2>
+<table class="ingredient-table">
+<tr><th style="width:14%;">Meal</th><th style="text-align:left;">Items</th><th>Cal</th><th>P</th><th>F</th><th>C</th></tr>
+<tr><td>Breakfast</td><td>Kimchi Egg Scramble (Lean) — 1,500 Plan</td><td>444</td><td>50</td><td>12</td><td>31</td></tr>
+<tr><td>Lunch</td><td>Greek Yogurt Salmon Salad (1 serving)</td><td>282</td><td>48</td><td>7</td><td>6</td></tr>
+<tr><td>Dinner</td><td>150g Pulled Chicken + 200g Garlic-Paprika Trio + 100g spinach side</td><td>443</td><td>47</td><td>14</td><td>35</td></tr>
+<tr><td>Snack</td><td>200g cottage cheese (low-fat) + 1 oz pistachios</td><td>327</td><td>34</td><td>16</td><td>14</td></tr>
+<tr class="total"><td colspan="2">TOTAL</td><td>1496</td><td>179g</td><td>49g</td><td>86g</td></tr>
+</table>
+
+<h2>vs. Target</h2>
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">-4</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">+9g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">-6g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">+6g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">✓</div><div class="label">Fit</div></div>
+</div>
+
+<h2>Notes</h2>
+<div class="note">Tight fit on calories (4 under target). Protein 9 over the floor — comfortable for LBM preservation in a deeper deficit. Fat 6 under target, mostly because the chicken + salmon + cottage cheese stack is naturally lean; the pistachios bring fat up to 49g. If you want to land exactly at 55g fat, add 5g olive oil to the salad — costs 40 cal and brings you to 1,536 / 179 / 53 / 86.</div>
+</div>
+</div>
+<div class="recipe-modal-overlay" id="dayplan-workout-a">
+<div class="recipe-modal">
+<div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Day Plan</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
+<div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:6px;">
+<span style="background:#f59e0b; color:#000; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:6px;">Workout day</span>
+<h1 style="margin:0;">Workout Day A</h1>
+</div>
+<p class="subtitle">Salmon dinner • 4 protein sources (eggs, chicken, salmon, whey)</p>
+
+<div style="font-size:0.82rem; color:#d1d5db; background:#1f2730; padding:12px 16px; border-radius:8px; border-left:3px solid #f59e0b; margin:16px 0;">
+<strong>Target:</strong> 1500 cal • 170g P • 45g F • 105g C
+</div>
+
+<h2>Meals</h2>
+<table class="ingredient-table">
+<tr><th style="width:14%;">Meal</th><th style="text-align:left;">Items</th><th>Cal</th><th>P</th><th>F</th><th>C</th></tr>
+<tr><td>Pre-WO</td><td>Kimchi Egg Scramble (Lean) — 1,500 Plan</td><td>444</td><td>50</td><td>12</td><td>31</td></tr>
+<tr><td>Post-WO</td><td>Greek Yogurt Pulled Chicken Salad + 80g cooked white rice</td><td>404</td><td>52</td><td>6</td><td>33</td></tr>
+<tr><td>Dinner</td><td>Sheet-Pan Wild Sockeye Salmon + 150g Garlic-Paprika Trio</td><td>498</td><td>40</td><td>27</td><td>22</td></tr>
+<tr><td>Snack</td><td>35g whey isolate</td><td>140</td><td>29</td><td>1</td><td>2</td></tr>
+<tr class="total"><td colspan="2">TOTAL</td><td>1486</td><td>171g</td><td>46g</td><td>88g</td></tr>
+</table>
+
+<h2>vs. Target</h2>
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">-14</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">+1g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">+1g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">-17g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">✓</div><div class="label">Fit</div></div>
+</div>
+
+<h2>Notes</h2>
+<div class="note">Sheet-Pan Salmon is the fat constraint: 21g fat from salmon alone uses 47% of the 45g workout-day budget, which is why this day’s snack is whey-only with no nuts. Carbs 17g under the 105g target — leaves headroom to bump trio to 200g (96 cal, 13.5g C extra) if you want to land closer to the workout-day carb target.</div>
+</div>
+</div>
+<div class="recipe-modal-overlay" id="dayplan-workout-b">
+<div class="recipe-modal">
+<div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Day Plan</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
+<div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:6px;">
+<span style="background:#f59e0b; color:#000; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:6px;">Workout day</span>
+<h1 style="margin:0;">Workout Day B</h1>
+</div>
+<p class="subtitle">Burger lunch • 5 protein sources (eggs, beef, chicken, whey, almonds)</p>
+
+<div style="font-size:0.82rem; color:#d1d5db; background:#1f2730; padding:12px 16px; border-radius:8px; border-left:3px solid #f59e0b; margin:16px 0;">
+<strong>Target:</strong> 1500 cal • 170g P • 45g F • 105g C
+</div>
+
+<h2>Meals</h2>
+<table class="ingredient-table">
+<tr><th style="width:14%;">Meal</th><th style="text-align:left;">Items</th><th>Cal</th><th>P</th><th>F</th><th>C</th></tr>
+<tr><td>Pre-WO</td><td>Kimchi Egg Scramble (Lean) — 1,500 Plan</td><td>444</td><td>50</td><td>12</td><td>31</td></tr>
+<tr><td>Lunch</td><td>Bobby Burger (full bun)</td><td>490</td><td>47</td><td>13</td><td>39</td></tr>
+<tr><td>Dinner</td><td>175g Pulled Chicken + 80g cooked white rice + 100g spinach side</td><td>393</td><td>50</td><td>6</td><td>31</td></tr>
+<tr><td>Snack</td><td>30g whey + 10g almonds</td><td>178</td><td>27</td><td>6</td><td>4</td></tr>
+<tr class="total"><td colspan="2">TOTAL</td><td>1505</td><td>174g</td><td>37g</td><td>105g</td></tr>
+</table>
+
+<h2>vs. Target</h2>
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">+5</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">+4g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">-8g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">+0g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">✓</div><div class="label">Fit</div></div>
+</div>
+
+<h2>Notes</h2>
+<div class="note">Carbs land exactly on target (105g) thanks to the burger bun + rice combo. Fat 8g under — full-bun burger plus lean pulled chicken keeps the day low-fat, with almonds providing what fat there is. If your training day calls for more carbs around training, swap the dinner spinach for an additional 50g rice (+65 cal, +14g C → 1,570 / 175 / 37 / 119).</div>
+</div>
+</div>
+<div class="recipe-modal-overlay" id="dayplan-shopping-list">
+<div class="recipe-modal">
+<div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Day Plan</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
+<div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:6px;">
+<span style="background:#3b82f6; color:#fff; font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:6px;">SHOPPING LIST</span>
+<h1 style="margin:0;">Weekly Shopping List — 1,500 Plan</h1>
+</div>
+<p class="subtitle">8-day rotation: 2× Rest A, 2× Rest B, 2× Workout A, 2× Workout B</p>
+
+<div style="font-size:0.82rem; color:#d1d5db; background:#1f2730; padding:12px 16px; border-radius:8px; border-left:3px solid #3b82f6; margin:16px 0;">
+<strong>Assumes:</strong> 2 of each day type over the week. Same Kimchi Lean Scramble breakfast every day. Pulled chicken batched once (2 slow-cooker runs) and used across multiple meals. Garlic-Paprika Trio batched once (~700g cooked) and used across Rest B + Workout A days. Tap any item to check it off.
+</div>
+
+<div style="display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;">
+<button class="btn" style="background:#2a2d35; color:#d1d5db; border:1px solid #3b82f655; padding:7px 14px; border-radius:8px; cursor:pointer; font-size:0.8rem; font-weight:500;" onclick="shoppingCheckAll()">Check all</button>
+<button class="btn" style="background:#2a2d35; color:#d1d5db; border:1px solid #3b82f655; padding:7px 14px; border-radius:8px; cursor:pointer; font-size:0.8rem; font-weight:500;" onclick="shoppingUncheckAll()">Uncheck all</button>
+</div>
+
+<div style="height:6px; background:#1a1d23; border-radius:3px; overflow:hidden; margin-bottom:14px;">
+<div id="shopping-progress" style="height:100%; background:linear-gradient(90deg, #22c55e, #3b82f6); transition: width 0.3s; width:0%;"></div>
+</div>
+
+<h2>Proteins</h2>
+<ul class="shopping-list" style="list-style:none; padding:0;">
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Boneless skinless chicken breast (raw)</div><div class="sq">3.5 lb (~1.6 kg)</div><div class="snote">2 slow-cooker batches → ~1,400g cooked.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">96/4 lean ground beef</div><div class="sq">1.5 lb (~680 g)</div><div class="snote">4 burgers: 2 thin-bun + 2 full-bun.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Wild sockeye salmon fillets (Costco frozen)</div><div class="sq">2 fillets (~340g raw)</div><div class="snote">Sheet-Pan Salmon for Workout A days.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Wild Planet wild sockeye salmon, canned (5 oz)</div><div class="sq">2 cans</div><div class="snote">Greek Yogurt Salmon Salad for Rest B.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Whey protein isolate</div><div class="sq">~130g for the week</div><div class="snote">~5 scoops.</div></div></li>
+</ul>
+
+<h2>Eggs &amp; Dairy</h2>
+<ul class="shopping-list" style="list-style:none; padding:0;">
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Large eggs</div><div class="sq">16 (1.5 dozen)</div><div class="snote">2 per breakfast × 8.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Liquid egg whites</div><div class="sq">~2.4 L / 80 fl oz</div><div class="snote">280g per breakfast × 8.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Plain nonfat Greek yogurt (Fage Total 0%)</div><div class="sq">~1.1 kg / 40 oz</div><div class="snote">600g for salads + 500g for Rest A snacks.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Cottage cheese, low-fat 1%</div><div class="sq">16 oz / ~400g</div><div class="snote">Rest B snacks.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Kraft Singles</div><div class="sq">4 slices</div><div class="snote">One per burger.</div></div></li>
+</ul>
+
+<h2>Produce</h2>
+<ul class="shopping-list" style="list-style:none; padding:0;">
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Red bell pepper</div><div class="sq">600g (4–5 medium)</div><div class="snote">Breakfast scrambles.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Red onion</div><div class="sq">~420g (2 medium)</div><div class="snote">320g breakfasts + 100g salad recipes.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Yellow onion</div><div class="sq">~150g (1 small)</div><div class="snote">Thin rings for the 4 burgers.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Baby spinach</div><div class="sq">~900g (2× 1-lb tubs)</div><div class="snote">480g breakfasts + 400g side salads.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Baby/fingerling potatoes</div><div class="sq">~12 oz (340g)</div><div class="snote">Garlic-Paprika Trio batch.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Carrots</div><div class="sq">3 medium (~200g)</div><div class="snote">Trio batch.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Broccoli florets (or 1 small head)</div><div class="sq">~300g</div><div class="snote">Trio batch.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Blueberries</div><div class="sq">1 pint (~200g)</div><div class="snote">Rest A snacks.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Lemons</div><div class="sq">3</div><div class="snote">Trio + both salads + buffer.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Fresh dill</div><div class="sq">1 small bunch (~20g)</div><div class="snote">Both salads.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Garlic (whole bulb)</div><div class="sq">1 head (~12 cloves)</div><div class="snote">8 for chicken batches + 3 for trio + buffer.</div></div></li>
+</ul>
+
+<h2>Bread, Grains &amp; Nuts</h2>
+<ul class="shopping-list" style="list-style:none; padding:0;">
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">45-cal thin bun (Sara Lee Delightful)</div><div class="sq">2 buns</div><div class="snote">Rest A burgers.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Standard hamburger bun (~50g)</div><div class="sq">2 buns</div><div class="snote">Workout B burgers.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Steel cut oats, dry</div><div class="sq">200g for the week</div><div class="snote">25g per breakfast × 8. A bag lasts ~3 weeks.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Uncooked white rice</div><div class="sq">~120g (~⅔ cup dry)</div><div class="snote">Workout days A + B.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Whole almonds (raw or roasted unsalted)</div><div class="sq">~3 oz (80g)</div><div class="snote">Rest A snacks (60g) + Workout B (20g).</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Pistachios</div><div class="sq">~2 oz (56g)</div><div class="snote">Rest B snacks.</div></div></li>
+</ul>
+
+<h2>Condiments &amp; Pantry</h2>
+<p style="font-size:0.78rem; color:#6b7280; margin-bottom:8px;">Most of these you likely have. Check before shopping.</p>
+<ul class="shopping-list" style="list-style:none; padding:0;">
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Kimchi</div><div class="sq">~16 oz jar</div><div class="snote">45g per breakfast × 8.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Capers, jarred</div><div class="sq">small jar</div><div class="snote">Both salads.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Dijon mustard</div><div class="sq">small jar</div><div class="snote">Both salads.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Yellow mustard, sugar-free ketchup, sriracha, low-fat mayo</div><div class="sq">~20g each</div><div class="snote">Burger sauce mix.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Dill pickles, jarred</div><div class="sq">~80g (sliced)</div><div class="snote">2–3 thin rounds per burger.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Olive oil</div><div class="sq">~50g (3.5 tbsp)</div><div class="snote">Trio + salmon.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Apple cider vinegar</div><div class="sq">~60g (4 tbsp)</div><div class="snote">2 pulled chicken batches.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Worcestershire sauce</div><div class="sq">~34g (2 tbsp)</div><div class="snote">Pulled chicken.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Tomato paste (small can or tube)</div><div class="sq">~64g (4 tbsp)</div><div class="snote">Pulled chicken.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Low-sodium chicken broth</div><div class="sq">~240ml (1 cup)</div><div class="snote">2 pulled chicken batches.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Smoked paprika</div><div class="sq">~25g (1 small jar)</div><div class="snote">Both pulled chicken batches + trio.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Cumin, onion powder, chili powder, cayenne</div><div class="sq">5g each</div><div class="snote">Spice rack.</div></div></li>
+<li onclick="shoppingToggle(this)" data-shop><div class="sb"></div><div class="sc"><div class="sn">Rosemary, thyme, salt, pepper, garlic powder</div><div class="sq">to taste</div><div class="snote">Standard pantry.</div></div></li>
+</ul>
+
+<h2>Sunday Prep Plan (~90 min active)</h2>
+<div class="note" style="margin-bottom:8px;"><strong>Sun AM:</strong> Run 2 batches of Slow Cooker Smoky Pulled Chicken back-to-back. 6–7 hr LOW. Yields ~1,600g cooked.</div>
+<div class="note" style="margin-bottom:8px;"><strong>Sun mid:</strong> Make Greek Yogurt dressing base in one big batch (Fage + dijon + lemon + capers + dill + red onion). Use half for chicken salad, half for salmon salad.</div>
+<div class="note" style="margin-bottom:8px;"><strong>Sun PM:</strong> Roast 1 full batch Garlic-Paprika Trio (~25 min, 425°F). Portion into 4 containers (200g × 2 + 150g × 2).</div>
+<div class="note" style="margin-bottom:8px;"><strong>Daily AM:</strong> Make breakfast scramble fresh (~10 min).</div>
+<div class="note"><strong>Burger / salmon nights:</strong> Cook à la minute — 8 min for burger, 12–15 min for salmon.</div>
+</div>
+</div>
+
+<style>
+.shopping-list li { display:flex; align-items:flex-start; gap:10px; padding:8px 12px; background:#1a1d23; border-radius:8px; margin-bottom:6px; border:1px solid #2a2d35; cursor:pointer; user-select:none; transition:all 0.15s; }
+.shopping-list li:hover { border-color:#3b82f655; }
+.shopping-list li.checked { background:#0f1114; opacity:0.45; }
+.shopping-list li.checked .sn, .shopping-list li.checked .sq { text-decoration:line-through; }
+.shopping-list .sb { flex-shrink:0; width:22px; height:22px; border:2px solid #3b82f6; border-radius:5px; display:flex; align-items:center; justify-content:center; margin-top:1px; background:transparent; color:#3b82f6; font-weight:700; font-size:0.95rem; }
+.shopping-list li.checked .sb { background:#3b82f6; color:#fff; }
+.shopping-list li.checked .sb::after { content:'✓'; }
+.shopping-list .sc { flex:1; min-width:0; }
+.shopping-list .sn { font-size:0.92rem; font-weight:600; color:#e4e4e7; }
+.shopping-list .sq { font-size:0.85rem; color:#facc15; font-weight:600; margin-top:2px; }
+.shopping-list .snote { font-size:0.75rem; color:#6b7280; margin-top:2px; }
+</style>
 <div class="recipe-modal-overlay" id="recipe-garlic-trio">
 <div class="recipe-modal">
 <div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Recipe Detail</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
