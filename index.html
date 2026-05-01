@@ -270,7 +270,7 @@
 <div style="font-size:0.7rem;color:var(--muted);margin-top:0.5rem;text-align:right;">Natural ceiling ~25 (Kouri et al., 1995)</div>
 </div>
 <div class="chart-grid">
-<div class="chart-card"><h3>Weight &amp; Body Fat % (Weekly)</h3><div style="font-size:0.7rem;color:var(--muted);margin-top:-0.3rem;margin-bottom:0.3rem;">BF%: Wk 4 DEXA 22.3% • Wk 9 DEXA 19.7% • Wk 5–8 raw RENPHO (no adjustment — DEXA #5 and #6 confirm RENPHO reads DEXA-equivalent within ±0.1pp)</div><canvas id="weightBfChart"></canvas></div>
+<div class="chart-card"><h3>Weight &amp; Body Fat % (Weekly)</h3><div style="font-size:0.7rem;color:var(--muted);margin-top:-0.3rem;margin-bottom:0.3rem;">BF%: Wk 4 DEXA 22.3% / Wk 9 DEXA 19.7% (anchors). Wk 5–8 = raw RENPHO + linear-interpolated offset between the 2 DEXA gaps (−2.2pp on 3/26, +0.1pp on 4/30). Treat in-between weeks as ±1pp uncertainty until next DEXA.</div><canvas id="weightBfChart"></canvas></div>
 <div class="chart-card"><h3>Body Composition — Fat vs Lean Mass</h3><canvas id="compChart"></canvas></div>
 </div>
 <div class="chart-grid">
@@ -443,7 +443,7 @@
 <div class="advice" style="margin:1.5rem 0">
 <h3 style="color:#a78bfa">InBody Cross-Reference (Apple Health)</h3>
 <p style="margin-top:0.5rem">116 InBody BIA readings from Jan 2023 – Oct 2025 were extracted from Apple Health. During the journey period (Apr–Oct 2025), InBody showed a consistent downward trend from ~24.5% to ~17.6% — tracking the same direction as DEXA but reading <strong>5–8 percentage points lower</strong>. This offset is typical for BIA devices, which underestimate body fat relative to DEXA. The InBody <em>trend</em> is valuable confirmation that body fat was declining steadily through October 2025, even though the absolute numbers shouldn't be taken at face value.</p>
-<p style="margin-top:0.5rem;color:var(--muted);font-size:0.9rem">Purple triangles on the chart above show InBody readings aligned to the nearest journey date. No InBody data after Oct 23, 2025. RENPHO bioimpedance scale added Mar 2026: reads BF% within ±0.1pp of DEXA on serial pairings (Mar 26 DEXA 22.3% vs same-day RENPHO 22.3% / Apr 30 DEXA 19.7% vs same-day RENPHO 19.8%). No bioimpedance adjustment applied — RENPHO is treated as DEXA-equivalent for this user/device combo. *Feb 26 DEXA was creatine/glycogen-depleted; raw 23.7% overstated by ~1.4pp (confirmed by DEXA #5 and DEXA #6 trajectory).</p>
+<p style="margin-top:0.5rem;color:var(--muted);font-size:0.9rem">Purple triangles on the chart above show InBody readings aligned to the nearest journey date. No InBody data after Oct 23, 2025. RENPHO bioimpedance scale added Mar 2026: tightly matched DEXA on Apr 30 (DEXA 19.7% / RENPHO 19.8% / Δ +0.1pp), but ran 2.2pp below DEXA on Mar 26 (DEXA 22.3% / RENPHO 20.1%). Calibration appears to improve at lower BF%, but with only 2 pairings, treat in-between RENPHO weeks as ±1–2pp uncertainty. Chart values for Wk 5–8 use linear interpolation of the DEXA gap between the two anchor scans. *Feb 26 DEXA was creatine/glycogen-depleted; raw 23.7% overstated by ~1.4pp (confirmed by DEXA #5 and DEXA #6 trajectory).</p>
 </div>
 <div class="chart-full"><div class="chart-card"><h3>Weight Projection to Goal</h3><canvas id="projectionChart"></canvas></div></div>
 </div>
@@ -627,7 +627,7 @@ function showView(view,btn){
 // Overview charts
 new Chart(document.getElementById('weightBfChart'),{type:'line',data:{labels:weeks,datasets:[
   {label:'Avg Weight',data:avgWeights,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',fill:true,tension:.3,pointRadius:5,pointBackgroundColor:'#38bdf8',yAxisID:'y'},
-  {label:'Body Fat % (DEXA + RENPHO, no adj)',data:[22,22,22,22,22.3,20.0,20.6,20.5,20.0,19.7],borderColor:'#f87171',tension:.3,pointRadius:5,pointBackgroundColor:'#f87171',borderDash:[5,3],yAxisID:'y1'}
+  {label:'Body Fat % (DEXA-cal., interp.)',data:[22,22,22,22,22.3,21.5,21.7,21.1,20.2,19.7],borderColor:'#f87171',tension:.3,pointRadius:5,pointBackgroundColor:'#f87171',borderDash:[5,3],yAxisID:'y1'}
 ]},options:{responsive:true,scales:{y:{position:'left',title:{display:true,text:'lbs'},grid:{color:'#1e293b'}},y1:{position:'right',title:{display:true,text:'BF%'},grid:{drawOnChartArea:false}}}}});
 
 new Chart(document.getElementById('compChart'),{type:'bar',data:{labels:['Baseline','Wk 2','Wk 3','Wk 4','Wk 5','Wk 6','Wk 7','Wk 8'],datasets:[
