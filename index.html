@@ -288,7 +288,7 @@
 <div class="advice">
 <h3>Key Recommendations</h3>
 <div class="advice-item"><div class="advice-icon" style="background:var(--green);color:#000;">✓</div><div class="advice-text"><strong>Stay the course.</strong> Protocol is working — fat coming off centrally, muscle holding peripherally.</div></div>
-<div class="advice-item"><div class="advice-icon" style="background:var(--accent);color:#000;">↺</div><div class="advice-text"><strong>Last lift session — Fri 5/1 P3|C: 8 PRs in 70 min.</strong> Bench 189 (135×12×3, +8.0%), Leg Press 398 (+2.5%), Shoulder Press 119 (+13.3%), Lat Pulldown 147 (+5.0%), Hamstring Curl 147 (+5.0%), Chest Fly 56 (+6.7%), Skull Crusher 47.7 (+4.8% rep PR), Russian Twist 28 (14→20 lb jump). Cable Row 126 and Hammer Curl 47.7 tied. Challenging RPE.</div></div>
+<div class="advice-item"><div class="advice-icon" style="background:var(--accent);color:#000;">↺</div><div class="advice-text"><strong>Last lift session — Mon 5/4 Toned | P0 | Upper (program switch from Recomp P3): 2 PRs in ~80 min.</strong> DB Bench 65×12 NEW WEIGHT PR (e1RM 91, +8.3% vs 4/29's 60×12 — first 65 lb working sets), Machine-Assisted Pull-Up 100×12 REP PR (doubled prior 100×6 max from 2/24, full 100# assist). Tied or near: DB Bicep Curl 30×12 (e1RM 42 — tied 4/27/4/29 max), Cable Tricep Rope Ext 50×11 (e1RM 68.3), DB Seated OH Press 45×12 (e1RM 63), Cable Single-Arm Row 45×12×3 (e1RM 63). 23 working sets (+ 2 bench warmups), Challenging RPE. First Toned-template session — calibration day, not PR-chase.</div></div>
 <div class="advice-item"><div class="advice-icon" style="background:var(--purple);color:#000;">★</div><div class="advice-text"><strong>Today (Tue 5/5 — Wk 10 Day 2):</strong> 173.0 lb / 19.7% RENPHO. -1.4 lb in 24h — back to Wk 9's 173.0 floor (matches Apr 29 prior low); Mon-AM pho/pizza bounce fully reversed. Wk 9 closed flat at 173.6 (open) → 173.6 (close); Wk 9 avg 173.23 vs Wk 8 avg 175.51 (<strong>−2.28 lb WoW</strong>). Sleep last night <strong>9h 15m / score 94</strong>, REM 2h 45m, Deep <strong>1h 40m (strongest in 2+ wks)</strong>. <strong>HRV 92 ms (+1 vs baseline)</strong> — modestly above-baseline; autonomic green light to train as programmed.</div></div>
 <div class="advice-item"><div class="advice-icon" style="background:var(--green);color:#000;">✓</div><div class="advice-text"><strong>Sleep held through Wk 9 final.</strong> Wk 9 avg 8.35 hrs across 7 nights (vs Wk 8's 8.53 — modest -0.18 hrs). Score range 79–92, two nights ≥9h. REM averaging 2.59 hrs/night, Wk 9. Deep is tracking-only per skill guide (Ultrahuman under-reports vs EEG); don't treat as a red flag.</div></div>
 <div class="advice-item"><div class="advice-icon" style="background:var(--accent);color:#000;">↻</div><div class="advice-text"><strong>Saturday active recovery by design.</strong> Wk 9 Sat (5/2): 11,904 steps with 40 min Zone 2 + sauna — intentional under coach's cortisol-management framework. Wk 9 final 17,695/day avg (7 days), single sub-15k. Volume target stays 15k+ on training and walking days; Wk 10 Day 1 (Mon 5/4) closed at 17,603 — solid above-15k floor.</div></div>
@@ -748,9 +748,9 @@ new Chart(document.getElementById('journeyChartDetail'),{type:'line',data:{datas
 
 /* === PROJECTION CHART: OPTION B (goal band) START — to revert to single 164 goal line, restore the OPTION A block below === */
 new Chart(document.getElementById('projectionChart'),{type:'line',data:{labels:['May 5\n(Now)','Jun 1','Jun 29','Jul 27','Aug 4\n(Goal)'],datasets:[
-  {label:'Weight',data:[173.0,170.6,167.8,165.0,164],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',fill:true,tension:.3,pointRadius:5},
-  {label:'BF%',data:[19.7,18.5,17.3,16.1,15],borderColor:'#4ade80',tension:.3,pointRadius:5,borderDash:[5,3],yAxisID:'y1'},
-  {label:'Waist (in)',data:[32.91,32.3,31.7,31.0,30.5],borderColor:'#f87171',tension:.3,pointRadius:5,borderDash:[3,3],yAxisID:'y2'},
+  {label:'Weight',data:[173.0,170.2,167.4,164.6,164],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',fill:true,tension:.3,pointRadius:5},
+  {label:'BF%',data:[19.7,18.3,16.8,15.4,15],borderColor:'#4ade80',tension:.3,pointRadius:5,borderDash:[5,3],yAxisID:'y1'},
+  {label:'Waist (in)',data:[32.63,32.0,31.3,30.7,30.5],borderColor:'#f87171',tension:.3,pointRadius:5,borderDash:[3,3],yAxisID:'y2'},
   /* Goal weight LOWER bound — lean held flat at 139.16 lb / 0.85 = 163.7 (anchor at 164) */
   {label:'Goal Weight (lean flat)',data:[164,164,164,164,164],borderColor:'#facc1580',borderDash:[10,5],pointRadius:0,fill:'+1',backgroundColor:'rgba(250,204,21,0.10)'},
   /* Goal weight UPPER bound — if lean keeps accreting at recent +0.35 lb/wk pace; will revisit Wk 12 (mid-July) */
@@ -761,9 +761,9 @@ new Chart(document.getElementById('projectionChart'),{type:'line',data:{labels:[
 
 /* === PROJECTION CHART: OPTION A (single goal line) BACKUP — uncomment + remove the OPTION B Chart() above to revert ===
 new Chart(document.getElementById('projectionChart'),{type:'line',data:{labels:['May 5\n(Now)','Jun 1','Jun 29','Jul 27','Aug 4\n(Goal)'],datasets:[
-  {label:'Weight',data:[173.0,170.6,167.8,165.0,164],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',fill:true,tension:.3,pointRadius:5},
-  {label:'BF%',data:[19.7,18.5,17.3,16.1,15],borderColor:'#4ade80',tension:.3,pointRadius:5,borderDash:[5,3],yAxisID:'y1'},
-  {label:'Waist (in)',data:[32.91,32.3,31.7,31.0,30.5],borderColor:'#f87171',tension:.3,pointRadius:5,borderDash:[3,3],yAxisID:'y2'},
+  {label:'Weight',data:[173.0,170.2,167.4,164.6,164],borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',fill:true,tension:.3,pointRadius:5},
+  {label:'BF%',data:[19.7,18.3,16.8,15.4,15],borderColor:'#4ade80',tension:.3,pointRadius:5,borderDash:[5,3],yAxisID:'y1'},
+  {label:'Waist (in)',data:[32.63,32.0,31.3,30.7,30.5],borderColor:'#f87171',tension:.3,pointRadius:5,borderDash:[3,3],yAxisID:'y2'},
   {label:'Goal Weight',data:[164,164,164,164,164],borderColor:'#facc1580',borderDash:[10,5],pointRadius:0}
 ]}
 === OPTION A BACKUP END === */
