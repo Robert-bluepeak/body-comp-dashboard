@@ -1100,6 +1100,14 @@ new Chart(document.getElementById('volumeChart'),{type:'bar',data:{labels:liftDa
 // Recipe registry — add new entries here when recipes are created
 const recipes = [
   {
+    name: 'Lean Teriyaki Chicken',
+    modal: 'recipe-teriyaki',
+    category: 'plan-1500',
+    cal: 1870, pro: 269, fat: 29, carb: 117,
+    servings: 5,
+    desc: 'Pan teriyaki with garlic, fresh ginger & scallion finish. ~1,010g cooked. Per 200g: 371 cal / 53g P / 5.7g F / 23g C — 14g protein per 100 cal, top leanness ratio. Fresh-vs-ground ginger option.'
+  },
+  {
     name: 'Slow Cooker Smoky Pulled Chicken',
     modal: 'recipe-chicken',
     category: 'plan-1500',
@@ -1424,6 +1432,19 @@ function showServing_meatball(n) {
   var modal = document.getElementById('recipe-spaghetti-meatballs');
   if (!modal) return;
   var target = document.getElementById('meatball_s' + n);
+  if (!target) return;
+  var section = target.closest('.serving-section');
+  section.querySelectorAll('.serving-detail').forEach(el => el.classList.remove('active'));
+  section.querySelectorAll('.serving-tab').forEach(el => el.classList.remove('active'));
+  target.classList.add('active');
+  section.querySelectorAll('.serving-tab').forEach(el => {
+    if (el.textContent.startsWith(n + 'g')) el.classList.add('active');
+  });
+}
+function showServing_teriyaki(n) {
+  var modal = document.getElementById('recipe-teriyaki');
+  if (!modal) return;
+  var target = document.getElementById('teriyaki_s' + n);
   if (!target) return;
   var section = target.closest('.serving-section');
   section.querySelectorAll('.serving-detail').forEach(el => el.classList.remove('active'));
@@ -3031,6 +3052,154 @@ function showServing_meatball(n) {
 </div>
 </div>
 
+<!-- ══════════════ RECIPE: LEAN TERIYAKI CHICKEN ══════════════ -->
+<div class="recipe-modal-overlay" id="recipe-teriyaki">
+<div class="recipe-modal">
+<div class="recipe-close"><span style="color:#9ca3af;font-size:0.8rem;">Recipe Detail</span><button class="recipe-close-btn" onclick="closeRecipe()">✕ Close</button></div>
+<h1>Lean Teriyaki Chicken</h1>
+<p class="subtitle">Est. ~1,010g cooked &bull; High-protein, very-low-fat pan teriyaki with garlic, fresh ginger, scallion &amp; honey glaze</p>
+
+<div style="font-size:0.82rem; color:#d1d5db; background:#1f2730; padding:12px 16px; border-radius:8px; border-left:3px solid #22c55e; margin:16px 0;">
+<strong>Plan fit:</strong> Default 200g serving = 371 cal / 53g P / 5.7g F / 23g C. Hits 31% of the 170g protein floor in one meal at only 25% of daily calories. The leanness ratio (14g protein per 100 cal) is among the strongest in the library — sits cleanly in workout-day budget alongside breakfast omelette + Greek yogurt bowl. Fresh ginger + scallion finish lifts it well above the original ground-ginger version.
+</div>
+
+<!-- WHOLE RECIPE MACROS -->
+<h2>Whole Recipe Totals</h2>
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">1,870</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">269g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">29g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">117g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">7g</div><div class="label">Fiber</div></div>
+</div>
+
+<p style="font-size:0.82rem; color:#9ca3af; margin:12px 0;"><strong>Per 100g cooked:</strong> 185 cal &bull; 26.6g P &bull; 2.9g F &bull; 11.6g C &bull; 0.7g fiber (assuming sauce reduced to a glaze across ~1,010g cooked output). Under-reduced sauce → ~170 cal/100g across ~1,110g cooked.</p>
+
+<!-- PER-SERVING (3 tabs) -->
+<h2>Per-Serving vs. Daily Targets</h2>
+<p style="font-size:0.82rem; color:#9ca3af; margin-bottom:10px;">Daily targets (1,500-Plan workout day): 1,500 cal • 170g P • 45g F • 105g C. Rest day = 170P / 55F / 80C. 155g protein floor.</p>
+<div class="serving-section">
+<div class="serving-tabs">
+<button class="serving-tab" onclick="showServing_teriyaki(100)">100g</button>
+<button class="serving-tab active" onclick="showServing_teriyaki(200)">200g</button>
+<button class="serving-tab" onclick="showServing_teriyaki(250)">250g</button>
+</div>
+
+<div id="teriyaki_s100" class="serving-detail">
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">185</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">26.6g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">2.9g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">11.6g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">0.7g</div><div class="label">Fiber</div></div>
+</div>
+<p class="remaining-label">Remaining for rest of day (workout day):</p>
+<div class="remaining-row">
+<span>1,315 cal</span> <span>143.4g P</span> <span>42.1g F</span> <span>93.4g C</span>
+</div>
+<p class="remaining-label" style="margin-top:10px;">Remaining for rest of day (rest day):</p>
+<div class="remaining-row">
+<span>1,315 cal</span> <span>143.4g P</span> <span>52.1g F</span> <span>68.4g C</span>
+</div>
+<p class="note" style="margin-top:14px;">Lightest portion &mdash; 12% of daily calories, 16% of protein floor. Useful as a protein top-up when you&rsquo;ve already eaten well, or as half a serving alongside another protein.</p>
+</div>
+
+<div id="teriyaki_s200" class="serving-detail active">
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">371</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">53.3g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">5.7g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">23.2g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">1.4g</div><div class="label">Fiber</div></div>
+</div>
+<p class="remaining-label">Remaining for rest of day (workout day):</p>
+<div class="remaining-row">
+<span>1,129 cal</span> <span>116.7g P</span> <span>39.3g F</span> <span>81.8g C</span>
+</div>
+<p class="remaining-label" style="margin-top:10px;">Remaining for rest of day (rest day):</p>
+<div class="remaining-row">
+<span>1,129 cal</span> <span>116.7g P</span> <span>49.3g F</span> <span>56.8g C</span>
+</div>
+<p class="note" style="margin-top:14px;"><strong>Default serving</strong> &mdash; 25% of daily calories but 31% of daily protein. Excellent leanness ratio: 14g protein per 100 cal.</p>
+</div>
+
+<div id="teriyaki_s250" class="serving-detail">
+<div class="macro-row">
+<div class="macro-card cal"><div class="value">463</div><div class="label">Calories</div></div>
+<div class="macro-card pro"><div class="value">66.6g</div><div class="label">Protein</div></div>
+<div class="macro-card fat"><div class="value">7.2g</div><div class="label">Fat</div></div>
+<div class="macro-card carb"><div class="value">29.0g</div><div class="label">Carbs</div></div>
+<div class="macro-card fiber"><div class="value">1.7g</div><div class="label">Fiber</div></div>
+</div>
+<p class="remaining-label">Remaining for rest of day (workout day):</p>
+<div class="remaining-row">
+<span>1,037 cal</span> <span>103.4g P</span> <span>37.8g F</span> <span>76.0g C</span>
+</div>
+<p class="remaining-label" style="margin-top:10px;">Remaining for rest of day (rest day):</p>
+<div class="remaining-row">
+<span>1,037 cal</span> <span>103.4g P</span> <span>47.8g F</span> <span>51.0g C</span>
+</div>
+<p class="note" style="margin-top:14px;">Generous portion &mdash; 31% of daily calories, 39% of daily protein in one meal. Great post-workout option.</p>
+</div>
+</div>
+
+<!-- INGREDIENT BREAKDOWN -->
+<h2>Ingredient Breakdown</h2>
+<table class="ingredient-table">
+<tr><th>Ingredient</th><th>Cal</th><th>Pro</th><th>Fat</th><th>Carbs</th><th>Fiber</th></tr>
+<tr class="section-header"><td colspan="6">Protein</td></tr>
+<tr><td>Boneless skinless chicken breast, 1,106g raw (2 lb 7 oz)</td><td>1,327</td><td>248.8g</td><td>28.7g</td><td>0g</td><td>0g</td></tr>
+<tr class="section-header"><td colspan="6">Sauce</td></tr>
+<tr><td>Low-sodium soy sauce, 13 tbsp</td><td>104</td><td>16.9g</td><td>0g</td><td>10.4g</td><td>0g</td></tr>
+<tr><td>Mirin, 6.5 tbsp</td><td>228</td><td>0g</td><td>0g</td><td>52.0g</td><td>0g</td></tr>
+<tr><td>Honey, 6.5 tsp</td><td>136</td><td>0g</td><td>0g</td><td>37.7g</td><td>0g</td></tr>
+<tr class="section-header"><td colspan="6">Aromatics</td></tr>
+<tr><td>Garlic, 6.5 cloves minced</td><td>26</td><td>1.3g</td><td>0g</td><td>5.8g</td><td>0.4g</td></tr>
+<tr><td>Ginger &mdash; fresh grated, 3.25 tbsp (~19g) <em style="color:#9ca3af;">[default]</em></td><td>16</td><td>0.4g</td><td>0.1g</td><td>3.5g</td><td>0.4g</td></tr>
+<tr><td style="color:#6b7280;">&nbsp;&nbsp;&nbsp;&nbsp;<em>or</em> ground ginger, 3.25 tsp <em style="color:#6b7280;">[swap]</em></td><td style="color:#6b7280;">20</td><td style="color:#6b7280;">0g</td><td style="color:#6b7280;">0g</td><td style="color:#6b7280;">4.2g</td><td style="color:#6b7280;">0.4g</td></tr>
+<tr><td>Scallions (green onions), 6 stalks (~90g), sliced &mdash; whites + greens separated</td><td>30</td><td>1.8g</td><td>0.2g</td><td>6.6g</td><td>2.4g</td></tr>
+<tr class="total"><td>TOTAL (with fresh ginger)</td><td>1,872</td><td>269.2g</td><td>29.0g</td><td>116.4g</td><td>3.2g</td></tr>
+</table>
+<p style="font-size:0.75rem; color:#6b7280; margin-top:6px;">Fresh ginger is the default; swap in ground ginger (3.25 tsp) for ~4 fewer calories &amp; ~0.4g less protein per recipe &mdash; flavor leans warmer/sharper with ground, brighter/more aromatic with fresh. Salt &amp; black pepper to taste (negligible).</p>
+
+<!-- RECIPE STEPS -->
+<h2>Recipe</h2>
+
+<h3>1. Prep</h3>
+<div class="steps">
+<div class="step"><div class="step-text">Slice the 2 lb 7 oz of chicken breast into ½&Prime; strips. Pat dry and season lightly with black pepper.</div></div>
+<div class="step"><div class="step-text">Mince 6.5 garlic cloves. Peel and finely grate <strong>3.25 tbsp fresh ginger</strong> (use a microplane &mdash; or substitute 3.25 tsp ground ginger).</div></div>
+<div class="step"><div class="step-text">Thinly slice 6 scallions. <strong>Keep whites and greens separate</strong> &mdash; whites go in the pan, greens are the finishing garnish.
+<div class="tip">Scallion whites caramelize like onion and build sauce depth; greens are delicate and lose color/aroma if cooked. The split is the whole point.</div></div></div>
+</div>
+
+<h3>2. Sear</h3>
+<div class="steps" style="counter-reset: step;">
+<div class="step"><div class="step-text">Heat a large nonstick skillet over medium-high (no oil &mdash; rely on the chicken's own moisture and the dry pan to develop color).</div></div>
+<div class="step"><div class="step-text">Add chicken in a single layer (work in batches if needed). Sear 3&ndash;4 minutes per side until golden and just cooked through.</div></div>
+<div class="step"><div class="step-text">Remove chicken to a plate.</div></div>
+</div>
+
+<h3>3. Build the sauce</h3>
+<div class="steps" style="counter-reset: step;">
+<div class="step"><div class="step-text">Drop heat to medium. Add the minced garlic, grated fresh ginger, and the <strong>scallion whites</strong> directly to the dry pan; toast 30&ndash;45 seconds until fragrant (fresh ginger needs slightly longer than ground to bloom).
+<div class="tip">If using ground ginger instead, toast just 20 seconds &mdash; it scorches faster than fresh.</div></div></div>
+<div class="step"><div class="step-text">Pour in 13 tbsp low-sodium soy sauce, 6.5 tbsp mirin, and 6.5 tsp honey. Bring to a steady bubble.
+<div class="tip">Scaled sauce volume needs longer reduction than the original recipe. Plan on 4&ndash;6 minutes of active bubbling. Reduce until the sauce coats the back of a spoon and leaves a clear trail when you drag a spatula across the pan bottom.</div></div></div>
+</div>
+
+<h3>4. Combine &amp; finish</h3>
+<div class="steps" style="counter-reset: step;">
+<div class="step"><div class="step-text">Return the chicken (and any plate juices) to the pan.</div></div>
+<div class="step"><div class="step-text">Toss to coat in the glaze. Keep on medium heat for another 2&ndash;3 minutes &mdash; sauce will tighten and cling rather than pool.</div></div>
+<div class="step"><div class="step-text">Off heat. <strong>Scatter the reserved scallion greens over the top</strong> just before serving &mdash; residual heat softens them slightly without dulling the color.</div></div>
+</div>
+
+<p style="font-size:0.82rem; color:#9ca3af; background:#1a1d23; padding:12px 16px; border-radius:8px; border-left:3px solid #3b82f6; margin:16px 0;"><strong>Accurate-tracking tip:</strong> Weigh the finished dish (chicken + sauce + scallions together), then divide whole-recipe totals (1,870 / 269 / 29 / 117 / 7) by actual weight in hundreds to get true per-100g values.</p>
+
+</div>
+</div>
+
 <!-- ══════════════ RECIPE: GREEK YOGURT BOWL — BLUEBERRIES & ALMONDS ══════════════ -->
 <div class="recipe-modal-overlay" id="recipe-fage-bowl">
 <div class="recipe-modal">
@@ -3137,4 +3306,4 @@ function showServing_meatball(n) {
 <div style="font-weight:600; color:#f59e0b; margin-bottom:10px; font-size:0.9rem;">⚠ Macros app cross-check (per 100g)</div>
 <p style="font-size:0.82rem; color:#9ca3af; margin-bottom:8px;">Your macros app (per 5/2 Sat screenshot) is using lower per-100g values than USDA standard for the yogurt and the blueberries. The almond entry is essentially correct.</p>
 <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
-<tr><th style="text-align:left; color:#9ca3af; font-weight:500; padding:4px 8px;">Ingredient</th><th                             
+<tr><th style="text-align:left; color:#9ca3af; font-weight:500; padding:4px 8px;">Ingredient</th><th
