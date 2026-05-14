@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="BodyComp" />
+<link rel="apple-touch-icon" href="icons/apple-touch-180.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png" />
+<link rel="manifest" href="manifest.json" />
+<title>Log Workout — Body Composition Tracker</title>
+<style>
+  :root {
+    --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
+    --text: #f1f5f9; --muted: #94a3b8; --accent: #38bdf8;
+    --green: #4ade80; --yellow: #facc15; --red: #f87171; --purple: #a78bfa; --orange: #fb923c;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background:var(--bg); color:var(--text); min-height:100vh; padding-bottom: env(safe-area-inset-bottom); }
+  .topbar { position:sticky; top:0; z-index:10; background:linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%); padding: calc(env(safe-area-inset-top) + 0.9rem) 1rem 0.9rem; border-bottom:1px solid var(--surface2); display:flex; align-items:center; gap:0.75rem; }
+  .topbar a.back { color:var(--accent); text-decoration:none; font-size:1.25rem; font-weight:600; width:32px; }
+  .topbar h1 { font-size:1.1rem; font-weight:700; flex:1; }
+  .topbar .save-btn { background:var(--accent); color:#000; border:none; padding:0.55rem 1rem; border-radius:8px; font-weight:700; font-size:0.85rem; cursor:pointer; }
+  .topbar .save-btn:disabled { opacity:0.5; }
+  .container { max-width:760px; margin:0 auto; padding:1rem; }
+
+  .card { background:var(--surface); border:1px solid var(--surface2); border-radius:12px; padding:1rem 1.1rem; margin-bottom:1rem; }
+  .card h2 { font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted); margin-bottom:0.7rem; }
+
+  .row { display:flex; gap:0.6rem; align-items:center; flex-wrap:wrap; }
+  .row > * { min-width:0; }
+  .row label { font-size:0.75rem; color:var(--muted); display:block; margin-bottom:0.2rem; }
+  .field { flex:1 1 140px; }
+  .field-grow { flex:2 1 200px; }
+
+  input, select, textarea {
+    background: var(--bg); color: var(--text); border:1px solid var(--surface2);
+    border-radius:8px; padding:0.55rem 0.7rem; font-size:0.95rem; font-family:inherit;
+    width:100%; outline:none; -webkit-appearance:none;
+  }
+  input:focus, select:focus, textarea:focus { border-color:var(--accent); }
+  input[type="number"] { font-variant-numeric: tabular-nums; }
+  textarea { resize:vertical; min-height:60px; }
+
+  .rpe-pills { display:grid; grid-template-columns:repeat(4, 1fr); gap:0.4rem; }
+  .rpe-pills button { background:var(--bg); color:var(--muted); border:1px solid var(--surface2); border-radius:8px; padding:0.55rem 0.4rem; font-size:0.82rem; cursor:pointer; font-family:inherit; }
+  .rpe-pills button.active { background:var(--accent); color:#000; border-color:var(--accent); font-weight:700; }
+
+  .exercise-card { background:var(--surface); border:1px solid var(--surface2); border-radius:12px; padding:0.9rem 1rem; margin-bottom:0.9rem; }
+  .ex-head { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.65rem; }
+  .ex-name { flex:1; font-size:1rem; font-weight:600; }
+  .ex-name-input { font-size:1rem; font-weight:600; padding:0.4rem 0.55rem; }
+  .ex-kind { font-size:0.7rem; color:var(--muted); background:var(--bg); border:1px solid var(--surface2); border-radius:6px; padding:0.25rem 1.6rem 0.25rem 0.5rem; width:auto; flex:0 0 auto; background-image:linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 12px) center, calc(100% - 7px) center; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+  .ex-delete { background:transparent; border:none; color:var(--red); font-size:1.1rem; cursor:pointer; padding:0.25rem 0.4rem; }
+
+  .set-row { display:grid; gap:0.4rem; align-items:center; margin-bottom:0.45rem; }
+  .set-row.weighted { grid-template-columns: 28px 1fr 1fr 60px 28px; }
+  .set-row.reps     { grid-template-columns: 28px 1fr 60px 28px; }
+  .set-row.time     { grid-template-columns: 28px 1fr 60px 28px; }
+  .set-row .num { color:var(--muted); font-size:0.85rem; text-align:center; font-variant-numeric: tabular-nums; }
+  .set-row input { padding:0.45rem 0.55rem; font-size:0.95rem; text-align:center; }
+  .set-row .e1rm { font-size:0.78rem; color:var(--accent); text-align:right; font-variant-numeric: tabular-nums; }
+  .set-row .del { background:transparent; border:none; color:var(--muted); font-size:1rem; cursor:pointer; padding:0.2rem; }
+
+  .add-row-btn { background:var(--bg); color:var(--accent); border:1px dashed var(--surface2); border-radius:8px; padding:0.5rem; width:100%; font-size:0.85rem; cursor:pointer; font-family:inherit; margin-top:0.3rem; }
+  .add-row-btn:hover { border-color:var(--accent); }
+
+  .add-exercise-card { background:transparent; border:2px dashed var(--surface2); border-radius:12px; padding:1rem; text-align:center; color:var(--muted); cursor:pointer; margin-bottom:1rem; font-size:0.95rem; }
+  .add-exercise-card:hover { border-color:var(--accent); color:var(--accent); }
+
+  .suggestions { background:var(--bg); border:1px solid var(--surface2); border-top:none; border-radius:0 0 8px 8px; max-height:180px; overflow-y:auto; position:absolute; left:0; right:0; top:100%; z-index:20; }
+  .suggestions div { padding:0.5rem 0.7rem; cursor:pointer; font-size:0.9rem; border-bottom:1px solid var(--surface2); }
+  .suggestions div:last-child { border-bottom:none; }
+  .suggestions div:hover, .suggestions div.hl { background:var(--surface2); color:var(--text); }
+  .suggestions .small { font-size:0.7rem; color:var(--muted); margin-left:0.5rem; }
+  .ex-name-wrap { position:relative; flex:1; }
+
+  .toast { position:fixed; left:50%; bottom:1.5rem; transform:translateX(-50%); background:var(--surface); border:1px solid var(--accent); color:var(--text); padding:0.7rem 1.1rem; border-radius:10px; font-size:0.9rem; z-index:100; box-shadow:0 4px 24px rgba(0,0,0,0.4); opacity:0; pointer-events:none; transition:opacity 0.2s; }
+  .toast.show { opacity:1; }
+
+  .history-card { background:var(--surface); border:1px solid var(--surface2); border-radius:12px; padding:0.9rem 1rem; margin-bottom:0.8rem; }
+  .history-card .h-top { display:flex; justify-content:space-between; align-items:baseline; }
+  .history-card .h-name { font-weight:600; font-size:0.95rem; }
+  .history-card .h-date { font-size:0.78rem; color:var(--muted); }
+  .history-card .h-meta { font-size:0.78rem; color:var(--muted); margin-top:0.25rem; }
+  .history-card .h-actions { display:flex; gap:0.5rem; margin-top:0.6rem; }
+  .history-card .h-actions button { flex:1; background:var(--bg); color:var(--text); border:1px solid var(--surface2); border-radius:8px; padding:0.5rem; font-size:0.82rem; cursor:pointer; font-family:inherit; }
+  .history-card .h-actions button.primary { background:var(--accent); color:#000; border-color:var(--accent); font-weight:700; }
+  .history-card .h-actions button:hover { border-color:var(--accent); }
+
+  .last-time { background:var(--bg); border:1px solid var(--surface2); border-radius:8px; padding:0.5rem 0.65rem; margin-bottom:0.55rem; font-size:0.78rem; color:var(--muted); }
+  .last-time .lt-head { display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+  .last-time .lt-head strong { color:var(--text); font-weight:600; }
+  .last-time .lt-best { color:var(--accent); font-variant-numeric: tabular-nums; }
+  .last-time .lt-toggle { color:var(--muted); font-size:0.72rem; margin-left:0.5rem; }
+  .last-time .lt-sets { margin-top:0.4rem; display:flex; flex-wrap:wrap; gap:0.35rem; }
+  .last-time .lt-sets .pill { background:var(--surface2); color:var(--text); border-radius:6px; padding:0.2rem 0.5rem; font-variant-numeric: tabular-nums; font-size:0.78rem; cursor:pointer; border:1px solid transparent; }
+  .last-time .lt-sets .pill:hover { border-color:var(--accent); color:var(--accent); }
+  .last-time .lt-session { margin-top:0.45rem; padding-top:0.45rem; border-top:1px solid var(--surface2); }
+  .last-time .lt-session .lt-date { display:block; font-size:0.7rem; color:var(--muted); margin-bottom:0.25rem; }
+
+  .footer-actions { display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem; }
+  .footer-actions button { flex:1 1 140px; background:var(--bg); color:var(--text); border:1px solid var(--surface2); border-radius:8px; padding:0.65rem; font-size:0.85rem; cursor:pointer; font-family:inherit; }
+  .footer-actions button:hover { border-color:var(--accent); color:var(--accent); }
+  .footer-actions .danger:hover { border-color:var(--red); color:var(--red); }
+
+  .seg { display:grid; grid-template-columns:repeat(2,1fr); gap:0.4rem; }
+  .seg button { background:var(--bg); color:var(--muted); border:1px solid var(--surface2); border-radius:8px; padding:0.5rem; font-size:0.85rem; cursor:pointer; font-family:inherit; }
+  .seg button.active { background:var(--accent); color:#000; border-color:var(--accent); font-weight:700; }
+
+  @media (max-width: 480px) {
+    .container { padding:0.75rem; }
+    .field { flex:1 1 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="index.html" aria-label="Back">←</a>
+  <h1 id="topTitle">Log Workout</h1>
+  <button class="save-btn" id="saveBtn" type="button">Save</button>
+</div>
+
+<div class="container">
+
+  <!-- View toggle -->
+  <div class="card" style="padding:0.5rem;">
+    <div class="seg" id="viewSeg">
+      <button data-view="entry" class="active">Log workout</button>
+      <button data-view="history">History</button>
+    </div>
+  </div>
+
+  <!-- ENTRY VIEW -->
+  <div id="view-entry">
+    <div class="card">
+      <h2>Workout</h2>
+      <div class="row">
+        <div class="field field-grow">
+          <label for="wName">Name</label>
+          <input id="wName" type="text" placeholder="Toned | P0 | Lower A" autocomplete="off" />
+        </div>
+      </div>
+      <div class="row" style="margin-top:0.6rem;">
+        <div class="field">
+          <label for="wDate">Date</label>
+          <input id="wDate" type="date" />
+        </div>
+        <div class="field">
+          <label for="wStart">Start</label>
+          <input id="wStart" type="time" />
+        </div>
+        <div class="field">
+          <label for="wEnd">End</label>
+          <input id="wEnd" type="time" />
+        </div>
+        <div class="field">
+          <label for="wDuration">Duration (min)</label>
+          <input id="wDuration" type="number" inputmode="numeric" min="0" placeholder="auto" />
+        </div>
+      </div>
+      <div style="margin-top:0.8rem;">
+        <label style="font-size:0.75rem;color:var(--muted);display:block;margin-bottom:0.3rem;">How was the workout?</label>
+        <div class="rpe-pills" id="rpePills">
+          <button type="button" data-rpe="easy">🙂 Easy</button>
+          <button type="button" data-rpe="moderate">😐 Moderate</button>
+          <button type="button" data-rpe="challenging">💪 Challenging</button>
+          <button type="button" data-rpe="hard">😅 Hard</button>
+        </div>
+      </div>
+      <div style="margin-top:0.8rem;">
+        <label for="wNotes" style="font-size:0.75rem;color:var(--muted);display:block;margin-bottom:0.3rem;">Notes (optional)</label>
+        <textarea id="wNotes" placeholder="Felt strong on the box squats. Lower back a bit tight."></textarea>
+      </div>
+    </div>
+
+    <div id="exerciseList"></div>
+
+    <div class="add-exercise-card" id="addExerciseBtn">+ Add exercise</div>
+
+    <div class="footer-actions">
+      <button id="exportBtn" type="button">⬇ Export all data (JSON)</button>
+      <button id="importBtn" type="button">⬆ Import JSON</button>
+      <button id="newBtn" type="button">New blank workout</button>
+    </div>
+    <input type="file" id="importFile" accept="application/json" style="display:none" />
+  </div>
+
+  <!-- HISTORY VIEW -->
+  <div id="view-history" style="display:none;">
+    <div class="card">
+      <h2>Saved workouts</h2>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="db.js"></script>
+<script>
+(function () {
+  // ---------- State ----------
+  let current = blankWorkout();
+  let editingId = null;
+  let library = [];
+
+  function blankWorkout() {
+    return {
+      id: null,
+      date: new Date().toISOString().slice(0, 10),
+      start: '',
+      end: '',
+      duration_min: null,
+      name: '',
+      rpe: '',
+      notes: '',
+      exercises: [],
+    };
+  }
+  function blankExercise(kind = 'weighted') {
+    return { name: '', kind, sets: [blankSet(kind)] };
+  }
+  function blankSet(kind) {
+    if (kind === 'time') return { seconds: null };
+    if (kind === 'reps') return { reps: null };
+    return { weight: null, reps: null };
+  }
+
+  // ---------- Helpers ----------
+  function $(id) { return document.getElementById(id); }
+  function toast(msg, ms = 1800) {
+    const t = $('toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), ms);
+  }
+  function minutesBetween(start, end) {
+    if (!start || !end) return null;
+    const [sh, sm] = start.split(':').map(Number);
+    const [eh, em] = end.split(':').map(Number);
+    let mins = (eh * 60 + em) - (sh * 60 + sm);
+    if (mins < 0) mins += 24 * 60;
+    return mins;
+  }
+
+  // ---------- Render ----------
+  function renderWorkoutHeader() {
+    $('wName').value = current.name || '';
+    $('wDate').value = current.date || '';
+    $('wStart').value = current.start || '';
+    $('wEnd').value = current.end || '';
+    $('wDuration').value = current.duration_min ?? '';
+    $('wNotes').value = current.notes || '';
+    document.querySelectorAll('#rpePills button').forEach((b) => {
+      b.classList.toggle('active', b.dataset.rpe === current.rpe);
+    });
+    $('topTitle').textContent = editingId ? 'Edit Workout' : 'Log Workout';
+  }
+
+  function renderExercises() {
+    const list = $('exerciseList');
+    list.innerHTML = '';
+    current.exercises.forEach((ex, exIdx) => {
+      list.appendChild(renderExerciseCard(ex, exIdx));
+    });
+  }
+
+  function renderExerciseCard(ex, exIdx) {
+    const card = document.createElement('div');
+    card.className = 'exercise-card';
+
+    const head = document.createElement('div');
+    head.className = 'ex-head';
+
+    const nameWrap = document.createElement('div');
+    nameWrap.className = 'ex-name-wrap';
+    const nameInput = document.createElement('input');
+    nameInput.className = 'ex-name-input';
+    nameInput.type = 'text';
+    nameInput.placeholder = 'Exercise name';
+    nameInput.value = ex.name;
+    nameInput.autocomplete = 'off';
+    nameInput.addEventListener('input', () => {
+      ex.name = nameInput.value;
+      showSuggestions(nameInput, ex, exIdx);
+    });
+    nameInput.addEventListener('focus', () => showSuggestions(nameInput, ex, exIdx));
+    nameInput.addEventListener('blur', () => setTimeout(hideSuggestions, 150));
+    nameWrap.appendChild(nameInput);
+    head.appendChild(nameWrap);
+
+    const kindSel = document.createElement('select');
+    kindSel.className = 'ex-kind';
+    [['weighted', 'weight×reps'], ['reps', 'reps only'], ['time', 'time (sec)']].forEach(([v, label]) => {
+      const o = document.createElement('option'); o.value = v; o.textContent = label;
+      if (ex.kind === v) o.selected = true;
+      kindSel.appendChild(o);
+    });
+    kindSel.addEventListener('change', () => {
+      ex.kind = kindSel.value;
+      ex.sets = ex.sets.map(() => blankSet(ex.kind));
+      renderExercises();
+    });
+    head.appendChild(kindSel);
+
+    const del = document.createElement('button');
+    del.className = 'ex-delete';
+    del.type = 'button';
+    del.innerHTML = '✕';
+    del.title = 'Remove exercise';
+    del.addEventListener('click', () => {
+      current.exercises.splice(exIdx, 1);
+      renderExercises();
+    });
+    head.appendChild(del);
+
+    card.appendChild(head);
+
+    // "Last time" reference panel — shown when this exercise name has prior history
+    const ltContainer = document.createElement('div');
+    card.appendChild(ltContainer);
+    refreshLastTime(ltContainer, ex);
+
+    // Refresh the panel whenever the name input changes (debounced)
+    let ltTimer = null;
+    nameInput.addEventListener('input', () => {
+      clearTimeout(ltTimer);
+      ltTimer = setTimeout(() => refreshLastTime(ltContainer, ex), 200);
+    });
+
+    ex.sets.forEach((s, sIdx) => card.appendChild(renderSetRow(ex, s, sIdx)));
+
+    const addBtn = document.createElement('button');
+    addBtn.className = 'add-row-btn';
+    addBtn.type = 'button';
+    addBtn.textContent = '+ Add set';
+    addBtn.addEventListener('click', () => {
+      const prev = ex.sets[ex.sets.length - 1];
+      const ns = blankSet(ex.kind);
+      if (prev) {
+        if ('weight' in prev) ns.weight = prev.weight;
+        if ('reps' in prev) ns.reps = prev.reps;
+        if ('seconds' in prev) ns.seconds = prev.seconds;
+      }
+      ex.sets.push(ns);
+      renderExercises();
+    });
+    card.appendChild(addBtn);
+    return card;
+  }
+
+  function renderSetRow(ex, s, sIdx) {
+    const row = document.createElement('div');
+    row.className = 'set-row ' + ex.kind;
+
+    const num = document.createElement('div'); num.className = 'num'; num.textContent = (sIdx + 1) + '.';
+    row.appendChild(num);
+
+    if (ex.kind === 'weighted') {
+      const wIn = numInput(s.weight, 'lb', (v) => { s.weight = v; updateE1RM(); });
+      const rIn = numInput(s.reps, 'reps', (v) => { s.reps = v; updateE1RM(); });
+      row.appendChild(wIn); row.appendChild(rIn);
+      const e1 = document.createElement('div'); e1.className = 'e1rm';
+      const v = BCDB.e1rm(s.weight, s.reps);
+      e1.textContent = v ? v + ' e1RM' : '';
+      row.appendChild(e1);
+      function updateE1RM() {
+        const v = BCDB.e1rm(s.weight, s.reps);
+        e1.textContent = v ? v + ' e1RM' : '';
+      }
+    } else if (ex.kind === 'reps') {
+      const rIn = numInput(s.reps, 'reps', (v) => { s.reps = v; });
+      row.appendChild(rIn);
+      const pad = document.createElement('div'); row.appendChild(pad);
+    } else if (ex.kind === 'time') {
+      const tIn = numInput(s.seconds, 'sec', (v) => { s.seconds = v; });
+      row.appendChild(tIn);
+      const pad = document.createElement('div'); row.appendChild(pad);
+    }
+
+    const del = document.createElement('button');
+    del.className = 'del'; del.type = 'button'; del.innerHTML = '−';
+    del.title = 'Remove set';
+    del.addEventListener('click', () => {
+      ex.sets.splice(sIdx, 1);
+      if (ex.sets.length === 0) ex.sets.push(blankSet(ex.kind));
+      renderExercises();
+    });
+    row.appendChild(del);
+    return row;
+  }
+
+  function numInput(value, placeholder, onChange) {
+    const i = document.createElement('input');
+    i.type = 'number';
+    i.inputMode = 'decimal';
+    i.placeholder = placeholder;
+    i.value = (value == null || value === '') ? '' : value;
+    i.addEventListener('input', () => {
+      const v = i.value === '' ? null : Number(i.value);
+      onChange(Number.isFinite(v) ? v : null);
+    });
+    return i;
+  }
+
+  // ---------- "Last time" reference panel ----------
+  async function refreshLastTime(container, ex) {
+    container.innerHTML = '';
+    const name = (ex.name || '').trim();
+    if (!name) return;
+    const history = await BCDB.getExerciseHistory(name, 4);
+    // Exclude the workout currently being edited, and (when repeating) the source workout —
+    // otherwise the Last-time panel echoes the data we just prefilled.
+    const skipIds = new Set([editingId, current._repeated_from].filter(Boolean));
+    const past = history.filter((h) => !skipIds.has(h.workout_id)).slice(0, 3);
+    if (past.length === 0) return;
+
+    const panel = document.createElement('div');
+    panel.className = 'last-time';
+
+    const last = past[0];
+    const head = document.createElement('div');
+    head.className = 'lt-head';
+    const fmtDate = last.date && last.date.length >= 10 ? last.date.slice(5) : last.date;
+    head.innerHTML =
+      '<div><strong>Last:</strong> ' + escapeHtml(fmtDate) +
+      (past.length > 1 ? ' <span class="lt-toggle">▾ ' + past.length + ' sessions</span>' : '') +
+      '</div>' +
+      (last.best_e1rm ? '<div class="lt-best">' + last.best_e1rm + ' best e1RM</div>' : '');
+    panel.appendChild(head);
+
+    panel.appendChild(buildSetsPills(last, ex));
+
+    let expanded = false;
+    head.addEventListener('click', () => {
+      if (past.length <= 1) return;
+      expanded = !expanded;
+      // Remove any extra session blocks
+      panel.querySelectorAll('.lt-session').forEach((n) => n.remove());
+      const toggle = head.querySelector('.lt-toggle');
+      if (toggle) toggle.textContent = (expanded ? '▴ ' : '▾ ') + past.length + ' sessions';
+      if (expanded) {
+        past.slice(1).forEach((sess) => {
+          const block = document.createElement('div');
+          block.className = 'lt-session';
+          const d = sess.date && sess.date.length >= 10 ? sess.date.slice(5) : sess.date;
+          const dateLabel = document.createElement('span');
+          dateLabel.className = 'lt-date';
+          dateLabel.textContent = d + (sess.best_e1rm ? ' — ' + sess.best_e1rm + ' best e1RM' : '');
+          block.appendChild(dateLabel);
+          block.appendChild(buildSetsPills(sess, ex));
+          panel.appendChild(block);
+        });
+      }
+    });
+
+    container.appendChild(panel);
+  }
+
+  function buildSetsPills(session, ex) {
+    const wrap = document.createElement('div');
+    wrap.className = 'lt-sets';
+    (session.sets || []).forEach((s) => {
+      const pill = document.createElement('button');
+      pill.type = 'button';
+      pill.className = 'pill';
+      pill.textContent = formatSet(s, session.kind || ex.kind);
+      pill.title = 'Tap to add as next set';
+      pill.addEventListener('click', () => applyHistorySet(ex, s, session.kind || ex.kind));
+      wrap.appendChild(pill);
+    });
+    return wrap;
+  }
+
+  function formatSet(s, kind) {
+    if (kind === 'time') return (s.seconds ?? '?') + ' sec';
+    if (kind === 'reps') return (s.reps ?? '?') + ' reps';
+    return (s.weight ?? '?') + ' × ' + (s.reps ?? '?');
+  }
+
+  function applyHistorySet(ex, s, kind) {
+    // If the kind on this exercise card differs, align it to the historical kind.
+    if (kind && ex.kind !== kind) ex.kind = kind;
+    // Find the first empty set; if all are filled, append a new one.
+    let target = ex.sets.find((row) => allEmpty(row));
+    if (!target) {
+      target = blankSet(ex.kind);
+      ex.sets.push(target);
+    }
+    if (kind === 'time') target.seconds = s.seconds ?? target.seconds ?? null;
+    else if (kind === 'reps') target.reps = s.reps ?? target.reps ?? null;
+    else { target.weight = s.weight ?? target.weight ?? null; target.reps = s.reps ?? target.reps ?? null; }
+    renderExercises();
+  }
+
+  // ---------- Exercise name autocomplete ----------
+  let activeSuggestEl = null;
+  function showSuggestions(input, ex, exIdx) {
+    hideSuggestions();
+    const q = (input.value || '').toLowerCase().trim();
+    const matches = library
+      .filter((e) => !q || e.name.toLowerCase().includes(q))
+      .slice(0, 8);
+    if (matches.length === 0) return;
+    const list = document.createElement('div');
+    list.className = 'suggestions';
+    matches.forEach((m) => {
+      const row = document.createElement('div');
+      row.innerHTML = '<strong>' + escapeHtml(m.name) + '</strong>' +
+        '<span class="small">' + m.kind + ' · ' + (m.usage_count || 0) + '×</span>';
+      row.addEventListener('mousedown', (e) => {
+        e.preventDefault();
+        ex.name = m.name;
+        ex.kind = m.kind;
+        if (ex.sets.length === 0 || ex.sets.every((s) => allEmpty(s))) {
+          ex.sets = [blankSet(ex.kind)];
+        }
+        hideSuggestions();
+        renderExercises(); // re-render also rebuilds the Last-time panel
+      });
+      list.appendChild(row);
+    });
+    input.parentNode.appendChild(list);
+    activeSuggestEl = list;
+  }
+  function hideSuggestions() {
+    if (activeSuggestEl && activeSuggestEl.parentNode) activeSuggestEl.parentNode.removeChild(activeSuggestEl);
+    activeSuggestEl = null;
+  }
+  function allEmpty(s) { return Object.values(s).every((v) => v == null || v === ''); }
+  function escapeHtml(s) { return (s || '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  // ---------- Save / load ----------
+  async function saveCurrent() {
+    // Collect inputs
+    current.name = $('wName').value.trim();
+    current.date = $('wDate').value || new Date().toISOString().slice(0, 10);
+    current.start = $('wStart').value || '';
+    current.end = $('wEnd').value || '';
+    const manualDur = $('wDuration').value;
+    current.duration_min = manualDur !== '' ? Number(manualDur) : minutesBetween(current.start, current.end);
+    current.notes = $('wNotes').value.trim();
+    // RPE already set
+
+    if (!current.name) { toast('Workout needs a name'); return; }
+    if (current.exercises.length === 0) { toast('Add at least one exercise'); return; }
+    const hasAny = current.exercises.some((ex) =>
+      ex.name.trim() && ex.sets.some((s) => !allEmpty(s))
+    );
+    if (!hasAny) { toast('Fill in at least one set'); return; }
+
+    if (editingId) current.id = editingId;
+    try {
+      const id = await BCDB.saveWorkout(current);
+      toast('Saved ✓');
+      editingId = id;
+      library = await BCDB.getExerciseLibrary();
+      // Refresh history list if it's been viewed
+      renderHistoryList();
+    } catch (e) {
+      console.error(e);
+      toast('Save failed: ' + e.message, 3000);
+    }
+  }
+
+  function newBlank() {
+    if (current.exercises.length > 0 || current.name) {
+      if (!confirm('Discard current workout and start fresh?')) return;
+    }
+    current = blankWorkout();
+    editingId = null;
+    renderWorkoutHeader();
+    renderExercises();
+  }
+
+  async function loadForEdit(id) {
+    const w = await BCDB.getWorkout(id);
+    if (!w) return;
+    current = w;
+    editingId = id;
+    renderWorkoutHeader();
+    renderExercises();
+    switchView('entry');
+  }
+
+  async function repeatWorkout(id) {
+    const fresh = await BCDB.duplicateWorkout(id);
+    current = fresh;
+    editingId = null;
+    renderWorkoutHeader();
+    renderExercises();
+    switchView('entry');
+    toast('Repeated — edit & save as new');
+  }
+
+  // ---------- History view ----------
+  async function renderHistoryList() {
+    const all = await BCDB.listWorkouts({ limit: 200 });
+    const list = $('historyList');
+    list.innerHTML = '';
+    if (all.length === 0) {
+      list.innerHTML = '<div style="color:var(--muted);font-size:0.9rem;">No workouts saved yet.</div>';
+      return;
+    }
+    all.forEach((w) => {
+      const card = document.createElement('div');
+      card.className = 'history-card';
+      const exCount = w.exercises.length;
+      const setCount = w.exercises.reduce((sum, ex) => sum + ex.sets.length, 0);
+      card.innerHTML =
+        '<div class="h-top"><div class="h-name">' + escapeHtml(w.name) + '</div>' +
+        '<div class="h-date">' + w.date + '</div></div>' +
+        '<div class="h-meta">' + exCount + ' exercise' + (exCount === 1 ? '' : 's') +
+        ' · ' + setCount + ' set' + (setCount === 1 ? '' : 's') +
+        (w.duration_min ? ' · ' + w.duration_min + ' min' : '') +
+        (w.rpe ? ' · ' + w.rpe : '') + '</div>' +
+        '<div class="h-actions">' +
+          '<button type="button" data-act="open">Open / edit</button>' +
+          '<button type="button" data-act="repeat" class="primary">Repeat ↻</button>' +
+        '</div>';
+      card.querySelector('[data-act="open"]').addEventListener('click', () => loadForEdit(w.id));
+      card.querySelector('[data-act="repeat"]').addEventListener('click', () => repeatWorkout(w.id));
+      list.appendChild(card);
+    });
+  }
+
+  // ---------- View toggle ----------
+  function switchView(name) {
+    document.querySelectorAll('#viewSeg button').forEach((b) => b.classList.toggle('active', b.dataset.view === name));
+    $('view-entry').style.display = name === 'entry' ? '' : 'none';
+    $('view-history').style.display = name === 'history' ? '' : 'none';
+    if (name === 'history') renderHistoryList();
+  }
+
+  // ---------- Export / import ----------
+  async function exportData() {
+    const payload = await BCDB.exportAll();
+    const stamp = new Date().toISOString().slice(0, 10);
+    BCDB.downloadJSON('body-comp-export-' + stamp + '.json', payload);
+    toast('Exported ✓');
+  }
+  function importData(file) {
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        const payload = JSON.parse(reader.result);
+        const counts = await BCDB.importAll(payload, { mode: 'merge' });
+        library = await BCDB.getExerciseLibrary();
+        toast('Imported: ' + counts.workouts + ' workouts');
+        renderHistoryList();
+      } catch (e) { toast('Import failed: ' + e.message, 3000); }
+    };
+    reader.readAsText(file);
+  }
+
+  // ---------- Wire up ----------
+  function bindHeader() {
+    $('wName').addEventListener('input', () => current.name = $('wName').value);
+    $('wDate').addEventListener('input', () => current.date = $('wDate').value);
+    $('wStart').addEventListener('input', () => {
+      current.start = $('wStart').value;
+      if ($('wDuration').value === '' && current.end) $('wDuration').placeholder = (minutesBetween(current.start, current.end) || 'auto');
+    });
+    $('wEnd').addEventListener('input', () => {
+      current.end = $('wEnd').value;
+      if ($('wDuration').value === '' && current.start) $('wDuration').placeholder = (minutesBetween(current.start, current.end) || 'auto');
+    });
+    $('wDuration').addEventListener('input', () => {
+      const v = $('wDuration').value;
+      current.duration_min = v === '' ? null : Number(v);
+    });
+    $('wNotes').addEventListener('input', () => current.notes = $('wNotes').value);
+    document.querySelectorAll('#rpePills button').forEach((b) => {
+      b.addEventListener('click', () => {
+        const v = b.dataset.rpe;
+        current.rpe = current.rpe === v ? '' : v;
+        document.querySelectorAll('#rpePills button').forEach((x) => x.classList.toggle('active', x.dataset.rpe === current.rpe));
+      });
+    });
+  }
+
+  async function init() {
+    bindHeader();
+    $('addExerciseBtn').addEventListener('click', () => {
+      current.exercises.push(blankExercise('weighted'));
+      renderExercises();
+      // Focus the newly-added exercise name field
+      setTimeout(() => {
+        const inputs = document.querySelectorAll('#exerciseList .ex-name-input');
+        const last = inputs[inputs.length - 1]; if (last) last.focus();
+      }, 0);
+    });
+    $('saveBtn').addEventListener('click', saveCurrent);
+    $('newBtn').addEventListener('click', newBlank);
+    $('exportBtn').addEventListener('click', exportData);
+    $('importBtn').addEventListener('click', () => $('importFile').click());
+    $('importFile').addEventListener('change', (e) => {
+      const f = e.target.files[0]; if (f) importData(f);
+      e.target.value = '';
+    });
+    document.querySelectorAll('#viewSeg button').forEach((b) => {
+      b.addEventListener('click', () => switchView(b.dataset.view));
+    });
+
+    library = await BCDB.getExerciseLibrary();
+    renderWorkoutHeader();
+    renderExercises();
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>
