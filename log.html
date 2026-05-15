@@ -181,6 +181,7 @@
     <div class="add-exercise-card" id="addExerciseBtn">+ Add exercise</div>
 
     <div class="footer-actions">
+      <button id="seedBtn" type="button">⇩ Load workout history from cloud</button>
       <button id="exportBtn" type="button">⬇ Export all data (JSON)</button>
       <button id="importBtn" type="button">⬆ Import JSON</button>
       <button id="newBtn" type="button">New blank workout</button>
@@ -655,6 +656,27 @@
     reader.readAsText(file);
   }
 
+  // Fetch the seed JSON co-hosted with the app on GitHub Pages and import it.
+  // Idempotent — workout IDs are deterministic ('wlog-YYYY-MM-DD'), so re-tapping
+  // merges by ID without creating duplicates.
+  async function loadSeedFromCloud() {
+    const existing = await BCDB.listWorkouts({ limit: 1 });
+    if (existing.length > 0 && !confirm('You already have saved workouts. Loading the cloud history merges with what you have (matching dates get overwritten). Continue?')) {
+      return;
+    }
+    try {
+      const r = await fetch('body-comp-import-from-xlsx.json', { cache: 'no-cache' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const payload = await r.json();
+      const counts = await BCDB.importAll(payload, { mode: 'merge' });
+      library = await BCDB.getExerciseLibrary();
+      toast('Loaded ' + counts.workouts + ' workouts from cloud');
+      renderHistoryList();
+    } catch (e) {
+      toast('Cloud load failed: ' + e.message, 3000);
+    }
+  }
+
   // ---------- Wire up ----------
   function bindHeader() {
     $('wName').addEventListener('input', () => current.name = $('wName').value);
@@ -696,6 +718,7 @@
     $('newBtn').addEventListener('click', newBlank);
     $('exportBtn').addEventListener('click', exportData);
     $('importBtn').addEventListener('click', () => $('importFile').click());
+    $('seedBtn').addEventListener('click', loadSeedFromCloud);
     $('importFile').addEventListener('change', (e) => {
       const f = e.target.files[0]; if (f) importData(f);
       e.target.value = '';

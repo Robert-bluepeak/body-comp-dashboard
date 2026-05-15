@@ -1,12 +1,13 @@
 // Body Composition Tracker — Service Worker
 // Bump CACHE_VERSION to force a fresh cache after deploying new HTML/CSS/JS.
-const CACHE_VERSION = 'bc-v2';
+const CACHE_VERSION = 'bc-v3';
 const CORE_ASSETS = [
   './',
   './index.html',
   './log.html',
   './db.js',
   './manifest.json',
+  './body-comp-import-from-xlsx.json',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/apple-touch-180.png',

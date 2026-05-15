@@ -1,0 +1,5801 @@
+{
+  "schema_version": 1,
+  "exported_at": "2026-05-15T14:00:37.684329",
+  "workouts": [
+    {
+      "id": "wlog-2026-02-24",
+      "date": "2026-02-24",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (2/24/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 10
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 205.0,
+              "reps": 8
+            },
+            {
+              "weight": 205.0,
+              "reps": 8
+            },
+            {
+              "weight": 205.0,
+              "reps": 8
+            },
+            {
+              "weight": 205.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 6
+            },
+            {
+              "weight": 135.0,
+              "reps": 5
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Pull Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 6
+            },
+            {
+              "weight": 80.0,
+              "reps": 6
+            },
+            {
+              "weight": 80.0,
+              "reps": 5
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 6
+            },
+            {
+              "weight": 50.0,
+              "reps": 10
+            },
+            {
+              "weight": 50.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Barbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 10
+            },
+            {
+              "weight": 50.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Ab Crunch Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 11
+            },
+            {
+              "weight": 70.0,
+              "reps": 7
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-02-27",
+      "date": "2026-02-27",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (2/27/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Overhead Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 10
+            },
+            {
+              "weight": 65.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 5
+            },
+            {
+              "weight": 85.0,
+              "reps": 5
+            },
+            {
+              "weight": 85.0,
+              "reps": 4
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 7
+            },
+            {
+              "weight": 75.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 7
+            },
+            {
+              "weight": 30.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Cable Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 7
+            },
+            {
+              "weight": 50.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 270.0,
+              "reps": 20
+            },
+            {
+              "weight": 270.0,
+              "reps": 17
+            },
+            {
+              "weight": 270.0,
+              "reps": 13
+            },
+            {
+              "weight": 180.0,
+              "reps": 13
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-03",
+      "date": "2026-03-03",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/3/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 215.0,
+              "reps": 8
+            },
+            {
+              "weight": 215.0,
+              "reps": 8
+            },
+            {
+              "weight": 215.0,
+              "reps": 8
+            },
+            {
+              "weight": 215.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 7
+            },
+            {
+              "weight": 135.0,
+              "reps": 5
+            }
+          ]
+        },
+        {
+          "name": "Barbell Rear Delt Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 115.0,
+              "reps": 8
+            },
+            {
+              "weight": 115.0,
+              "reps": 8
+            },
+            {
+              "weight": 115.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 60.0,
+              "reps": 10
+            },
+            {
+              "weight": 60.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Barbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 60.0,
+              "reps": 10
+            },
+            {
+              "weight": 60.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Ab Crunch Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 11
+            },
+            {
+              "weight": 70.0,
+              "reps": 9
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-05",
+      "date": "2026-03-05",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/5/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 195.0,
+              "reps": 6
+            },
+            {
+              "weight": 195.0,
+              "reps": 6
+            },
+            {
+              "weight": 195.0,
+              "reps": 6
+            },
+            {
+              "weight": 195.0,
+              "reps": 6
+            },
+            {
+              "weight": 195.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Overhead Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 80.0,
+              "reps": 7
+            },
+            {
+              "weight": 80.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 35.0,
+              "reps": 7
+            },
+            {
+              "weight": 35.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Cable Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 55.0,
+              "reps": 7
+            },
+            {
+              "weight": 55.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 19
+            },
+            {
+              "weight": 250.0,
+              "reps": 16
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-07",
+      "date": "2026-03-07",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/7/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 220.0,
+              "reps": 8
+            },
+            {
+              "weight": 220.0,
+              "reps": 8
+            },
+            {
+              "weight": 220.0,
+              "reps": 8
+            },
+            {
+              "weight": 220.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Barbell Rear Delt Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 135.0,
+              "reps": 6
+            },
+            {
+              "weight": 155.0,
+              "reps": 6
+            },
+            {
+              "weight": 155.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 10
+            },
+            {
+              "weight": 65.0,
+              "reps": 10
+            },
+            {
+              "weight": 65.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Barbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 10
+            },
+            {
+              "weight": 70.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Ab Crunch Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-10",
+      "date": "2026-03-10",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/10/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 205.0,
+              "reps": 6
+            },
+            {
+              "weight": 205.0,
+              "reps": 6
+            },
+            {
+              "weight": 205.0,
+              "reps": 5
+            },
+            {
+              "weight": 205.0,
+              "reps": 6
+            },
+            {
+              "weight": 205.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Overhead Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 6
+            },
+            {
+              "weight": 90.0,
+              "reps": 6
+            },
+            {
+              "weight": 90.0,
+              "reps": 6
+            },
+            {
+              "weight": 90.0,
+              "reps": 6
+            },
+            {
+              "weight": 90.0,
+              "reps": 6
+            },
+            {
+              "weight": 90.0,
+              "reps": 4
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 85.0,
+              "reps": 6
+            },
+            {
+              "weight": 85.0,
+              "reps": 5
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 7
+            },
+            {
+              "weight": 37.5,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Cable Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 60.0,
+              "reps": 7
+            },
+            {
+              "weight": 60.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 17
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-11",
+      "date": "2026-03-11",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/11/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 225.0,
+              "reps": 8
+            },
+            {
+              "weight": 225.0,
+              "reps": 8
+            },
+            {
+              "weight": 225.0,
+              "reps": 8
+            },
+            {
+              "weight": 225.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Rear Delt Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 155.0,
+              "reps": 6
+            },
+            {
+              "weight": 155.0,
+              "reps": 6
+            },
+            {
+              "weight": 160.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 10
+            },
+            {
+              "weight": 70.0,
+              "reps": 6
+            },
+            {
+              "weight": 45.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 10
+            },
+            {
+              "weight": 70.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Ab Crunch Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 10
+            },
+            {
+              "weight": 70.0,
+              "reps": 9
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-14",
+      "date": "2026-03-14",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/14/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 123.0,
+              "reps": 8
+            },
+            {
+              "weight": 203.0,
+              "reps": 6
+            },
+            {
+              "weight": 203.0,
+              "reps": 6
+            },
+            {
+              "weight": 203.0,
+              "reps": 6
+            },
+            {
+              "weight": 203.0,
+              "reps": 6
+            },
+            {
+              "weight": 203.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Overhead Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 53.0,
+              "reps": 8
+            },
+            {
+              "weight": 93.0,
+              "reps": 6
+            },
+            {
+              "weight": 93.0,
+              "reps": 6
+            },
+            {
+              "weight": 93.0,
+              "reps": 6
+            },
+            {
+              "weight": 93.0,
+              "reps": 6
+            },
+            {
+              "weight": 93.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 85.0,
+              "reps": 7
+            },
+            {
+              "weight": 85.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 7
+            },
+            {
+              "weight": 40.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Cable Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 60.0,
+              "reps": 7
+            },
+            {
+              "weight": 60.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 19
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-15",
+      "date": "2026-03-15",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/15/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 225.0,
+              "reps": 3
+            },
+            {
+              "weight": 230.0,
+              "reps": 8
+            },
+            {
+              "weight": 230.0,
+              "reps": 8
+            },
+            {
+              "weight": 230.0,
+              "reps": 8
+            },
+            {
+              "weight": 230.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 135.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Rear Delt Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 160.0,
+              "reps": 6
+            },
+            {
+              "weight": 160.0,
+              "reps": 6
+            },
+            {
+              "weight": 160.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 10
+            },
+            {
+              "weight": 70.0,
+              "reps": 7
+            },
+            {
+              "weight": 45.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Barbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 10
+            },
+            {
+              "weight": 70.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Ab Crunch Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 11
+            },
+            {
+              "weight": 70.0,
+              "reps": 10
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-16",
+      "date": "2026-03-16",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/16/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 8
+            },
+            {
+              "weight": 215.0,
+              "reps": 6
+            },
+            {
+              "weight": 215.0,
+              "reps": 6
+            },
+            {
+              "weight": 215.0,
+              "reps": 6
+            },
+            {
+              "weight": 215.0,
+              "reps": 6
+            },
+            {
+              "weight": 215.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Overhead Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 8
+            },
+            {
+              "weight": 95.0,
+              "reps": 6
+            },
+            {
+              "weight": 95.0,
+              "reps": 6
+            },
+            {
+              "weight": 95.0,
+              "reps": 6
+            },
+            {
+              "weight": 95.0,
+              "reps": 6
+            },
+            {
+              "weight": 95.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 90.0,
+              "reps": 7
+            },
+            {
+              "weight": 90.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 6
+            },
+            {
+              "weight": 45.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Cable Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 7
+            },
+            {
+              "weight": 65.0,
+              "reps": 5
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 20
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-17",
+      "date": "2026-03-17",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/17/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 205.0,
+              "reps": 12
+            },
+            {
+              "weight": 205.0,
+              "reps": 12
+            },
+            {
+              "weight": 205.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 11
+            },
+            {
+              "weight": 105.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bent Over Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 125.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 9
+            },
+            {
+              "weight": 95.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Lateral Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 17.5,
+              "reps": 12
+            },
+            {
+              "weight": 17.5,
+              "reps": 12
+            },
+            {
+              "weight": 17.5,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 9
+            },
+            {
+              "weight": 25.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Weighted Suspended Dip",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 11
+            },
+            {
+              "reps": 8
+            },
+            {
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-23",
+      "date": "2026-03-23",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/23/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 190.0,
+              "reps": 10
+            },
+            {
+              "weight": 190.0,
+              "reps": 10
+            },
+            {
+              "weight": 190.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Prone Lying Hamstring Curl Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 8
+            },
+            {
+              "weight": 95.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 10
+            },
+            {
+              "weight": 100.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Rope Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 9
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-24",
+      "date": "2026-03-24",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/24/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 210.0,
+              "reps": 12
+            },
+            {
+              "weight": 210.0,
+              "reps": 12
+            },
+            {
+              "weight": 210.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bent Over Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 95.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Lateral Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 12
+            },
+            {
+              "weight": 20.0,
+              "reps": 12
+            },
+            {
+              "weight": 20.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 22.5,
+              "reps": 12
+            },
+            {
+              "weight": 22.5,
+              "reps": 12
+            },
+            {
+              "weight": 22.5,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Weighted Suspended Dip",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 9
+            },
+            {
+              "reps": 7
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-25",
+      "date": "2026-03-25",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/25/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 195.0,
+              "reps": 10
+            },
+            {
+              "weight": 195.0,
+              "reps": 10
+            },
+            {
+              "weight": 195.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Prone Lying Hamstring Curl Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 95.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 11
+            },
+            {
+              "weight": 100.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 32.5,
+              "reps": 12
+            },
+            {
+              "weight": 32.5,
+              "reps": 9
+            },
+            {
+              "weight": 32.5,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Cable Rope Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 11
+            },
+            {
+              "weight": 40.0,
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-27",
+      "date": "2026-03-27",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/27/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Barbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 8
+            },
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bent Over Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 95.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Lateral Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 12
+            },
+            {
+              "weight": 20.0,
+              "reps": 12
+            },
+            {
+              "weight": 20.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 22.5,
+              "reps": 12
+            },
+            {
+              "weight": 22.5,
+              "reps": 12
+            },
+            {
+              "weight": 22.5,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Weighted Suspended Dip",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 11
+            },
+            {
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-30",
+      "date": "2026-03-30",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/30/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 200.0,
+              "reps": 10
+            },
+            {
+              "weight": 200.0,
+              "reps": 10
+            },
+            {
+              "weight": 200.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Prone Lying Hamstring Curl Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Rope Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 11
+            },
+            {
+              "weight": 45.0,
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-03-31",
+      "date": "2026-03-31",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (3/31/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 6
+            },
+            {
+              "weight": 110.0,
+              "reps": 12
+            },
+            {
+              "weight": 110.0,
+              "reps": 12
+            },
+            {
+              "weight": 110.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bent Over Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Lateral Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 22.5,
+              "reps": 12
+            },
+            {
+              "weight": 22.5,
+              "reps": 12
+            },
+            {
+              "weight": 22.5,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Alt DB Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 11
+            },
+            {
+              "weight": 25.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Weighted Suspended Dip",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 12
+            },
+            {
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-01",
+      "date": "2026-04-01",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Lower (4/1/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Standing Calf Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 20
+            },
+            {
+              "weight": 250.0,
+              "reps": 20
+            }
+          ]
+        },
+        {
+          "name": "Ab Crunch Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 12
+            },
+            {
+              "weight": 70.0,
+              "reps": 10
+            },
+            {
+              "weight": 70.0,
+              "reps": 7
+            },
+            {
+              "weight": 70.0,
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-02",
+      "date": "2026-04-02",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/2/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 205.0,
+              "reps": 10
+            },
+            {
+              "weight": 205.0,
+              "reps": 10
+            },
+            {
+              "weight": 205.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Seated Hamstring Curl Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 11
+            },
+            {
+              "weight": 60.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Cable Rope Tricep Pushdown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 10
+            },
+            {
+              "weight": 45.0,
+              "reps": 8
+            },
+            {
+              "weight": 25.0,
+              "reps": 9
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-14",
+      "date": "2026-04-14",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/14/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Neutral Grip Lat Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 85.0,
+              "reps": 12
+            },
+            {
+              "weight": 90.0,
+              "reps": 12
+            },
+            {
+              "weight": 90.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Romanian Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 12
+            },
+            {
+              "weight": 65.0,
+              "reps": 12
+            },
+            {
+              "weight": 65.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Seated Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell 3 Point Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 11
+            },
+            {
+              "weight": 45.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Overhead Tricep Extension",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 15
+            },
+            {
+              "weight": 25.0,
+              "reps": 15
+            }
+          ]
+        },
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 205.0,
+              "reps": 12
+            },
+            {
+              "weight": 205.0,
+              "reps": 12
+            },
+            {
+              "weight": 205.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 8
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-15",
+      "date": "2026-04-15",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/15/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 210.0,
+              "reps": 10
+            },
+            {
+              "weight": 210.0,
+              "reps": 8
+            },
+            {
+              "weight": 210.0,
+              "reps": 8
+            },
+            {
+              "weight": 210.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 8
+            },
+            {
+              "weight": 100.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 10
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Barbell Shoulder Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 15
+            },
+            {
+              "weight": 135.0,
+              "reps": 12
+            },
+            {
+              "weight": 135.0,
+              "reps": 12
+            },
+            {
+              "weight": 135.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bulgarian Split Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Standing Incline Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 17.0,
+              "reps": 12
+            },
+            {
+              "weight": 17.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Arnold Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 11
+            },
+            {
+              "weight": 25.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Parallel Bar Dip",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 8
+            },
+            {
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Sit Up",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 6
+            },
+            {
+              "reps": 5
+            },
+            {
+              "reps": 5
+            },
+            {
+              "reps": 5
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-17",
+      "date": "2026-04-17",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/17/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 198.8,
+              "reps": 12
+            },
+            {
+              "weight": 262.7,
+              "reps": 12
+            },
+            {
+              "weight": 262.7,
+              "reps": 12
+            },
+            {
+              "weight": 262.7,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Seated Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 85.0,
+              "reps": 12
+            },
+            {
+              "weight": 85.0,
+              "reps": 12
+            },
+            {
+              "weight": 85.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Barbell Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 12
+            },
+            {
+              "weight": 75.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 11
+            },
+            {
+              "weight": 40.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Lat Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Prone Lying Hamstring Curl Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Alternating Dumbbell Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 14
+            },
+            {
+              "weight": 30.0,
+              "reps": 14
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 14
+            },
+            {
+              "weight": 25.0,
+              "reps": 14
+            }
+          ]
+        },
+        {
+          "name": "Medicine Ball Russian Twist",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 12.0,
+              "reps": 12
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-21",
+      "date": "2026-04-21",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/21/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 185.0,
+              "reps": 5
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Barbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 65.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 6
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Neutral Grip Lat Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 90.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Romanian Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 145.0,
+              "reps": 12
+            },
+            {
+              "weight": 145.0,
+              "reps": 12
+            },
+            {
+              "weight": 145.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Seated Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell 3 Point Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Crossover",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 17.0,
+              "reps": 15
+            },
+            {
+              "weight": 20.0,
+              "reps": 15
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 270.0,
+              "reps": 12
+            },
+            {
+              "weight": 270.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 27.5,
+              "reps": 12
+            },
+            {
+              "weight": 27.5,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Overhead Tricep Extension",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 17.5,
+              "reps": 15
+            },
+            {
+              "weight": 22.5,
+              "reps": 15
+            }
+          ]
+        },
+        {
+          "name": "Lying Leg Raises",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 11
+            },
+            {
+              "reps": 9
+            },
+            {
+              "reps": 8
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-23",
+      "date": "2026-04-23",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/23/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 215.0,
+              "reps": 10
+            },
+            {
+              "weight": 215.0,
+              "reps": 8
+            },
+            {
+              "weight": 215.0,
+              "reps": 8
+            },
+            {
+              "weight": 215.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 9
+            },
+            {
+              "weight": 100.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Barbell Shoulder Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 145.0,
+              "reps": 15
+            },
+            {
+              "weight": 145.0,
+              "reps": 12
+            },
+            {
+              "weight": 145.0,
+              "reps": 12
+            },
+            {
+              "weight": 145.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bulgarian Split Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Cable Standing Incline Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 12
+            },
+            {
+              "weight": 20.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Arnold Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 10
+            },
+            {
+              "weight": 30.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Parallel Bar Dip",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 10
+            },
+            {
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Sit Up",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 16
+            },
+            {
+              "reps": 7
+            },
+            {
+              "reps": 6
+            },
+            {
+              "reps": 5
+            },
+            {
+              "reps": 5
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-25",
+      "date": "2026-04-25",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/25/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 125.0,
+              "reps": 12
+            },
+            {
+              "weight": 125.0,
+              "reps": 12
+            },
+            {
+              "weight": 125.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 277.0,
+              "reps": 12
+            },
+            {
+              "weight": 277.0,
+              "reps": 12
+            },
+            {
+              "weight": 277.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Seated Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 90.0,
+              "reps": 12
+            },
+            {
+              "weight": 90.0,
+              "reps": 12
+            },
+            {
+              "weight": 90.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Barbell Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 75.0,
+              "reps": 12
+            },
+            {
+              "weight": 75.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 37.5,
+              "reps": 12
+            },
+            {
+              "weight": 37.5,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Lat Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Prone Lying Hamstring Curl Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Alternating Dumbbell Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 32.5,
+              "reps": 14
+            },
+            {
+              "weight": 32.5,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 32.5,
+              "reps": 12
+            },
+            {
+              "weight": 32.5,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Medicine Ball Russian Twist",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 14.0,
+              "reps": 12
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-27",
+      "date": "2026-04-27",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/27/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 6
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Barbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 8
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 12
+            },
+            {
+              "weight": 115.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Neutral Grip Lat Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 95.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Romanian Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 155.0,
+              "reps": 12
+            },
+            {
+              "weight": 155.0,
+              "reps": 12
+            },
+            {
+              "weight": 155.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Seated Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 14
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell 3 Point Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Cable Crossover",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 15
+            },
+            {
+              "weight": 20.0,
+              "reps": 15
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 360.0,
+              "reps": 12
+            },
+            {
+              "weight": 380.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Overhead Tricep Extension",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 27.5,
+              "reps": 15
+            },
+            {
+              "weight": 30.0,
+              "reps": 15
+            }
+          ]
+        },
+        {
+          "name": "Lying Leg Raises",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 8
+            },
+            {
+              "reps": 9
+            },
+            {
+              "reps": 6
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-04-29",
+      "date": "2026-04-29",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (4/29/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 220.0,
+              "reps": 10
+            },
+            {
+              "weight": 220.0,
+              "reps": 8
+            },
+            {
+              "weight": 220.0,
+              "reps": 8
+            },
+            {
+              "weight": 220.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 8
+            },
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Shoulder Shrug",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 165.0,
+              "reps": 15
+            },
+            {
+              "weight": 165.0,
+              "reps": 12
+            },
+            {
+              "weight": 165.0,
+              "reps": 12
+            },
+            {
+              "weight": 165.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bulgarian Split Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Cable Standing Incline Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 23.0,
+              "reps": 10
+            },
+            {
+              "weight": 23.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Standing Arnold Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Parallel Bar Dip",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Sit Up",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 16
+            },
+            {
+              "reps": 8
+            },
+            {
+              "reps": 5
+            },
+            {
+              "reps": 4
+            },
+            {
+              "reps": 2
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-01",
+      "date": "2026-05-01",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Mixed (5/1/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 12
+            },
+            {
+              "weight": 135.0,
+              "reps": 12
+            },
+            {
+              "weight": 135.0,
+              "reps": 12
+            },
+            {
+              "weight": 135.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Leg Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 284.0,
+              "reps": 12
+            },
+            {
+              "weight": 284.0,
+              "reps": 12
+            },
+            {
+              "weight": 284.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Seated Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 90.0,
+              "reps": 12
+            },
+            {
+              "weight": 90.0,
+              "reps": 12
+            },
+            {
+              "weight": 90.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 85.0,
+              "reps": 12
+            },
+            {
+              "weight": 85.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Lat Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Prone Lying Hamstring Curl Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 105.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Alternating Dumbbell Hammer Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 32.5,
+              "reps": 14
+            },
+            {
+              "weight": 32.5,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Skull Crusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 32.5,
+              "reps": 14
+            },
+            {
+              "weight": 32.5,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Medicine Ball Russian Twist",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 12
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-04",
+      "date": "2026-05-04",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Upper (5/4/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Dumbbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 8
+            },
+            {
+              "weight": 50.0,
+              "reps": 5
+            },
+            {
+              "weight": 65.0,
+              "reps": 12
+            },
+            {
+              "weight": 65.0,
+              "reps": 10
+            },
+            {
+              "weight": 65.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Cable Seated Single Arm Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Seated Overhead Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Pull Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 100.0,
+              "reps": 10
+            },
+            {
+              "weight": 100.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Cable Lateral Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 10.0,
+              "reps": 10
+            },
+            {
+              "weight": 10.0,
+              "reps": 7
+            },
+            {
+              "weight": 10.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Cable Rope Standing Tricep Extension",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 11
+            },
+            {
+              "weight": 50.0,
+              "reps": 7
+            },
+            {
+              "weight": 50.0,
+              "reps": 6
+            },
+            {
+              "weight": 30.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 9
+            },
+            {
+              "weight": 30.0,
+              "reps": 6
+            },
+            {
+              "weight": 20.0,
+              "reps": 7
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-05",
+      "date": "2026-05-05",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Lower (5/5/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Box Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 185.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Romanian Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 165.0,
+              "reps": 12
+            },
+            {
+              "weight": 175.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Step Ups",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "TRX Lateral Lunge",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 12
+            },
+            {
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Single Leg Seated Leg Extension Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 380.0,
+              "reps": 12
+            },
+            {
+              "weight": 380.0,
+              "reps": 12
+            },
+            {
+              "weight": 380.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Lying Leg Raises",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Bicycle Crunch",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 34
+            },
+            {
+              "reps": 25
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-07",
+      "date": "2026-05-07",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Upper (5/7/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Dumbbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Seated Row Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 43.0,
+              "reps": 12
+            },
+            {
+              "weight": 43.0,
+              "reps": 12
+            },
+            {
+              "weight": 43.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Alternating Standing Dumbbell Shoulder Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 32.5,
+              "reps": 12
+            },
+            {
+              "weight": 32.5,
+              "reps": 10
+            },
+            {
+              "weight": 32.5,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Lat Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 90.0,
+              "reps": 15
+            },
+            {
+              "weight": 90.0,
+              "reps": 15
+            },
+            {
+              "weight": 90.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Standing Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 15
+            },
+            {
+              "weight": 20.0,
+              "reps": 15
+            },
+            {
+              "weight": 20.0,
+              "reps": 15
+            }
+          ]
+        },
+        {
+          "name": "Cable Face Pull",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 15
+            },
+            {
+              "weight": 30.0,
+              "reps": 15
+            },
+            {
+              "weight": 30.0,
+              "reps": 15
+            }
+          ]
+        },
+        {
+          "name": "Barbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 15
+            },
+            {
+              "weight": 45.0,
+              "reps": 17
+            }
+          ]
+        },
+        {
+          "name": "Cable Rope Overhead Tricep Extension",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Cable Split Stance Pallof Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 15.0,
+              "reps": 12
+            },
+            {
+              "weight": 20.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Push Up",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 17
+            },
+            {
+              "reps": 13
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-09",
+      "date": "2026-05-09",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Lower (5/9/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Box Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 135.0,
+              "reps": 10
+            },
+            {
+              "weight": 195.0,
+              "reps": 12
+            },
+            {
+              "weight": 195.0,
+              "reps": 12
+            },
+            {
+              "weight": 195.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Barbell Romanian Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 185.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 12
+            },
+            {
+              "weight": 185.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Step Ups",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 12
+            },
+            {
+              "weight": 40.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "TRX Lateral Lunge",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 12
+            },
+            {
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Single Leg Seated Leg Extension Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Standing Calf Raise Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 380.0,
+              "reps": 12
+            },
+            {
+              "weight": 380.0,
+              "reps": 12
+            },
+            {
+              "weight": 380.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Lying Leg Raises",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 12
+            },
+            {
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Bicycle Crunch",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 27
+            },
+            {
+              "reps": 20
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-11",
+      "date": "2026-05-11",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Upper (5/11/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Dumbbell Incline Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 10
+            },
+            {
+              "weight": 50.0,
+              "reps": 5
+            },
+            {
+              "weight": 65.0,
+              "reps": 12
+            },
+            {
+              "weight": 65.0,
+              "reps": 10
+            },
+            {
+              "weight": 65.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Cable Seated Single Arm Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 47.0,
+              "reps": 12
+            },
+            {
+              "weight": 47.0,
+              "reps": 12
+            },
+            {
+              "weight": 47.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Seated Overhead Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 12
+            },
+            {
+              "weight": 45.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Pull Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 100.0,
+              "reps": 12
+            },
+            {
+              "weight": 80.0,
+              "reps": 12
+            },
+            {
+              "weight": 80.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Cable Lateral Raise",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 10.0,
+              "reps": 12
+            },
+            {
+              "weight": 10.0,
+              "reps": 9
+            },
+            {
+              "weight": 10.0,
+              "reps": 7
+            }
+          ]
+        },
+        {
+          "name": "Cable Rope Standing Tricep Extension",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 12
+            },
+            {
+              "weight": 50.0,
+              "reps": 8
+            },
+            {
+              "weight": 50.0,
+              "reps": 6
+            },
+            {
+              "weight": 30.0,
+              "reps": 6
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Bicep Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 30.0,
+              "reps": 9
+            },
+            {
+              "weight": 30.0,
+              "reps": 6
+            },
+            {
+              "weight": 20.0,
+              "reps": 5
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-12",
+      "date": "2026-05-12",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Lower (5/12/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Squat",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            },
+            {
+              "weight": 215.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Wall Sit",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 40
+            },
+            {
+              "weight": 40.0,
+              "reps": 40
+            },
+            {
+              "weight": 40.0,
+              "reps": 60
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Romanian Deadlift",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 85.0,
+              "reps": 12
+            },
+            {
+              "weight": 85.0,
+              "reps": 11
+            },
+            {
+              "weight": 85.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Lateral Lunge",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 50.0,
+              "reps": 11
+            },
+            {
+              "weight": 50.0,
+              "reps": 4
+            },
+            {
+              "weight": 50.0,
+              "reps": 5
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Walking Lunge",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 12
+            },
+            {
+              "weight": 35.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Hanging Leg Raise",
+          "kind": "reps",
+          "sets": [
+            {
+              "reps": 10
+            },
+            {
+              "reps": 11
+            },
+            {
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Single Leg Seated Leg Extension Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 55.0,
+              "reps": 12
+            },
+            {
+              "weight": 55.0,
+              "reps": 11
+            },
+            {
+              "weight": 55.0,
+              "reps": 10
+            }
+          ]
+        },
+        {
+          "name": "Seated Calf Raise Machine",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 105.0,
+              "reps": 12
+            },
+            {
+              "weight": 130.0,
+              "reps": 12
+            },
+            {
+              "weight": 140.0,
+              "reps": 12
+            }
+          ]
+        },
+        {
+          "name": "Medicine Ball Russian Twist",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 10
+            },
+            {
+              "weight": 20.0,
+              "reps": 10
+            },
+            {
+              "weight": 20.0,
+              "reps": 10
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    },
+    {
+      "id": "wlog-2026-05-14",
+      "date": "2026-05-14",
+      "start": "",
+      "end": "",
+      "duration_min": null,
+      "name": "Imported \u2014 Upper (5/14/2026)",
+      "rpe": "",
+      "notes": "Imported from Body Composition Tracker.xlsx Workout Log.",
+      "exercises": [
+        {
+          "name": "Barbell Bench Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 95.0,
+              "reps": 10
+            },
+            {
+              "weight": 135.0,
+              "reps": 4
+            },
+            {
+              "weight": 145.0,
+              "reps": 12
+            },
+            {
+              "weight": 145.0,
+              "reps": 11
+            },
+            {
+              "weight": 145.0,
+              "reps": 8
+            }
+          ]
+        },
+        {
+          "name": "Alternating Dumbbell Seated Arnold Press",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 7
+            },
+            {
+              "weight": 30.0,
+              "reps": 12
+            },
+            {
+              "weight": 25.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Machine Assisted Chin Up",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 80.0,
+              "reps": 15
+            },
+            {
+              "weight": 70.0,
+              "reps": 15
+            },
+            {
+              "weight": 70.0,
+              "reps": 11
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Single Arm Row",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 45.0,
+              "reps": 8
+            },
+            {
+              "weight": 40.0,
+              "reps": 10
+            },
+            {
+              "weight": 40.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Cable Standing Incline Chest Fly",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 20.0,
+              "reps": 14
+            },
+            {
+              "weight": 20.0,
+              "reps": 10
+            },
+            {
+              "weight": 20.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Cable Straight Arm Pulldown",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 40.0,
+              "reps": 15
+            },
+            {
+              "weight": 40.0,
+              "reps": 10
+            },
+            {
+              "weight": 40.0,
+              "reps": 9
+            }
+          ]
+        },
+        {
+          "name": "Dumbbell Zottman Curl",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 25.0,
+              "reps": 9
+            },
+            {
+              "weight": 20.0,
+              "reps": 11
+            },
+            {
+              "weight": 17.5,
+              "reps": 13
+            }
+          ]
+        },
+        {
+          "name": "Ez Bar Skullcrusher",
+          "kind": "weighted",
+          "sets": [
+            {
+              "weight": 60.0,
+              "reps": 12
+            },
+            {
+              "weight": 60.0,
+              "reps": 10
+            },
+            {
+              "weight": 60.0,
+              "reps": 9
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-05-15T14:00:37.684329"
+    }
+  ],
+  "exercise_lib": [
+    {
+      "name": "Barbell Squat",
+      "kind": "weighted",
+      "usage_count": 13,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Barbell Bench Press",
+      "kind": "weighted",
+      "usage_count": 9,
+      "last_used": "2026-05-14"
+    },
+    {
+      "name": "Machine Assisted Pull Up",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-11"
+    },
+    {
+      "name": "Barbell Bicep Curl",
+      "kind": "weighted",
+      "usage_count": 10,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Barbell Skull Crusher",
+      "kind": "weighted",
+      "usage_count": 5,
+      "last_used": "2026-03-15"
+    },
+    {
+      "name": "Ab Crunch Machine",
+      "kind": "weighted",
+      "usage_count": 6,
+      "last_used": "2026-04-01"
+    },
+    {
+      "name": "Barbell Deadlift",
+      "kind": "weighted",
+      "usage_count": 12,
+      "last_used": "2026-04-29"
+    },
+    {
+      "name": "Barbell Overhead Press",
+      "kind": "weighted",
+      "usage_count": 5,
+      "last_used": "2026-03-16"
+    },
+    {
+      "name": "Dumbbell Shrug",
+      "kind": "weighted",
+      "usage_count": 5,
+      "last_used": "2026-03-16"
+    },
+    {
+      "name": "Alt DB Hammer Curl",
+      "kind": "weighted",
+      "usage_count": 5,
+      "last_used": "2026-03-16"
+    },
+    {
+      "name": "Cable Tricep Pushdown",
+      "kind": "weighted",
+      "usage_count": 5,
+      "last_used": "2026-03-16"
+    },
+    {
+      "name": "Standing Calf Raise",
+      "kind": "weighted",
+      "usage_count": 6,
+      "last_used": "2026-04-01"
+    },
+    {
+      "name": "Barbell Rear Delt Row",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-03-15"
+    },
+    {
+      "name": "Barbell Incline Bench Press",
+      "kind": "weighted",
+      "usage_count": 7,
+      "last_used": "2026-04-27"
+    },
+    {
+      "name": "Barbell Bent Over Row",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-03-31"
+    },
+    {
+      "name": "Dumbbell Lateral Raise",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-03-31"
+    },
+    {
+      "name": "Alt DB Bicep Curl",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-03-31"
+    },
+    {
+      "name": "Weighted Suspended Dip",
+      "kind": "reps",
+      "usage_count": 4,
+      "last_used": "2026-03-31"
+    },
+    {
+      "name": "Prone Lying Hamstring Curl Machine",
+      "kind": "weighted",
+      "usage_count": 6,
+      "last_used": "2026-05-01"
+    },
+    {
+      "name": "Dumbbell Bench Press",
+      "kind": "weighted",
+      "usage_count": 8,
+      "last_used": "2026-05-04"
+    },
+    {
+      "name": "Machine Assisted Chin Up",
+      "kind": "weighted",
+      "usage_count": 8,
+      "last_used": "2026-05-14"
+    },
+    {
+      "name": "Dumbbell Standing Shoulder Press",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-04-02"
+    },
+    {
+      "name": "Cable Rope Tricep Pushdown",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-04-02"
+    },
+    {
+      "name": "Seated Hamstring Curl Machine",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-04-02"
+    },
+    {
+      "name": "Neutral Grip Lat Pulldown",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-04-27"
+    },
+    {
+      "name": "Dumbbell Romanian Deadlift",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Dumbbell Seated Shoulder Press",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-04-27"
+    },
+    {
+      "name": "Dumbbell 3 Point Row",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-04-27"
+    },
+    {
+      "name": "Dumbbell Bicep Curl",
+      "kind": "weighted",
+      "usage_count": 8,
+      "last_used": "2026-05-11"
+    },
+    {
+      "name": "Dumbbell Standing Overhead Tricep Extension",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-04-27"
+    },
+    {
+      "name": "Barbell Shoulder Shrug",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-04-29"
+    },
+    {
+      "name": "Dumbbell Bulgarian Split Squat",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-04-29"
+    },
+    {
+      "name": "Cable Standing Incline Chest Fly",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-05-14"
+    },
+    {
+      "name": "Dumbbell Standing Arnold Press",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-04-29"
+    },
+    {
+      "name": "Parallel Bar Dip",
+      "kind": "reps",
+      "usage_count": 3,
+      "last_used": "2026-04-29"
+    },
+    {
+      "name": "Sit Up",
+      "kind": "reps",
+      "usage_count": 3,
+      "last_used": "2026-04-29"
+    },
+    {
+      "name": "Leg Press",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-01"
+    },
+    {
+      "name": "Cable Seated Row",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-01"
+    },
+    {
+      "name": "Barbell Shoulder Press",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-01"
+    },
+    {
+      "name": "Dumbbell Chest Fly",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-01"
+    },
+    {
+      "name": "Lat Pulldown",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Alternating Dumbbell Hammer Curl",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-01"
+    },
+    {
+      "name": "Dumbbell Skull Crusher",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-01"
+    },
+    {
+      "name": "Medicine Ball Russian Twist",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Barbell Romanian Deadlift",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-05-09"
+    },
+    {
+      "name": "Cable Crossover",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-04-27"
+    },
+    {
+      "name": "Standing Calf Raise Machine",
+      "kind": "weighted",
+      "usage_count": 4,
+      "last_used": "2026-05-09"
+    },
+    {
+      "name": "Lying Leg Raises",
+      "kind": "reps",
+      "usage_count": 4,
+      "last_used": "2026-05-09"
+    },
+    {
+      "name": "Cable Seated Single Arm Row",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-11"
+    },
+    {
+      "name": "Dumbbell Seated Overhead Press",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-11"
+    },
+    {
+      "name": "Cable Lateral Raise",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-11"
+    },
+    {
+      "name": "Cable Rope Standing Tricep Extension",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-11"
+    },
+    {
+      "name": "Barbell Box Squat",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-09"
+    },
+    {
+      "name": "Dumbbell Step Ups",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-09"
+    },
+    {
+      "name": "TRX Lateral Lunge",
+      "kind": "reps",
+      "usage_count": 2,
+      "last_used": "2026-05-09"
+    },
+    {
+      "name": "Single Leg Seated Leg Extension Machine",
+      "kind": "weighted",
+      "usage_count": 3,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Bicycle Crunch",
+      "kind": "reps",
+      "usage_count": 2,
+      "last_used": "2026-05-09"
+    },
+    {
+      "name": "Dumbbell Incline Bench Press",
+      "kind": "weighted",
+      "usage_count": 2,
+      "last_used": "2026-05-11"
+    },
+    {
+      "name": "Seated Row Machine",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Alternating Standing Dumbbell Shoulder Press",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Cable Standing Chest Fly",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Cable Face Pull",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Cable Rope Overhead Tricep Extension",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Cable Split Stance Pallof Press",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Push Up",
+      "kind": "reps",
+      "usage_count": 1,
+      "last_used": "2026-05-07"
+    },
+    {
+      "name": "Dumbbell Wall Sit",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Dumbbell Lateral Lunge",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Dumbbell Walking Lunge",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Hanging Leg Raise",
+      "kind": "reps",
+      "usage_count": 1,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Seated Calf Raise Machine",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-12"
+    },
+    {
+      "name": "Alternating Dumbbell Seated Arnold Press",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-14"
+    },
+    {
+      "name": "Dumbbell Single Arm Row",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-14"
+    },
+    {
+      "name": "Cable Straight Arm Pulldown",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-14"
+    },
+    {
+      "name": "Dumbbell Zottman Curl",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-14"
+    },
+    {
+      "name": "Ez Bar Skullcrusher",
+      "kind": "weighted",
+      "usage_count": 1,
+      "last_used": "2026-05-14"
+    }
+  ],
+  "weighins": [],
+  "meta": []
+}
