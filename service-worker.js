@@ -1,6 +1,6 @@
 // Body Composition Tracker — Service Worker
 // Bump CACHE_VERSION to force a fresh cache after deploying new HTML/CSS/JS.
-const CACHE_VERSION = 'bc-v3';
+const CACHE_VERSION = 'bc-v4';
 const CORE_ASSETS = [
   './',
   './index.html',

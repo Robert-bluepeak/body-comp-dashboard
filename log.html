@@ -81,10 +81,36 @@
   .toast.show { opacity:1; }
 
   .history-card { background:var(--surface); border:1px solid var(--surface2); border-radius:12px; padding:0.9rem 1rem; margin-bottom:0.8rem; }
-  .history-card .h-top { display:flex; justify-content:space-between; align-items:baseline; }
+  .history-card .h-body { cursor:pointer; padding:0.1rem 0; }
+  .history-card .h-body:hover { color:var(--accent); }
+  .history-card .h-top { display:flex; justify-content:space-between; align-items:baseline; gap:0.5rem; }
   .history-card .h-name { font-weight:600; font-size:0.95rem; }
-  .history-card .h-date { font-size:0.78rem; color:var(--muted); }
+  .history-card .h-date { font-size:0.78rem; color:var(--muted); white-space:nowrap; }
   .history-card .h-meta { font-size:0.78rem; color:var(--muted); margin-top:0.25rem; }
+
+  /* Read-only review panel */
+  .review-back { background:transparent; border:none; color:var(--accent); font-size:0.9rem; cursor:pointer; padding:0.3rem 0; margin-bottom:0.6rem; font-family:inherit; }
+  .review-header { background:var(--surface); border:1px solid var(--surface2); border-radius:12px; padding:1rem 1.1rem; margin-bottom:1rem; }
+  .review-name { font-size:1.15rem; font-weight:700; margin-bottom:0.35rem; }
+  .review-meta { font-size:0.82rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:0.4rem 0.7rem; }
+  .review-meta .dot { color:var(--surface2); }
+  .review-rpe-pill { display:inline-block; background:var(--surface2); color:var(--text); padding:0.15rem 0.55rem; border-radius:6px; font-size:0.75rem; font-weight:600; text-transform:capitalize; }
+  .review-notes { margin-top:0.7rem; font-size:0.85rem; color:var(--muted); line-height:1.45; padding-top:0.6rem; border-top:1px solid var(--surface2); }
+
+  .review-ex { background:var(--surface); border:1px solid var(--surface2); border-radius:12px; padding:0.9rem 1rem; margin-bottom:0.7rem; }
+  .review-ex-head { display:flex; justify-content:space-between; align-items:baseline; gap:0.6rem; margin-bottom:0.5rem; }
+  .review-ex-name { font-weight:600; font-size:0.98rem; }
+  .review-ex-best { color:var(--accent); font-size:0.78rem; font-variant-numeric: tabular-nums; white-space:nowrap; }
+  .review-set { display:grid; grid-template-columns: 28px 1fr 70px; align-items:baseline; padding:0.3rem 0; font-variant-numeric: tabular-nums; font-size:0.92rem; border-bottom:1px solid var(--surface2); }
+  .review-set:last-child { border-bottom:none; }
+  .review-set .rs-num { color:var(--muted); font-size:0.78rem; }
+  .review-set .rs-val { }
+  .review-set .rs-e1rm { color:var(--accent); font-size:0.78rem; text-align:right; }
+
+  .review-actions { display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1rem; }
+  .review-actions button { flex:1 1 120px; padding:0.7rem; border-radius:8px; font-size:0.9rem; font-weight:600; cursor:pointer; font-family:inherit; border:1px solid var(--surface2); background:var(--bg); color:var(--text); }
+  .review-actions button.primary { background:var(--accent); color:#000; border-color:var(--accent); }
+  .review-actions button:hover { border-color:var(--accent); }
   .history-card .h-actions { display:flex; gap:0.5rem; margin-top:0.6rem; }
   .history-card .h-actions button { flex:1; background:var(--bg); color:var(--text); border:1px solid var(--surface2); border-radius:8px; padding:0.5rem; font-size:0.82rem; cursor:pointer; font-family:inherit; }
   .history-card .h-actions button.primary { background:var(--accent); color:#000; border-color:var(--accent); font-weight:700; }
@@ -611,20 +637,115 @@
       const exCount = w.exercises.length;
       const setCount = w.exercises.reduce((sum, ex) => sum + ex.sets.length, 0);
       card.innerHTML =
-        '<div class="h-top"><div class="h-name">' + escapeHtml(w.name) + '</div>' +
-        '<div class="h-date">' + w.date + '</div></div>' +
-        '<div class="h-meta">' + exCount + ' exercise' + (exCount === 1 ? '' : 's') +
-        ' · ' + setCount + ' set' + (setCount === 1 ? '' : 's') +
-        (w.duration_min ? ' · ' + w.duration_min + ' min' : '') +
-        (w.rpe ? ' · ' + w.rpe : '') + '</div>' +
+        '<div class="h-body" title="Tap to review">' +
+          '<div class="h-top"><div class="h-name">' + escapeHtml(w.name) + '</div>' +
+          '<div class="h-date">' + w.date + '</div></div>' +
+          '<div class="h-meta">' + exCount + ' exercise' + (exCount === 1 ? '' : 's') +
+          ' · ' + setCount + ' set' + (setCount === 1 ? '' : 's') +
+          (w.duration_min ? ' · ' + w.duration_min + ' min' : '') +
+          (w.rpe ? ' · ' + w.rpe : '') + '</div>' +
+        '</div>' +
         '<div class="h-actions">' +
-          '<button type="button" data-act="open">Open / edit</button>' +
+          '<button type="button" data-act="edit">Edit</button>' +
           '<button type="button" data-act="repeat" class="primary">Repeat ↻</button>' +
         '</div>';
-      card.querySelector('[data-act="open"]').addEventListener('click', () => loadForEdit(w.id));
+      card.querySelector('.h-body').addEventListener('click', () => renderReview(w.id));
+      card.querySelector('[data-act="edit"]').addEventListener('click', () => loadForEdit(w.id));
       card.querySelector('[data-act="repeat"]').addEventListener('click', () => repeatWorkout(w.id));
       list.appendChild(card);
     });
+  }
+
+  // Read-only review of a completed workout. Renders inside #view-history,
+  // replacing the saved-workouts list. Back button restores the list.
+  async function renderReview(id) {
+    const w = await BCDB.getWorkout(id);
+    if (!w) { toast('Workout not found'); return; }
+    const container = $('view-history');
+    container.innerHTML = '';
+
+    const back = document.createElement('button');
+    back.className = 'review-back';
+    back.type = 'button';
+    back.textContent = '← Back to history';
+    back.addEventListener('click', () => { container.innerHTML = ''; container.appendChild(rebuildHistoryShell()); renderHistoryList(); });
+    container.appendChild(back);
+
+    // Header
+    const header = document.createElement('div');
+    header.className = 'review-header';
+    const metaParts = [];
+    if (w.date) metaParts.push(w.date);
+    if (w.start && w.end) metaParts.push(w.start + ' – ' + w.end);
+    if (w.duration_min) metaParts.push(w.duration_min + ' min');
+    header.innerHTML =
+      '<div class="review-name">' + escapeHtml(w.name || '(no name)') + '</div>' +
+      '<div class="review-meta">' +
+        metaParts.map((p,i) => (i ? '<span class="dot">·</span>' : '') + '<span>' + escapeHtml(p) + '</span>').join('') +
+        (w.rpe ? (metaParts.length ? '<span class="dot">·</span>' : '') + '<span class="review-rpe-pill">' + escapeHtml(w.rpe) + '</span>' : '') +
+      '</div>' +
+      (w.notes ? '<div class="review-notes">' + escapeHtml(w.notes) + '</div>' : '');
+    container.appendChild(header);
+
+    // Exercises
+    (w.exercises || []).forEach((ex) => {
+      const card = document.createElement('div');
+      card.className = 'review-ex';
+
+      // Best e1RM across sets (weighted only)
+      let best = null;
+      if (ex.kind === 'weighted') {
+        for (const s of ex.sets || []) {
+          const v = BCDB.e1rm(s.weight, s.reps);
+          if (v && (best == null || v > best)) best = v;
+        }
+      }
+
+      const head = document.createElement('div');
+      head.className = 'review-ex-head';
+      head.innerHTML =
+        '<div class="review-ex-name">' + escapeHtml(ex.name) + '</div>' +
+        (best ? '<div class="review-ex-best">' + best + ' best e1RM</div>' : '');
+      card.appendChild(head);
+
+      (ex.sets || []).forEach((s, i) => {
+        const row = document.createElement('div');
+        row.className = 'review-set';
+        let val;
+        if (ex.kind === 'time') val = (s.seconds ?? '?') + ' sec';
+        else if (ex.kind === 'reps') val = (s.reps ?? '?') + ' reps';
+        else val = (s.weight ?? '?') + ' × ' + (s.reps ?? '?');
+        const e1 = (ex.kind === 'weighted') ? BCDB.e1rm(s.weight, s.reps) : null;
+        row.innerHTML =
+          '<div class="rs-num">' + (i + 1) + '.</div>' +
+          '<div class="rs-val">' + val + '</div>' +
+          '<div class="rs-e1rm">' + (e1 ? e1 + ' e1RM' : '') + '</div>';
+        card.appendChild(row);
+      });
+
+      container.appendChild(card);
+    });
+
+    // Actions
+    const actions = document.createElement('div');
+    actions.className = 'review-actions';
+    actions.innerHTML =
+      '<button type="button" data-act="edit">Edit</button>' +
+      '<button type="button" data-act="repeat" class="primary">Repeat ↻</button>';
+    actions.querySelector('[data-act="edit"]').addEventListener('click', () => loadForEdit(id));
+    actions.querySelector('[data-act="repeat"]').addEventListener('click', () => repeatWorkout(id));
+    container.appendChild(actions);
+
+    window.scrollTo(0, 0);
+  }
+
+  // Rebuilds the History view's static shell (card wrapping the saved-workouts list)
+  // after a review wipes the container's content.
+  function rebuildHistoryShell() {
+    const shell = document.createElement('div');
+    shell.className = 'card';
+    shell.innerHTML = '<h2>Saved workouts</h2><div id="historyList"></div>';
+    return shell;
   }
 
   // ---------- View toggle ----------
