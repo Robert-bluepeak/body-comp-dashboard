@@ -760,7 +760,35 @@
   async function exportData() {
     const payload = await BCDB.exportAll();
     const stamp = new Date().toISOString().slice(0, 10);
-    BCDB.downloadJSON('body-comp-export-' + stamp + '.json', payload);
+    const filename = 'body-comp-export-' + stamp + '.json';
+    const text = JSON.stringify(payload, null, 2);
+
+    // Prefer the Web Share API on platforms that support file sharing (iOS PWAs,
+    // modern Android, recent desktop Chrome on Windows). This pops the native
+    // share sheet so the user can pick OneDrive / AirDrop / Mail / Files in one
+    // tap, instead of a generic download dialog.
+    if (typeof navigator.canShare === 'function') {
+      try {
+        const file = new File([text], filename, { type: 'application/json' });
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            files: [file],
+            title: 'Body composition workout export',
+            text: (payload.workouts || []).length + ' workouts as of ' + stamp,
+          });
+          toast('Shared ✓');
+          return;
+        }
+      } catch (e) {
+        // AbortError = user dismissed the share sheet — silent, not an error.
+        if (e && e.name === 'AbortError') { toast('Share cancelled'); return; }
+        // Any other failure: fall through to download below.
+        console.warn('share() failed, falling back to download:', e);
+      }
+    }
+
+    // Fallback: traditional anchor-based download.
+    BCDB.downloadJSON(filename, payload);
     toast('Exported ✓');
   }
   function importData(file) {
