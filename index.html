@@ -237,10 +237,10 @@
 </div>
 <!-- BCC:END kpi-row -->
 <div class="projection-banner">
-<div><div class="big">~10 weeks</div><div class="label">to 14.5% BF (cut bottom)</div><div class="detail">DEXA 4/30: 19.7% / 173.27 lb / 139.16 Lean+BMC • DEXA pace ~1.08 lb fat/wk → ~10 wk to 14.5% cut bottom (~Jul 12) • cut-bottom BF reads 0.3–0.5pp low (dehydrated lean compartment)</div></div>
-<div><div style="font-size:1.5rem;font-weight:700;">163–169 lbs</div><div class="label">Derived weight band</div><div class="detail">Cut bottom ~163 (lean cut-suppressed) → steady state ~166–167 (lean recovered) • upper 169 = Nov 2025 peak Lean+BMC 143.74 fully restored</div></div>
+<div><div class="big">~6 weeks</div><div class="label">to 14.5% BF (cut bottom)</div><div class="detail">DEXA 4/30 anchor: 19.7% / 173.27 lb / 139.16 Lean+BMC • Wk 12 close 5/24: 18.4% RENPHO / 167.4 lb (−5.9 lb since 4/30 vs −1.08 lb/wk anchor projection of −3.4 lb — well ahead, which is why pace gets slowed). <strong>Plan REVISED 5/23 — lean-loss concern triggered refeed Mon 5/26 and tightened targets.</strong> Refeed Mon 5/26 → Wed 5/28 (3-day, 2,000–2,200 kcal); resume at slower 0.7–1.0 lb/wk pace. DEXA #7 6/4 will confirm. Cut-bottom BF reads 0.3–0.5pp low (dehydrated lean compartment).</div></div>
+<div><div style="font-size:1.5rem;font-weight:700;">161–166 lbs</div><div class="label">Derived weight band (revised 5/23)</div><div class="detail">Cut bottom 159–161 lb (was 162.5) → steady state 162.5–164 lb (was 166.5) • <strong>HARD FLOOR 162 lb</strong> until DEXA #7 reads. Supersedes the original 163–169 band.</div></div>
 <div><div style="font-size:1.5rem;font-weight:700;">14.5% → 15.0%</div><div class="label">Two-target plan</div><div class="detail">Cut to 14.5% BF (transient, Jul) → reverse 4–6 wk → 15.0% DEXA BF post-reverse-diet steady state (the actual goal)</div></div>
-<div><div style="font-size:1.5rem;font-weight:700;color:var(--green)">~Sep 7, 2026</div><div class="label">Steady-state target</div><div class="detail">Cut bottom ~Jul 12 (~162.5 lb @ 14.5%) → reverse → ~Sep 7 settle at ~166.5 lb @ 15.0% BF with lean recovered</div></div>
+<div><div style="font-size:1.5rem;font-weight:700;color:var(--green)">~Aug 4, 2026</div><div class="label">Steady-state target</div><div class="detail">Cut bottom ~Jul 5 (~160 lb @ 14.5%, revised from Jun 16 / 162.5) → reverse 4–6 wk → ~Aug 4 settle at ~163.25 lb @ 15.0% BF with lean recovered. <strong>Post-cut blood panel reminder moved Sep 15 → Aug 10.</strong></div></div>
 </div>
 <!-- FFMI Range Reference -->
 <div style="background:var(--card);border-radius:12px;padding:1.2rem 1.5rem;margin-bottom:1.5rem;border:1px solid var(--border);">
@@ -661,7 +661,7 @@ new Chart(document.getElementById('weightBfChart'),{type:'line',data:{labels:wee
 ]},options:{responsive:true,scales:{y:{position:'left',title:{display:true,text:'lbs'},min:165,max:180,grid:{color:'#1e293b'}},y1:{position:'right',title:{display:true,text:'BF%'},min:17,max:23,grid:{drawOnChartArea:false}}}}});
 
 // Dual-axis grouped variant — independent scales make each component's trend equally visible
-new Chart(document.getElementById('compChart_inline'),{type:'bar',data:{labels:['Baseline','Wk 4 (DEXA)','Wk 5','Wk 6 (Italy)','Wk 7','Wk 8','Wk 9 (DEXA)','Wk 10 (close)','Wk 11 (running)'],datasets:[
+new Chart(document.getElementById('compChart_inline'),{type:'bar',data:{labels:['Baseline','Wk 4 (DEXA)','Wk 5','Wk 6 (Italy)','Wk 7','Wk 8','Wk 9 (DEXA)','Wk 10 (close)','Wk 11 (close)','Wk 12 (close)'],datasets:[
   /* BCC:BEGIN compChart-inline-data */
 {label:'Lean+BMC (left axis)',data:[139.0,137.5,137.8,138.2,138.5,138.8,139.16,139.30,138.04,137.27],backgroundColor:'#4ade80',borderRadius:4,yAxisID:'yL'},
   {label:'Fat Mass (right axis)',data:[39.1,38.7,38.5,38.8,37.0,36.7,34.07,32.67,31.96,30.95],backgroundColor:'#f87171',borderRadius:4,yAxisID:'yR'}
@@ -799,29 +799,29 @@ new Chart(document.getElementById('journeyChartDetail'),{type:'line',data:{datas
 /* Two targets: cut to 14.5% DEXA BF (gives rebound room), then reverse-diet to settle at 15% steady state. Cut bottom understates true BF by 0.3-0.5pp due to lean dehydration/glycogen depletion. */
 new Chart(document.getElementById('projectionChart'),{type:'line',data:{datasets:[
   /* PRIMARY — BF% projection trajectory through cut and reverse */
-  {label:'BF% (projected)',data:[{x:'2026-05-01',y:20.0},{x:'2026-05-17',y:18.8},{x:'2026-06-01',y:16.5},{x:'2026-06-16',y:14.5},{x:'2026-06-30',y:14.7},{x:'2026-07-21',y:15.0}],borderColor:'#4ade80',backgroundColor:'rgba(74,222,128,0.12)',fill:true,tension:.3,pointRadius:6,borderWidth:3,yAxisID:'y'},
+  {label:'BF% (projected)',data:[{x:'2026-05-01',y:20.0},{x:'2026-05-17',y:18.8},{x:'2026-06-01',y:16.5},{x:'2026-07-05',y:14.5},{x:'2026-07-20',y:14.7},{x:'2026-08-04',y:15.0}],borderColor:'#4ade80',backgroundColor:'rgba(74,222,128,0.12)',fill:true,tension:.3,pointRadius:6,borderWidth:3,yAxisID:'y'},
   /* ACTUAL — today's BF% (RENPHO) — green to match the projected BF% line */
   /* BCC:BEGIN projection-current-bf */
 {label:'Actual BF% today (RENPHO)',data:[{x:'2026-05-24',y:18.4}],borderColor:'#4ade80',backgroundColor:'#4ade80',pointRadius:9,pointHoverRadius:11,pointStyle:'circle',pointBorderColor:'#fff',pointBorderWidth:2,showLine:false,yAxisID:'y'}
   /* BCC:END projection-current-bf */,
   /* 14.5% cut-bottom target (transient) */
-  {label:'14.5% Cut Bottom',data:[{x:'2026-05-01',y:14.5},{x:'2026-07-21',y:14.5}],borderColor:'#fb923c',borderDash:[8,4],pointRadius:0,borderWidth:2,yAxisID:'y'},
+  {label:'14.5% Cut Bottom',data:[{x:'2026-05-01',y:14.5},{x:'2026-08-04',y:14.5}],borderColor:'#fb923c',borderDash:[8,4],pointRadius:0,borderWidth:2,yAxisID:'y'},
   /* 15.0% steady-state goal (post-reverse) */
-  {label:'15.0% Steady-State Goal',data:[{x:'2026-05-01',y:15},{x:'2026-07-21',y:15}],borderColor:'#facc15',borderDash:[10,5],pointRadius:0,borderWidth:2.5,yAxisID:'y'},
+  {label:'15.0% Steady-State Goal',data:[{x:'2026-05-01',y:15},{x:'2026-08-04',y:15}],borderColor:'#facc15',borderDash:[10,5],pointRadius:0,borderWidth:2.5,yAxisID:'y'},
   /* DERIVED — Weight projection */
-  {label:'Weight projected (derived)',data:[{x:'2026-05-01',y:173.6},{x:'2026-05-10',y:170.0},{x:'2026-05-17',y:169.2},{x:'2026-06-01',y:166.0},{x:'2026-06-16',y:162.5},{x:'2026-06-30',y:164.5},{x:'2026-07-21',y:166.5}],borderColor:'#38bdf8',tension:.3,pointRadius:5,borderDash:[2,4],yAxisID:'y1'},
+  {label:'Weight projected (derived)',data:[{x:'2026-05-01',y:173.6},{x:'2026-05-10',y:170.0},{x:'2026-05-17',y:169.2},{x:'2026-06-01',y:166.0},{x:'2026-07-05',y:160},{x:'2026-07-20',y:162},{x:'2026-08-04',y:163.25}],borderColor:'#38bdf8',tension:.3,pointRadius:5,borderDash:[2,4],yAxisID:'y1'},
   /* ACTUAL — today's weight (RENPHO) — cyan to match the projected weight line */
   /* BCC:BEGIN projection-current-weight */
 {label:'Actual Weight today (RENPHO)',data:[{x:'2026-05-24',y:167.4}],borderColor:'#38bdf8',backgroundColor:'#38bdf8',pointRadius:9,pointHoverRadius:11,pointStyle:'rectRot',pointBorderColor:'#fff',pointBorderWidth:2,showLine:false,yAxisID:'y1'}
 /* BCC:END projection-current-weight */,
   /* Goal weight band UPPER (Nov 2025 peak Lean+BMC recovered) */
-  {label:'Goal wt band upper (peak lean)',data:[{x:'2026-05-01',y:169},{x:'2026-07-21',y:169}],borderColor:'#38bdf855',borderDash:[5,5],pointRadius:0,fill:'+1',backgroundColor:'rgba(56,189,248,0.08)',yAxisID:'y1'},
+  {label:'Goal wt band upper (revised steady-state)',data:[{x:'2026-05-01',y:166},{x:'2026-08-04',y:166}],borderColor:'#38bdf855',borderDash:[5,5],pointRadius:0,fill:'+1',backgroundColor:'rgba(56,189,248,0.08)',yAxisID:'y1'},
   /* Goal weight band LOWER (cut-suppressed lean) */
-  {label:'Goal wt band lower (cut-suppressed lean)',data:[{x:'2026-05-01',y:163},{x:'2026-07-21',y:163}],borderColor:'#38bdf855',borderDash:[5,5],pointRadius:0,yAxisID:'y1'},
+  {label:'Goal wt band lower (revised cut-bottom)',data:[{x:'2026-05-01',y:161},{x:'2026-08-04',y:161}],borderColor:'#38bdf855',borderDash:[5,5],pointRadius:0,yAxisID:'y1'},
   /* DEXA #7 — Jun 4 vertical reference line (spans BF% axis) */
   {label:'DEXA #7 (Jun 4)',data:[{x:'2026-06-04',y:13},{x:'2026-06-04',y:22}],borderColor:'#a78bfa',backgroundColor:'#a78bfa',borderWidth:2,borderDash:[4,4],pointRadius:[0,0],showLine:true,fill:false,yAxisID:'y'},
   /* DEXA #7 expected BF% landing point on the projection line */
-  {label:'DEXA #7 expected (~17.3% / ~167 lb)',data:[{x:'2026-06-04',y:17.3}],borderColor:'#fff',backgroundColor:'#a78bfa',pointRadius:8,pointHoverRadius:10,pointStyle:'star',pointBorderWidth:2,showLine:false,yAxisID:'y'},
+  {label:'DEXA #7 expected (~17.5% / ~168 lb, post-refeed)',data:[{x:'2026-06-04',y:17.5}],borderColor:'#fff',backgroundColor:'#a78bfa',pointRadius:8,pointHoverRadius:10,pointStyle:'star',pointBorderWidth:2,showLine:false,yAxisID:'y'},
   /* Waist (tertiary) — projected trajectory */
   {label:'Waist (in)',data:[
     // CLEANEST FIX ACTIVE (5/11/2026): forward-looking projection only.
@@ -831,13 +831,13 @@ new Chart(document.getElementById('projectionChart'),{type:'line',data:{datasets
     //   ORIGINAL projection (pre-smoothing): {x:'2026-06-01',y:32.0}
     {x:'2026-05-01',y:32.63},     // Wk 9 close — projection start anchor
     {x:'2026-06-01',y:31.6},      // smoothed midpoint (physiologically fit; original was 32.0)
-    {x:'2026-06-16',y:30.4},      // cut bottom @ 14.5% BF
-    {x:'2026-06-30',y:30.5},      // reverse diet midpoint
-    {x:'2026-07-21',y:30.7}       // steady state @ 15.0% BF
+    {x:'2026-07-05',y:30.4},      // cut bottom @ 14.5% BF
+    {x:'2026-07-20',y:30.5},      // reverse diet midpoint
+    {x:'2026-08-04',y:30.7}       // steady state @ 15.0% BF
   ],borderColor:'#f87171',tension:.3,pointRadius:3,borderDash:[3,3],yAxisID:'y2'},
-  /* ACTUAL — most recent waist measurement (Wk 11 close, 5/17) — red square to match the projected waist line */
+  /* ACTUAL — most recent waist measurement (Wk 12 close, 5/24) — red square to match the projected waist line */
   {label:'Actual Waist (most recent, Wk 12 close)',data:[{x:'2026-05-24',y:31.41}],borderColor:'#f87171',backgroundColor:'#f87171',pointRadius:9,pointHoverRadius:11,pointStyle:'rect',pointBorderColor:'#fff',pointBorderWidth:2,showLine:false,yAxisID:'y2'}
-]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8'}},title:{display:true,text:'Two-target plan: cut to 14.5% BF (Jul) → reverse to 15.0% steady state (Sep). Green ● = today\'s BF%, cyan ◆ = today\'s weight, red ■ = most-recent waist (Wk 10 close), purple dashed line + ★ = scheduled DEXA #7 (Jun 4).',color:'#facc15',font:{size:12}}},scales:{x:{type:'time',time:{unit:'month',displayFormats:{month:'MMM d'},tooltipFormat:'MMM d, yyyy'},min:'2026-05-01',max:'2026-07-21',grid:{color:'#1e293b'},ticks:{color:'#94a3b8',source:'auto'}},y:{position:'left',title:{display:true,text:'BF%',color:'#4ade80',font:{weight:'bold'}},min:13,max:22,grid:{color:'#1e293b'},ticks:{color:'#4ade80',callback:function(v){return v+'%';}}},y1:{position:'right',title:{display:true,text:'Weight (lbs)',color:'#38bdf8'},min:158,max:180,grid:{drawOnChartArea:false},ticks:{color:'#38bdf8'}},y2:{position:'right',title:{display:false},min:30,max:33,grid:{drawOnChartArea:false},ticks:{display:false},display:false}}}});
+]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8'}},title:{display:true,text:'Two-target plan: cut to 14.5% BF (~Jul 5) → reverse to 15.0% steady state (~Aug 4). Green ● = today\'s BF%, cyan ◆ = today\'s weight, red ■ = most-recent waist (Wk 12 close, 5/24), purple dashed line + ★ = scheduled DEXA #7 (Jun 4).',color:'#facc15',font:{size:12}}},scales:{x:{type:'time',time:{unit:'month',displayFormats:{month:'MMM d'},tooltipFormat:'MMM d, yyyy'},min:'2026-05-01',max:'2026-08-04',grid:{color:'#1e293b'},ticks:{color:'#94a3b8',source:'auto'}},y:{position:'left',title:{display:true,text:'BF%',color:'#4ade80',font:{weight:'bold'}},min:13,max:22,grid:{color:'#1e293b'},ticks:{color:'#4ade80',callback:function(v){return v+'%';}}},y1:{position:'right',title:{display:true,text:'Weight (lbs)',color:'#38bdf8'},min:158,max:180,grid:{drawOnChartArea:false},ticks:{color:'#38bdf8'}},y2:{position:'right',title:{display:false},min:30,max:33,grid:{drawOnChartArea:false},ticks:{display:false},display:false}}}});
 
 /* === PROJECTION CHART: OPTION D (two-target) END === */
 
