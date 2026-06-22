@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-24T18:01:15",
+  "generated_at": "2026-06-21T19:04:44",
   "since": "2025-04-14",
   "max_width": 600,
   "jpeg_quality": 85,
-  "count": 53,
+  "count": 57,
   "photos": [
     {
       "date": "2025-04-14",
@@ -269,6 +269,26 @@
       "date": "2026-05-24",
       "src": "body-pics/front/2026-05-24.jpg",
       "source_filename": "2026-05-24.jpg"
+    },
+    {
+      "date": "2026-05-31",
+      "src": "body-pics/front/2026-05-31.jpg",
+      "source_filename": "IMG_2121.jpg"
+    },
+    {
+      "date": "2026-06-07",
+      "src": "body-pics/front/2026-06-07.jpg",
+      "source_filename": "IMG_2177.jpg"
+    },
+    {
+      "date": "2026-06-15",
+      "src": "body-pics/front/2026-06-15.jpg",
+      "source_filename": "IMG_2332.jpg"
+    },
+    {
+      "date": "2026-06-21",
+      "src": "body-pics/front/2026-06-21.jpg",
+      "source_filename": "IMG_2325.jpg"
     }
   ]
 }
