@@ -800,9 +800,10 @@ new Chart(document.getElementById('journeyChartDetail'),{type:'line',data:{datas
 /* === PROJECTION CHART: OPTION D (two-target reframe, 2026-05-05) — 14.5% cut bottom → 15% steady state. OPTION A backup preserved below === */
 /* Two targets: cut to 14.5% DEXA BF (gives rebound room), then reverse-diet to settle at 15% steady state. Cut bottom understates true BF by 0.3-0.5pp due to lean dehydration/glycogen depletion. */
 new Chart(document.getElementById('projectionChart'),{type:'line',data:{datasets:[
-  /* BF% TRAJECTORY — DEXA anchors + today + projection forward */
-  {label:'BF% (DEXA + today + projection)',
+  /* BF% TRAJECTORY — Wk 0 baseline + DEXA anchors + today + projection forward */
+  {label:'BF% (Wk 0 + DEXA + today + projection)',
    data:[
+     {x:'2026-02-23',y:22.0},   /* Wk 0 baseline (RENPHO) */
      {x:'2026-03-26',y:22.3},   /* DEXA #5 */
      {x:'2026-04-30',y:19.7},   /* DEXA #6 */
      {x:'2026-06-04',y:18.4},   /* DEXA #7 */
@@ -813,17 +814,18 @@ new Chart(document.getElementById('projectionChart'),{type:'line',data:{datasets
      {x:'2026-10-19',y:15.0}    /* STEADY-STATE target */
    ],
    borderColor:'#4ade80',backgroundColor:'rgba(74,222,128,0.08)',fill:false,tension:0.3,
-   pointRadius:[6,6,6,9,5,9,5,9],
-   pointBackgroundColor:['#a78bfa','#a78bfa','#a78bfa','#4ade80','#4ade80','#fb923c','#4ade80','#facc15'],
-   pointStyle:['star','star','star','circle','circle','rectRot','circle','rectRot'],
+   pointRadius:[6,8,8,8,9,5,9,5,9],
+   pointBackgroundColor:['#4ade80','#a78bfa','#a78bfa','#a78bfa','#4ade80','#4ade80','#fb923c','#4ade80','#facc15'],
+   pointStyle:['circle','star','star','star','circle','circle','rectRot','circle','rectRot'],
    pointBorderColor:'#fff',pointBorderWidth:2,borderWidth:3,yAxisID:'y'},
 
-  /* WEIGHT TRAJECTORY — DEXA anchors + today + projection forward */
-  {label:'Weight (DEXA + today + projection, lb)',
+  /* WEIGHT TRAJECTORY — Wk 0 baseline + DEXA anchors + today + projection forward */
+  {label:'Weight (Wk 0 + DEXA + today + projection, lb)',
    data:[
-     {x:'2026-03-26',y:177.0},
-     {x:'2026-04-30',y:173.3},
-     {x:'2026-06-04',y:169.94},
+     {x:'2026-02-23',y:178.1},  /* Wk 0 baseline */
+     {x:'2026-03-26',y:177.0},  /* DEXA #5 */
+     {x:'2026-04-30',y:173.3},  /* DEXA #6 */
+     {x:'2026-06-04',y:169.94}, /* DEXA #7 */
      {x:'2026-06-28',y:168.2},  /* TODAY */
      {x:'2026-08-15',y:163.5},
      {x:'2026-09-14',y:161.0},  /* CUT-BOTTOM */
@@ -831,10 +833,29 @@ new Chart(document.getElementById('projectionChart'),{type:'line',data:{datasets
      {x:'2026-10-19',y:164.0}   /* STEADY-STATE */
    ],
    borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.08)',borderDash:[4,4],fill:false,tension:0.3,
-   pointRadius:[6,6,6,9,5,9,5,9],
-   pointBackgroundColor:['#a78bfa','#a78bfa','#a78bfa','#38bdf8','#38bdf8','#fb923c','#38bdf8','#facc15'],
-   pointStyle:['star','star','star','rectRot','circle','rectRot','circle','rectRot'],
+   pointRadius:[6,8,8,8,9,5,9,5,9],
+   pointBackgroundColor:['#38bdf8','#a78bfa','#a78bfa','#a78bfa','#38bdf8','#38bdf8','#fb923c','#38bdf8','#facc15'],
+   pointStyle:['rectRot','star','star','star','rectRot','circle','rectRot','circle','rectRot'],
    pointBorderColor:'#fff',pointBorderWidth:2,borderWidth:2,yAxisID:'y1'},
+
+  /* WAIST TRAJECTORY — Wk 0 baseline + tape closes near DEXA dates + today + projection forward */
+  {label:'Waist (Wk 0 + closes + projection, in)',
+   data:[
+     {x:'2026-02-23',y:34.21},  /* Wk 0 baseline */
+     {x:'2026-03-29',y:33.81},  /* Wk 4 close — nearest tape to DEXA #5 */
+     {x:'2026-05-03',y:32.63},  /* Wk 9 close — nearest tape to DEXA #6 */
+     {x:'2026-06-07',y:31.22},  /* Wk 14 close — nearest tape to DEXA #7 */
+     {x:'2026-06-28',y:31.22},  /* TODAY — Wk 17 close */
+     {x:'2026-08-15',y:30.3},   /* projected mid-cut */
+     {x:'2026-09-14',y:29.7},   /* CUT-BOTTOM */
+     {x:'2026-10-05',y:29.9},
+     {x:'2026-10-19',y:30.2}    /* STEADY-STATE */
+   ],
+   borderColor:'#f87171',backgroundColor:'rgba(248,113,113,0.08)',borderDash:[3,3],fill:false,tension:0.3,
+   pointRadius:[6,6,6,6,9,5,9,5,9],
+   pointBackgroundColor:['#f87171','#f87171','#f87171','#f87171','#f87171','#f87171','#fb923c','#f87171','#facc15'],
+   pointStyle:['rect','rect','rect','rect','rect','circle','rectRot','circle','rectRot'],
+   pointBorderColor:'#fff',pointBorderWidth:2,borderWidth:2,yAxisID:'y2'},
 
   /* 14.5% CUT-BOTTOM reference line */
   {label:'14.5% cut-bottom target',
@@ -855,7 +876,7 @@ options:{
   responsive:true,
   plugins:{
     legend:{position:'bottom',labels:{usePointStyle:true,padding:14,color:'#94a3b8',font:{size:11}}},
-    title:{display:true,text:'Cut to 14.5% BF (~Sep 14) → reverse to 15.0% steady-state (~Oct 19). \u2605 = DEXA actual. \u25CF/\u25C6 = today. \u25C6 = milestone.',color:'#facc15',font:{size:12}}
+    title:{display:true,text:'Cut to 14.5% BF (~Sep 14) \u2192 reverse to 15.0% steady-state (~Oct 19). \u2605 = DEXA actual. \u25CF/\u25C6/\u25A0 = Wk 0 + today. Orange \u25C6 = cut-bottom milestone. Yellow \u25C6 = steady-state milestone.',color:'#facc15',font:{size:12}}
   },
   scales:{
     x:{type:'time',time:{unit:'month',displayFormats:{month:'MMM'},tooltipFormat:'MMM d, yyyy'},
@@ -864,7 +885,9 @@ options:{
        min:13,max:23,grid:{color:'#1e293b'},
        ticks:{color:'#4ade80',callback:function(v){return v+'%';}}},
     y1:{position:'right',title:{display:true,text:'Weight (lb)',color:'#38bdf8',font:{weight:'bold',size:13}},
-        min:158,max:180,grid:{drawOnChartArea:false},ticks:{color:'#38bdf8'}}
+        min:158,max:180,grid:{drawOnChartArea:false},ticks:{color:'#38bdf8'}},
+    y2:{position:'right',title:{display:true,text:'Waist (in)',color:'#f87171',font:{weight:'bold',size:12}},
+        min:29,max:35,grid:{drawOnChartArea:false},ticks:{color:'#f87171',callback:function(v){return v.toFixed(1)+'"';}}}
   }
 }});
 
