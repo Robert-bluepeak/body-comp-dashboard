@@ -385,7 +385,7 @@
     At your caloric deficit, you have less recovery headroom than someone at maintenance — so catching early warning signs matters more.
     RPE trending upward for the same weight/reps is another subtle signal that fatigue is accumulating before performance actually drops.
     <br/><br/>
-<strong>Data loaded:</strong> 50 sessions (Feb 24 – Aug 26), Recomp Phase 1 (P1): 10 sessions · Recomp Phase 2 (P2): 9 sessions · Recomp Phase 3 (P3): 9 sessions · Toned/Forge P0: 5 sessions · Toned/Forge P1: 7 sessions · Full Body Split (FB): 11 sessions (8/3 FB A #1 → 8/26 FB B #4 → 9/1 FB A #4 — 7 consecutive rounds posting broad PR sweeps: 7/7/8/8/11/7/8 PRs).
+<strong>Data loaded:</strong> 52 sessions (Feb 24 – Sep 5), Recomp Phase 1 (P1): 10 sessions · Recomp Phase 2 (P2): 9 sessions · Recomp Phase 3 (P3): 9 sessions · Toned/Forge P0: 5 sessions · Toned/Forge P1: 7 sessions · Full Body Split (FB): 12 sessions (8/3 FB A #1 → 9/1 FB A #4 → 9/5 FB B #4 — 8 consecutive rounds posting broad PR sweeps: 7/7/8/8/11/7/8/5 PRs).
   </p>
 </div>
 </div>
@@ -650,15 +650,15 @@ const bfWeekly = [22,22,22,22,22.3,21.5,21.7,21.1,20.2,19.7,19.0,18.8,18.4,18.3,
 new Chart(document.getElementById('weightBfChart'),{type:'line',data:{labels:weeks,datasets:[
   {label:'Avg Weight',data:avgWeights,borderColor:'#38bdf8',backgroundColor:'rgba(56,189,248,0.1)',fill:true,tension:.3,pointRadius:5,pointBackgroundColor:'#38bdf8',yAxisID:'y'},
   {label:'Body Fat % (DEXA-cal., interp.)',data:bfWeekly,borderColor:'#f87171',tension:.3,pointRadius:5,pointBackgroundColor:'#f87171',borderDash:[5,3],yAxisID:'y1'}
-]},options:{responsive:true,scales:{y:{position:'left',title:{display:true,text:'lbs'},min:165,max:180,grid:{color:'#1e293b'}},y1:{position:'right',title:{display:true,text:'BF%'},min:17,max:23,grid:{drawOnChartArea:false}}}}});
+]},options:{responsive:true,scales:{y:{position:'left',title:{display:true,text:'lbs'},min:158,max:180,grid:{color:'#1e293b'}},y1:{position:'right',title:{display:true,text:'BF%'},min:14,max:23,grid:{drawOnChartArea:false}}}}});
 
 // Dual-axis grouped variant — independent scales make each component's trend equally visible
-new Chart(document.getElementById('compChart_inline'),{type:'bar',data:{labels:['Baseline','Wk 4 (DEXA)','Wk 5','Wk 6 (Italy)','Wk 7','Wk 8','Wk 9 (DEXA)','Wk 10 (close)','Wk 11 (close)','Wk 12 (close)','Wk 13 (running)'],datasets:[
+new Chart(document.getElementById('compChart_inline'),{type:'bar',data:{labels:['Baseline','Wk 4 (DEXA)','Wk 5','Wk 6 (Italy)','Wk 7','Wk 8','Wk 9 (DEXA)','Wk 10 (close)','Wk 11 (close)','Wk 12 (close)','Wk 13 (close)','Wk 14 (DEXA #7)','Wk 15 (close)','Wk 16 (close)','Wk 17 (close)','Wk 18 (open)','Wk 19','Wk 20','Wk 21 (close)','Wk 22 (close)','Wk 23','Wk 24','Wk 25','Wk 26','Wk 27 (close)'],datasets:[
   /* BCC:BEGIN compChart-inline-data */
 {label:'Lean+BMC (left axis)',data:[139.0,137.5,137.8,138.2,138.5,138.8,139.16,139.30,138.04,137.27,136.16,138.63,137.24,136.59,137.08,137.07,null,null,137.55,137.06,136.81,136.92,137.25,136.58,136.76,135.09],backgroundColor:'#4ade80',borderRadius:4,yAxisID:'yL'},
   {label:'Fat Mass (right axis)',data:[39.1,38.7,38.5,38.8,37.0,36.7,34.07,32.67,31.96,30.95,30.50,31.31,30.13,31.01,31.32,31.73,null,null,32.05,31.74,31.05,31.31,31.78,30.88,31.11,29.11],backgroundColor:'#f87171',borderRadius:4,yAxisID:'yR'}
 /* BCC:END compChart-inline-data */
-]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8'}}},scales:{x:{grid:{color:'#1e293b'}},yL:{position:'left',title:{display:true,text:'Lean+BMC (lb)',color:'#4ade80'},min:135,max:141,grid:{color:'#1e293b'},ticks:{color:'#4ade80'}},yR:{position:'right',title:{display:true,text:'Fat (lb)',color:'#f87171'},min:30,max:42,grid:{drawOnChartArea:false},ticks:{color:'#f87171'}}}}});
+]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8'}}},scales:{x:{grid:{color:'#1e293b'}},yL:{position:'left',title:{display:true,text:'Lean+BMC (lb)',color:'#4ade80'},min:132,max:141,grid:{color:'#1e293b'},ticks:{color:'#4ade80'}},yR:{position:'right',title:{display:true,text:'Fat (lb)',color:'#f87171'},min:28,max:42,grid:{drawOnChartArea:false},ticks:{color:'#f87171'}}}}});
 
 /* BCC:BEGIN body-measurement-charts */
 const mW = ['Wk 0','Wk 3','Wk 4','Wk 5','Wk 6','Wk 7','Wk 8','Wk 9','Wk 10','Wk 11','Wk 12','Wk 13','Wk 14','Wk 16','Wk 17','Wk 22','Wk 23','Wk 24','Wk 25','Wk 26','Wk 27'];
@@ -750,7 +750,7 @@ new Chart(document.getElementById('journeyChartFull'),{type:'line',data:{dataset
   {label:'_startLine',data:[{x:'2022-01-15',y:165},{x:'2022-01-15',y:240}],borderColor:'#4ade80',borderDash:[5,5],borderWidth:2,pointRadius:0,showLine:true,fill:false},
   {label:'_endLine',data:[{x:'2026-09-06',y:165},{x:'2026-09-06',y:240}],borderColor:'#38bdf8',borderDash:[5,5],borderWidth:2,pointRadius:0,showLine:true,fill:false},
   {label:'Key Moments',data:[peak2008,low2014,peak2021,current],pointRadius:8,pointBackgroundColor:['#f87171','#4ade80','#f87171','#38bdf8'],pointBorderColor:'#fff',pointBorderWidth:2,pointStyle:['circle','circle','circle','star'],showLine:false,pointHoverRadius:10}
-]},options:{responsive:true,plugins:{legend:{display:true,position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8',filter:function(item){return item.text==='Monthly Avg Weight'||item.text==='Intentional Effort (Jan 2022–Present)';}}},tooltip:{filter:function(item){return !item.dataset.label.startsWith('_')&&item.dataset.label!=='Intentional Effort (Jan 2022–Present)';},callbacks:{title:function(items){const d=items[0].raw.x;const dt=new Date(d+'T12:00:00');return dt.toLocaleDateString('en-US',{year:'numeric',month:'short'});},label:function(item){return item.raw.y+' lbs';}}}},scales:{x:{type:'time',time:{unit:'year',displayFormats:{year:'yyyy'}},grid:{color:'#1e293b'},ticks:{color:'#94a3b8',maxRotation:0}},y:{title:{display:true,text:'Weight (lbs)',color:'#94a3b8'},min:165,max:240,grid:{color:'#1e293b'},ticks:{color:'#94a3b8'}}}}});
+]},options:{responsive:true,plugins:{legend:{display:true,position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8',filter:function(item){return item.text==='Monthly Avg Weight'||item.text==='Intentional Effort (Jan 2022–Present)';}}},tooltip:{filter:function(item){return !item.dataset.label.startsWith('_')&&item.dataset.label!=='Intentional Effort (Jan 2022–Present)';},callbacks:{title:function(items){const d=items[0].raw.x;const dt=new Date(d+'T12:00:00');return dt.toLocaleDateString('en-US',{year:'numeric',month:'short'});},label:function(item){return item.raw.y+' lbs';}}}},scales:{x:{type:'time',time:{unit:'year',displayFormats:{year:'yyyy'}},grid:{color:'#1e293b'},ticks:{color:'#94a3b8',maxRotation:0}},y:{title:{display:true,text:'Weight (lbs)',color:'#94a3b8'},min:158,max:240,grid:{color:'#1e293b'},ticks:{color:'#94a3b8'}}}}});
 
 // ═══ DETAIL CHART (Apr 2025–Present, daily) ═══
 /* BCC:BEGIN det-arrays */
@@ -778,14 +778,14 @@ const bfData = [
 ];
 /* BCC:END bf-trend-chart-data */
 // DEXA scan markers
-const dexaDates = ['2025-05-27','2025-09-15','2025-10-06','2025-11-12','2025-12-17','2026-02-26','2026-03-26','2026-04-30'];
+const dexaDates = ['2025-05-27','2025-09-15','2025-10-06','2025-11-12','2025-12-17','2026-02-26','2026-03-26','2026-04-30','2026-06-04','2026-07-31','2026-08-29'];
 const dexaData = dexaDates.map(d=>{const pt=detData.find(p=>p.x===d); return pt||{x:d,y:null};});
 new Chart(document.getElementById('journeyChartDetail'),{type:'line',data:{datasets:[
   {label:'Daily Weight',data:detData,borderColor:'rgba(56,189,248,0.35)',tension:0,pointRadius:2,pointBackgroundColor:'rgba(56,189,248,0.5)',borderWidth:1,yAxisID:'y'},
   {label:'7-Day Moving Avg',data:ma7,borderColor:'#38bdf8',tension:.3,pointRadius:0,borderWidth:2.5,yAxisID:'y'},
   {label:'BF% (DEXA + RENPHO)',data:bfData,borderColor:'#f87171',tension:.3,pointRadius:5,pointBackgroundColor:'#f87171',borderDash:[5,3],borderWidth:2,yAxisID:'y1'},
   {label:'DEXA Scans',data:dexaData.filter(d=>d.y!==null),pointRadius:10,pointBackgroundColor:'#f87171',pointBorderColor:'#fff',pointBorderWidth:2,pointStyle:'rectRot',showLine:false,yAxisID:'y'}
-]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8'}},tooltip:{callbacks:{title:function(items){const d=items[0].raw.x;const dt=new Date(d+'T12:00:00');return dt.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});},label:function(item){if(item.dataset.label.includes('BF')) return item.raw.y+'%'; return item.raw.y+' lbs';}}}},scales:{x:{type:'time',time:{unit:'month',displayFormats:{month:'MMM yyyy'}},grid:{color:'#1e293b'},ticks:{color:'#94a3b8',maxRotation:45}},y:{position:'left',title:{display:true,text:'Weight (lbs)',color:'#94a3b8'},min:160,max:200,grid:{color:'#1e293b'},ticks:{color:'#94a3b8'}},y1:{position:'right',title:{display:true,text:'Body Fat %',color:'#f87171'},min:18,max:33,grid:{drawOnChartArea:false},ticks:{color:'#f87171',callback:function(v){return v+'%';}}}}}});
+]},options:{responsive:true,plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:12,color:'#94a3b8'}},tooltip:{callbacks:{title:function(items){const d=items[0].raw.x;const dt=new Date(d+'T12:00:00');return dt.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'});},label:function(item){if(item.dataset.label.includes('BF')) return item.raw.y+'%'; return item.raw.y+' lbs';}}}},scales:{x:{type:'time',time:{unit:'month',displayFormats:{month:'MMM yyyy'}},grid:{color:'#1e293b'},ticks:{color:'#94a3b8',maxRotation:45}},y:{position:'left',title:{display:true,text:'Weight (lbs)',color:'#94a3b8'},min:158,max:200,grid:{color:'#1e293b'},ticks:{color:'#94a3b8'}},y1:{position:'right',title:{display:true,text:'Body Fat %',color:'#f87171'},min:14,max:32,grid:{drawOnChartArea:false},ticks:{color:'#f87171',callback:function(v){return v+'%';}}}}}});
 } // end initJourneyCharts
 
 /* === PROJECTION CHART: OPTION D (two-target reframe, 2026-05-05) — 14.5% cut bottom → 15% steady state. OPTION A backup preserved below === */
