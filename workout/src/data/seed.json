@@ -1,0 +1,3525 @@
+{
+ "schema": 1,
+ "generatedAt": "2026-09-10T22:19:24",
+ "source": "Body Composition Tracker.xlsx :: Workout Log",
+ "cutoff": "2026-08-01",
+ "stats": {
+  "sessions": 14,
+  "sets": 284,
+  "workingSets": 233,
+  "skippedRows": 0
+ },
+ "renamed": {
+  "Band Assisted Pull Up": "Band-Assisted Pull-up",
+  "Barbell Back Squat": "Back Squat",
+  "Barbell Bench Press": "Barbell Bench Press",
+  "Barbell Deadlift": "Barbell Deadlift",
+  "Barbell Overhead Press": "Standing Barbell OHP",
+  "Cable Rope Standing Overhead Tricep Extension": "Rope Overhead Tricep Extension",
+  "Cable Straight Bar Tricep Pushdown": "Cable Tricep Pushdown",
+  "Close Grip Lat Pulldown": "Close-Grip Lat Pulldown",
+  "Dumbbell Incline Bench Press": "DB Incline Bench Press",
+  "Dumbbell Incline Bicep Curl": "DB Incline Curl",
+  "Dumbbell Incline Row": "Chest-Supported DB Row",
+  "Dumbbell Lateral Raise": "DB Lateral Raise",
+  "Dumbbell Tricep Extension": "Overhead Tricep Extension",
+  "Lever Squat Machine — BSS": "Bulgarian Split Squat (lever)",
+  "Machine Assisted Pull Up": "Assisted Pull-up"
+ },
+ "sessions": [
+  {
+   "id": "seed-2026-08-03",
+   "date": "2026-08-03",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Back Squat",
+     "sourceName": "Barbell Back Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 135,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 185,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top set; first squat session since 5/12 (83-day gap); re-entry load below 5/12 top of 215",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 155,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Back-off working set",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 155,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Back-off working set; fatigue endpoint",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Bench Press",
+     "sourceName": "Dumbbell Incline Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 40,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 65,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; matches 5/21 top load (65 lb); reps 5 vs 5/21 top of 12 — re-entry rep drop after 74-day gap",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 55,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Wide Grip Lat Pulldown",
+     "sourceName": "Wide Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 70,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup; new Kalos naming variant (vs prior \"Lat Pulldown\" / \"Neutral Grip Lat Pulldown\")",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 85,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 113",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 85,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 105",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Hamstring Curl Machine",
+     "sourceName": "Seated Hamstring Curl Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 60,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup; first \"Seated\" (not \"Prone Lying\") hamstring curl session since 4/2 — different machine per Kalos label",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 85,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 108",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 85,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 85,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest-Supported DB Row",
+     "sourceName": "Dumbbell Incline Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 27.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "New exercise baseline; working",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 27.5,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Seated Back Supported Shoulder Press",
+     "sourceName": "Dumbbell Seated Back Supported Shoulder Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 27.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "New Kalos naming variant vs prior \"Dumbbell Seated Shoulder Press\" / \"Dumbbell Seated Overhead Press\"; working baseline",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 27.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Rope Overhead Tricep Extension",
+     "sourceName": "Cable Rope Standing Overhead Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 35,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Superset w/ Cable Bicep Curl; new Kalos naming (combines Standing + Overhead labels)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 35,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Bicep Curl",
+     "sourceName": "Cable Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Superset w/ Cable Rope Overhead Tricep Extension; new exercise (vs prior \"Dumbbell Bicep Curl\" and \"Cable Single Arm Standing Bicep Curl\")",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-05",
+   "date": "2026-08-05",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Bench Press",
+     "sourceName": "Barbell Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 95,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 135,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top set; first BB Bench since 5/31 (66-day gap); re-entry load — 5/31 top was 145×12 (e1RM 203)",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 125,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 125,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; fatigue endpoint",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Kickstand RDL w/ Wall",
+     "sourceName": "DB Kickstand RDL w/ Wall",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 35,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "New exercise baseline; unilateral hinge with wall support; per-side load 35 lb; working",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 35,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Band-Assisted Pull-up",
+     "sourceName": "Band Assisted Pull Up",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 0,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Bodyweight; new Kalos naming variant (vs prior 'Machine Assisted Pull Up' — band-assisted rig, no assist weight logged); working",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 0,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Bodyweight; working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Leg Extension Machine",
+     "sourceName": "Seated Leg Extension Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 75,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "New Kalos naming variant (vs prior 'Single Leg Seated Leg Extension Machine' — bilateral not unilateral); working; e1RM 100",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 80,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 107",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Row Machine",
+     "sourceName": "Seated Row Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 43,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; second Seated Row Machine session (prior 5/7, 5/21); load 43 lb per-side or per Kalos label; e1RM 56",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 43,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Lateral Raise",
+     "sourceName": "Dumbbell Lateral Raise",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 15,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; first DB Lateral Raise since 6/20 (46-day gap); 6/20 top load 20×12",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 15,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Tricep Pushdown",
+     "sourceName": "Cable Straight Bar Tricep Pushdown",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Alternating Dumbbell Bicep Curl; new Kalos naming variant (vs prior 'Cable Bar Tricep Pushdown' / 'Cable Rope Tricep Pushdown'); working",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 45,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Alternating Dumbbell Bicep Curl",
+     "sourceName": "Alternating Dumbbell Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 25,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Straight Bar Tricep Pushdown; return to 'Alt DB Bicep Curl' naming (last appeared 3/31); working",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 25,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-08",
+   "date": "2026-08-08",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Deadlift",
+     "sourceName": "Barbell Deadlift",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 135,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 185,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 205,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top set; first Deadlift since 4/29 (101-day gap); re-entry load — 4/29 top was 220×10 (Weight PR); Kalos e1RM 239",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 155,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; Kalos e1RM 207",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Standing Barbell OHP",
+     "sourceName": "Barbell Overhead Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 75,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; first OHP since 6/20 (49-day gap); load matched 6/20 top (75×10) at 9 reps; Kalos e1RM 98",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 75,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; Kalos e1RM 95",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Bulgarian Split Squat",
+     "sourceName": "Dumbbell Bulgarian Split Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; load matched 4/29 PR (50×12); reps 12→10 vs pre-gap; Kalos e1RM 67",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; Kalos e1RM 67",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest Fly Machine",
+     "sourceName": "Chest Fly Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup; new Kalos naming variant (vs prior \"Dumbbell Chest Fly\" / \"Cable Standing Chest Fly\")",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 70,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; Kalos e1RM 93",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 70,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; Kalos e1RM 93",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Close-Grip Lat Pulldown",
+     "sourceName": "Close Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 85,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; new Kalos naming variant (vs prior \"Wide Grip Lat Pulldown\" / \"Neutral Grip Lat Pulldown\"); Kalos e1RM 113",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; Kalos e1RM 120",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Wide Grip Seated Row",
+     "sourceName": "Cable Wide Grip Seated Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 90,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; new Kalos naming variant (vs prior \"Cable Seated Row\" / \"Seated Row Machine\"); Kalos e1RM 120",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; Kalos e1RM 114",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Lying Dumbbell Tricep Extension",
+     "sourceName": "Lying Dumbbell Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Dumbbell Incline Bicep Curl; new exercise / new Kalos naming variant (skullcrusher pattern); Kalos e1RM 67",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; working; Kalos e1RM 80",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Curl",
+     "sourceName": "Dumbbell Incline Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 20,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Lying Dumbbell Tricep Extension; new Kalos naming variant (vs prior \"Dumbbell Bicep Curl\"); Kalos e1RM 27",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 22.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; working; Kalos e1RM 30",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-10",
+   "date": "2026-08-10",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Back Squat",
+     "sourceName": "Barbell Back Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 135,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 155,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 4,
+       "weight": 185,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; matches 8/3 top (185×5, e1RM 216); load flat, no gain vs FB A #1",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 155,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Back-off working; e1RM 207 — up from 8/3 back-off 155×10 (207) — matched, then improved rep quality",
+       "warmup": false
+      },
+      {
+       "setNum": 6,
+       "weight": 155,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Back-off working; e1RM 207 — 2nd rep-matched back-off (vs 8/3 second back-off 155×8) = +2 reps at same load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Bench Press",
+     "sourceName": "Dumbbell Incline Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 40,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 55,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 73; different loading vs 8/3 (65×5, e1RM 76) — higher volume, lighter top",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 55,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 70",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Wide Grip Lat Pulldown",
+     "sourceName": "Wide Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 85,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 113 — matches 8/3 top; skipped warmup this session vs 8/3 (70×8)",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 85,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 113; +3 reps at same load vs 8/3 second set (85×7)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Hamstring Curl Machine",
+     "sourceName": "Seated Hamstring Curl Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 85,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 113 (Weight PR — up from 8/3 top 85×8, e1RM 108); +2 reps at same load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 85,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 111; skipped warmup and reduced set count 4→2 vs 8/3",
+       "warmup": true
+      }
+     ]
+    },
+    {
+     "name": "Chest-Supported DB Row",
+     "sourceName": "Dumbbell Incline Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 27.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 37 — matches 8/3 top; second FB A appearance",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 27.5,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 33; reps 6 vs 8/3 second set (8) — mild rep drop on set 2",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Seated Back Supported Shoulder Press",
+     "sourceName": "Dumbbell Seated Back Supported Shoulder Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 32.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 43 — Weight PR vs 8/3 (27.5×10, e1RM 37); +5 lb load / same reps = +16% e1RM",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 32.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 43 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Rope Overhead Tricep Extension",
+     "sourceName": "Cable Rope Standing Overhead Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 35,
+       "reps": 11,
+       "rir": null,
+       "rpe": null,
+       "notes": "Superset w/ Cable Bicep Curl; e1RM 48 (Rep PR — up from 8/3 top 35×8, e1RM 44); +3 reps at same load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 35,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 47",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Bicep Curl",
+     "sourceName": "Cable Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Superset w/ Cable Rope Overhead Tricep Ext; e1RM 42 (Rep PR — up from 8/3 top 30×9, e1RM 39); +3 reps at same load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 42 — 2nd set matched at PR reps",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-12",
+   "date": "2026-08-12",
+   "day": null,
+   "legacyLabel": "FB B round 2",
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Bench Press",
+     "sourceName": "Barbell Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 95,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 145,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 169 (Weight PR — up from 8/5 top 135×7 e1RM 167, +1.2%); FB B round 2",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 115,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 153 (vs 8/5 back-off 125×6 e1RM 150, +2%); +4 reps at 10 lb lighter",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 115,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 150 (vs 8/5 second back-off 125×5 e1RM 146, +3%); +4 reps",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Kickstand RDL w/ Wall",
+     "sourceName": "DB Kickstand RDL w/ Wall",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 60 — Weight PR up from 8/5 (35×10 e1RM 47), +28%",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 60 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Band-Assisted Pull-up",
+     "sourceName": "Band Assisted Pull Up",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 0,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Bodyweight; working; matches 8/5 top (12 reps)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 0,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Bodyweight; working; Rep PR set 2 — +4 reps vs 8/5 (8)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Leg Extension Machine",
+     "sourceName": "Seated Leg Extension Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 85,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 113 — Weight PR up from 8/5 top 80×10 e1RM 107, +6%",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 120 — Weight PR set 2 (+10 lb vs 8/5 top)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Row Machine",
+     "sourceName": "Seated Row Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 43,
+       "reps": 11,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 59 — Rep PR up from 8/5 top 43×9 e1RM 56, +5%; +2 reps at same load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 43,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 53 — matches 8/5 second set (43×6 e1RM 52)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Lateral Raise",
+     "sourceName": "Dumbbell Lateral Raise",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 17.5,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 25 — Weight PR up from 8/5 (15×12 e1RM 21), +19%",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 17.5,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 23 — set 2 at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Tricep Pushdown",
+     "sourceName": "Cable Straight Bar Tricep Pushdown",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Alt DB Bicep Curl; e1RM 67 — Weight PR up from 8/5 (45×10 e1RM 60), +12%",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; working; e1RM 67 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Alternating Dumbbell Bicep Curl",
+     "sourceName": "Alternating Dumbbell Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 25,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Straight Bar Tri Pushdown; e1RM 33 — Rep PR up from 8/5 (25×8 e1RM 32); +2 reps at same load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 25,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; working; e1RM 33 — 2nd set matched at Rep PR",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-14",
+   "date": "2026-08-14",
+   "day": null,
+   "legacyLabel": "FB C round 2",
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Deadlift",
+     "sourceName": "Barbell Deadlift",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 135,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 185,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 215,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 251 (Weight PR — up from 8/8 top 205×5 e1RM 239, +5%); FB C round 2",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 165,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 220 (Weight PR — up from 8/8 back-off 155×10 e1RM 207, +6%); +10 lb at same reps",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Standing Barbell OHP",
+     "sourceName": "Barbell Overhead Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 65,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 85,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 111 (Weight PR — up from 8/8 top 75×9 e1RM 98, +13%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 85,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 102 (Weight PR — up from 8/8 75×8 e1RM 95, +7%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Bulgarian Split Squat",
+     "sourceName": "Dumbbell Bulgarian Split Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 55,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 73 (Weight PR — up from 8/8 top 50×10 e1RM 67, +9%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 55,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 70 (Weight PR — 8/8 set 2 was 50×10 e1RM 67)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest Fly Machine",
+     "sourceName": "Chest Fly Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 80,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 107 (Weight PR — up from 8/8 top 70×10 e1RM 93, +15%); +10 lb at same reps; skipped warmup vs 8/8",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 85,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 113 (Weight PR — set 2 heavier; +21% vs 8/8 top)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Close-Grip Lat Pulldown",
+     "sourceName": "Close Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 95,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 127 (Weight PR — up from 8/8 top 90×10 e1RM 120, +6%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 95,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 127 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Wide Grip Seated Row",
+     "sourceName": "Cable Wide Grip Seated Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 90,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 111 — !! RECOVERY ALERT vs 8/8 top 90×10 e1RM 120, -8%; likely late-session fatigue (7th exercise, after DL top)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 108 vs 8/8 set 2 90×8 e1RM 114, -5%; fatigue signal continues",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Lying Dumbbell Tricep Extension",
+     "sourceName": "Lying Dumbbell Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ DB Incline Bicep Curl; e1RM 80 — matches 8/8 top (60×10)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 80 — 2nd set matched top",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Curl",
+     "sourceName": "Dumbbell Incline Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 27.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Lying DB Tricep Ext; e1RM 37 (Weight PR — up from 8/8 top 22.5×10 e1RM 30, +23%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 27.5,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 35 (Weight PR — vs 8/8 set 1 20×10 e1RM 27, +30%)",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-17",
+   "date": "2026-08-17",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Back Squat",
+     "sourceName": "Barbell Back Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 135,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 185,
+       "reps": 2,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 4,
+       "weight": 195,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 228 (Weight PR — up from 8/10 top 185×5 e1RM 216, +5.6%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 165,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 220 (Weight PR — up from 8/10 back-off 155×10 e1RM 207, +6.3%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 6,
+       "weight": 165,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 220 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Bench Press",
+     "sourceName": "Dumbbell Incline Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 40,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 80 (Weight PR — up from 8/10 top 55×10 e1RM 73, +9.6%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 80 — 2nd set matched at PR load (vs 8/10 set 2 55×8 e1RM 70, +14%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Wide Grip Lat Pulldown",
+     "sourceName": "Wide Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 60,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 120 (Weight PR — up from 8/10 top 85×10 e1RM 113, +6.2%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 90,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 117 (Weight PR — vs 8/10 set 2 85×10 e1RM 113, +3.3%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Hamstring Curl Machine",
+     "sourceName": "Seated Hamstring Curl Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 90,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 120 (Weight PR — up from 8/10 top 85×10 e1RM 113, +6.2%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 95,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 127 (Weight PR — set 2 heavier still; +12% vs 8/10 top; matches historical 4/2 peak load 95×12=133 e1RM within Recomp Phase 5)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest-Supported DB Row",
+     "sourceName": "Dumbbell Incline Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 40 (Weight PR — up from 8/10 top 27.5×10 e1RM 37, +8.1%); +2.5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 40 — 2nd set matched at PR load (vs 8/10 set 2 27.5×6 e1RM 33, +21%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Seated Back Supported Shoulder Press",
+     "sourceName": "Dumbbell Seated Back Supported Shoulder Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 37.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 50 (Weight PR — up from 8/10 top 32.5×10 e1RM 43, +16.3%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 37.5,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 50 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Rope Overhead Tricep Extension",
+     "sourceName": "Cable Rope Standing Overhead Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 35,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Bicep Curl; e1RM 49 (Rep PR — up from 8/10 top 35×11 e1RM 48, +2.1%); matched weight, +1 rep",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 35,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 49 — 2nd set matched Rep PR (vs 8/10 set 2 35×10 e1RM 47, +5%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Bicep Curl",
+     "sourceName": "Cable Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 35,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Rope Standing OH Tri Ext; e1RM 49 (Weight PR — up from 8/10 top 30×12 e1RM 42, +16.7%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 35,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 49 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-19",
+   "date": "2026-08-19",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Bench Press",
+     "sourceName": "Barbell Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 135,
+       "reps": 3,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 150,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 175 (Weight PR — up from 8/12 top 145×5 e1RM 169, +3.6%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 120,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 160",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 120,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 156",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Kickstand RDL w/ Wall",
+     "sourceName": "DB Kickstand RDL w/ Wall",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 67 (Weight PR — up from 8/12 top 45×10 e1RM 60, +11%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 50,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 67 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Assisted Pull-up",
+     "sourceName": "Machine Assisted Pull Up",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 80,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 112 — new exercise variant (was \"Band Assisted Pull Up\" 8/5, 8/12); reps only prior",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 75,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 98 — assist decreased (harder) from set 1",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Leg Extension Machine",
+     "sourceName": "Seated Leg Extension Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 95,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 133 (Weight PR — up from 8/12 top 80×10 e1RM 107, +24%); +15 lb",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 100,
+       "reps": 14,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 147 (Weight PR — set 2 heavier still; +23% vs 8/12 set 2 90×10 e1RM 120)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Row Machine",
+     "sourceName": "Seated Row Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 53,
+       "reps": 11,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 72 (Weight PR — up from 8/12 top 43×11 e1RM 56, +29%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 53,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 64 — reps drop at PR load, still +14% e1RM vs 8/12 set 2 43×9 e1RM 56",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Lateral Raise",
+     "sourceName": "Dumbbell Lateral Raise",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 20,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 28 (Weight PR — up from 8/12 top 17.5×12 e1RM 24, +14%); +2.5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 20,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 26 — matched 8/12 set 2 reps (17.5×9) at higher load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Tricep Pushdown",
+     "sourceName": "Cable Straight Bar Tricep Pushdown",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 55,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Alt DB Bicep Curl; e1RM 77 (Weight PR — up from 8/12 top 50×10 e1RM 67, +15%); +5 lb, +2 reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 60,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 76 (Weight PR — +5 lb again, set 2 heavier than set 1)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Alternating Dumbbell Bicep Curl",
+     "sourceName": "Alternating Dumbbell Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Straight Bar Tri Pushdown; e1RM 37 (Weight PR — up from 8/12 top 25×10 e1RM 33, +12%); +5 lb at lower reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 37 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-22",
+   "date": "2026-08-22",
+   "day": null,
+   "legacyLabel": "FB C round 3",
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Deadlift",
+     "sourceName": "Barbell Deadlift",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 135,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 185,
+       "reps": 3,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 225,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 263 (Weight PR — up from 8/14 top 215×5 e1RM 251, +4.8%); +10 lb at same reps; FB C round 3",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 185,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 247 (Weight PR — up from 8/14 back-off 165×10 e1RM 220, +12.3%); +20 lb at same reps",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Standing Barbell OHP",
+     "sourceName": "Barbell Overhead Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup (empty bar)",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 117 (Weight PR — up from 8/14 top 85×9 e1RM 111, +5.4%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 90,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 108 (Weight PR — up from 8/14 85×6 e1RM 102, +5.9%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Bulgarian Split Squat",
+     "sourceName": "Dumbbell Bulgarian Split Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 80 (Weight PR — up from 8/14 top 55×10 e1RM 73, +9.6%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 80 — matched PR load; +2 reps vs 8/14 set 2 (55×8)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest Fly Machine",
+     "sourceName": "Chest Fly Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 90,
+       "reps": 15,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 135 (Rep+Weight PR — vs 8/14 top 85×10 e1RM 113, +19%); +5 lb, +5 reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 105,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 140 (Weight PR — set 2 heavier; +24% vs 8/14 top e1RM 113)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Close-Grip Lat Pulldown",
+     "sourceName": "Close Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 105,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 140 (Weight PR — up from 8/14 top 95×10 e1RM 127, +10%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 110,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 136 (Weight PR — set 2 heavier; +7% vs 8/14 top e1RM 127)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Wide Grip Seated Row",
+     "sourceName": "Cable Wide Grip Seated Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 90,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 117 (Rep PR — matched 8/14 load, +2 reps top set; +5.4% vs 8/14 top e1RM 111); recovers from 8/14 late-session dip",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 111 (Rep PR — vs 8/14 set 2 90×6 e1RM 108, +2.8%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Lying Dumbbell Tricep Extension",
+     "sourceName": "Lying Dumbbell Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 70,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ DB Incline Bicep Curl; e1RM 93 (Weight PR — up from 8/14 top 60×10 e1RM 80, +16.3%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 70,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 89 (Weight PR — vs 8/14 set 2 60×10 e1RM 80; +11%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Curl",
+     "sourceName": "Dumbbell Incline Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Lying DB Tricep Ext; e1RM 40 (Weight PR — up from 8/14 top 27.5×10 e1RM 37, +8.1%); +2.5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 38 (Weight PR — vs 8/14 set 2 27.5×8 e1RM 35, +8.6%)",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-08-26",
+   "date": "2026-08-26",
+   "day": null,
+   "legacyLabel": "FB B round 3",
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Dumbbell Bench Press",
+     "sourceName": "Dumbbell Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 65,
+       "reps": 4,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 80,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 93 (Weight PR — up from 5/4 top 65x12 e1RM 91, +2.2%); +15 lb at lower reps; first DB Bench since 5/4 (114-day gap); FB B round 3",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 55,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 73",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 55,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 68",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Barbell Romanian Deadlift",
+     "sourceName": "Barbell Romanian Deadlift",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 95,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 145,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 193",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 165,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 220 — first Barbell RDL since 5/9 (109-day gap); prior top 5/9 185x12 e1RM 259, below prior peak after layoff",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Assisted Pull-up",
+     "sourceName": "Machine Assisted Pull Up",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 80,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 104 — assist load matched 8/19 (80), reps down from 12 to 9 (harder relative to prior); exclude from deload flag (assist-machine per feedback)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 80,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 93 — fatigue set at same assist",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Leg Extension Machine",
+     "sourceName": "Seated Leg Extension Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 110,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 154 (Weight PR — up from 8/19 top 95x12 e1RM 133, +16%); +15 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 110,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 143 — matched PR load; -1 rep vs 8/19 set 2 (100x14)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Row Machine",
+     "sourceName": "Seated Row Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 53,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 74 (Rep PR — up from 8/19 top 53x11 e1RM 72, +2.8%); +1 rep at PR load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 55.5,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 68 (Weight PR — set 2 heavier than 8/19 set 2 53x6 e1RM 64, +6%); +2.5 lb",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Lateral Raise",
+     "sourceName": "Dumbbell Lateral Raise",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 22.5,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 29 (Weight PR — up from 8/19 top 20x12 e1RM 28, +3.6%); +2.5 lb at lower reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 22.5,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 28 — matched PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Tricep Pushdown",
+     "sourceName": "Cable Straight Bar Tricep Pushdown",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Alt DB Bicep Curl; e1RM 80 (Weight PR — up from 8/19 top 55x12 e1RM 77, +3.9%); +5 lb at lower reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 60,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 76 — matched 8/19 set 2 (60x8 e1RM 76)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Alternating Dumbbell Bicep Curl",
+     "sourceName": "Alternating Dumbbell Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Straight Bar Tri Pushdown; e1RM 38 (Rep PR — up from 8/19 top 30x7 e1RM 37, +2.7%); +1 rep at PR load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 38 — matched Rep PR",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-09-01",
+   "date": "2026-09-01",
+   "day": null,
+   "legacyLabel": "FB A round 4",
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Back Squat",
+     "sourceName": "Barbell Back Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 135,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 205,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 239 (Weight PR — up from 8/17 top 195×5 e1RM 228, +4.8%); +10 lb at same reps; FB A round 4",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 185,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 247 (Weight PR — up from 8/17 back-off 165×10 e1RM 220, +12.3%); +20 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 185,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 247 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Bench Press",
+     "sourceName": "Dumbbell Incline Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 65,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 87 (Weight PR — up from 8/17 top 60×10 e1RM 80, +8.75%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 65,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 76 — reps drop at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Wide Grip Lat Pulldown",
+     "sourceName": "Wide Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 95,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 127 (Weight PR — up from 8/17 top 90×10 e1RM 120, +5.8%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 100,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 133 (Weight PR — set 2 heavier; +10 lb / +10.8% vs 8/17 top)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Hamstring Curl Machine",
+     "sourceName": "Seated Hamstring Curl Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 100,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 133 (Weight PR — up from 8/17 top 90×10 e1RM 120, +10.8%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 110,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 143 (Weight PR — set 2 heavier still; +15 lb vs 8/17 set 2 95×10 e1RM 127, +12.6%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest-Supported DB Row",
+     "sourceName": "Dumbbell Incline Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 40,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 53 (Weight PR — up from 8/17 top 30×10 e1RM 40, +32.5%); +10 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 40,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 53 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Seated Back Supported Shoulder Press",
+     "sourceName": "Dumbbell Seated Back Supported Shoulder Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 60 (Weight PR — up from 8/17 top 37.5×10 e1RM 50, +20%); +7.5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 45,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 57 (Weight PR — set 2 vs 8/17 set 2 37.5×10 e1RM 50, +14%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Rope Overhead Tricep Extension",
+     "sourceName": "Cable Rope Standing Overhead Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 37,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Bicep Curl; e1RM 48 — load PR at 37 lb (+2 lb vs 8/17); e1RM flat vs 8/17 top 35×12 e1RM 49 (-2%) — trade reps for load",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 37,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 48 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Bicep Curl",
+     "sourceName": "Cable Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 37,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Rope Standing OH Tri Ext; e1RM 52 (Weight PR — up from 8/17 top 35×12 e1RM 49, +6.1%); +2 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 37,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 52 — 2nd set matched at PR load",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-09-05",
+   "date": "2026-09-05",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Bench Press",
+     "sourceName": "Barbell Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 135,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 155,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 181 (Weight PR — up from 8/19 top 150×5 e1RM 175, +3.4%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 125,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 167 (vs 8/19 back-off 120×10 e1RM 160, +4.4%); +5 lb same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 125,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 163 (vs 8/19 set 5 120×9 e1RM 156, +4.5%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Barbell Romanian Deadlift",
+     "sourceName": "Barbell Romanian Deadlift",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 135,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 185,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 247 (Weight PR — up from 8/26 top 165×10 e1RM 220, +12.3%); +20 lb same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 185,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 247 — matched PR load and reps set 2",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Assisted Pull-up",
+     "sourceName": "Machine Assisted Pull Up",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 80,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 112 — matched 8/19 top (80×12), assist same load, reps recovered vs 8/26 (80×9 e1RM 104, +8%)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 75,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 105 — assist decreased (harder) vs 8/26 set 2 (80×5 e1RM 93, +13%); also +3 reps vs 8/19 set 2 (75×9 e1RM 98, +7%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Leg Extension Machine",
+     "sourceName": "Seated Leg Extension Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 115,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 153 — Weight PR load 115 lb (+5 lb vs 8/26 top 110×12 e1RM 154, essentially flat e1RM -0.6%)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 115,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 153 — matched PR load set 2; +6 lb vs 8/26 set 2 110×9 e1RM 143 (+7%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Row Machine",
+     "sourceName": "Seated Row Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 58,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 77 (Weight PR — up from 8/26 top 53×12 e1RM 74, +4.1%); +5 lb at similar reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 58,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 72 — Weight PR set 2 vs 8/26 set 2 55.5×7 e1RM 68 (+5.9%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Lateral Raise",
+     "sourceName": "Dumbbell Lateral Raise",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 22.5,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 31 (Rep PR — up from 8/26 top 22.5×9 e1RM 29, +6.9%); matched PR load, +3 reps",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 22.5,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 29 — matched 8/26 top set (22.5×9)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Tricep Pushdown",
+     "sourceName": "Cable Straight Bar Tricep Pushdown",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Alt DB Bicep Curl; e1RM 80 — matched 8/26 top (60×10 e1RM 80)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 60,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 80 — Rep PR set 2 vs 8/26 set 2 60×8 e1RM 76 (+5.3%); matched top load and reps",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Alternating Dumbbell Bicep Curl",
+     "sourceName": "Alternating Dumbbell Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ Cable Straight Bar Tri Pushdown; e1RM 39 (Rep PR — up from 8/26 top 30×8 e1RM 38, +2.6%); matched PR load +1 rep",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 38 — matched 8/26 Rep PR",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-09-07",
+   "date": "2026-09-07",
+   "day": null,
+   "legacyLabel": null,
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Back Squat",
+     "sourceName": "Barbell Back Squat",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 135,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 185,
+       "reps": 3,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 215,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 195,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "PR",
+       "warmup": false
+      },
+      {
+       "setNum": 5,
+       "weight": 195,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Bench Press",
+     "sourceName": "Dumbbell Incline Bench Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 65,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 65,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Wide Grip Lat Pulldown",
+     "sourceName": "Wide Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 105,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "PR",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 105,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Seated Hamstring Curl Machine",
+     "sourceName": "Seated Hamstring Curl Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 110,
+       "reps": 11,
+       "rir": null,
+       "rpe": null,
+       "notes": "PR",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 110,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest-Supported DB Row",
+     "sourceName": "Dumbbell Incline Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "PR",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Dumbbell Seated Back Supported Shoulder Press",
+     "sourceName": "Dumbbell Seated Back Supported Shoulder Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 55,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "PR",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 55,
+       "reps": 4,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 32.5,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Rope Overhead Tricep Extension",
+     "sourceName": "Cable Rope Standing Overhead Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 40,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "PR (superset)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 40,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "superset",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Bicep Curl",
+     "sourceName": "Cable Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 40,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "PR (superset)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 40,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "superset",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "id": "seed-2026-09-10",
+   "date": "2026-09-10",
+   "day": null,
+   "legacyLabel": "FB C round 4",
+   "source": "xlsx",
+   "warmupCompleted": null,
+   "exercises": [
+    {
+     "name": "Barbell Deadlift",
+     "sourceName": "Barbell Deadlift",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 135,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 165,
+       "reps": 3,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 195,
+       "reps": 2,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 4,
+       "weight": 220,
+       "reps": 1,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup single",
+       "warmup": true
+      },
+      {
+       "setNum": 5,
+       "weight": 235,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 274.2 (Weight PR — up from 8/22 top 225×5 e1RM 263, +4.4%); +10 lb at same reps; FB C round 4",
+       "warmup": false
+      },
+      {
+       "setNum": 6,
+       "weight": 190,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working back-off; e1RM 253.3 (Weight PR — up from 8/22 back-off 185×10 e1RM 247, +2.6%); +5 lb at same reps",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Standing Barbell OHP",
+     "sourceName": "Barbell Overhead Press",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 45,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup (empty bar)",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 65,
+       "reps": 5,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup ramp",
+       "warmup": true
+      },
+      {
+       "setNum": 3,
+       "weight": 95,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 120.3 (Weight PR — up from 8/22 top 90×9 e1RM 117, +2.9%); +5 lb, -1 rep",
+       "warmup": false
+      },
+      {
+       "setNum": 4,
+       "weight": 95,
+       "reps": 6,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 114.0 (Weight PR — up from 8/22 set 2 90×6 e1RM 108, +5.6%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Bulgarian Split Squat (lever)",
+     "sourceName": "Lever Squat Machine — BSS",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 130,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; NEW baseline exercise (plate-loaded lever squat machine for Bulgarian Split Squats); replaces DB BSS in FB C — lever geometry means plate load ≠ true resistance, progression tracked independently",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 130,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; matched set 1 — try 140 lb next round if 130×10 felt like DB 60s did",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Chest Fly Machine",
+     "sourceName": "Chest Fly Machine",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 110,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 154.0 (Weight PR — up from 8/22 set 2 105×10 e1RM 140, +10%)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 110,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 143.0 (Weight PR — vs 8/22 top 90×15 e1RM 135, +4.4%; matched set 1 load)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Close-Grip Lat Pulldown",
+     "sourceName": "Close Grip Lat Pulldown",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 80,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Warmup",
+       "warmup": true
+      },
+      {
+       "setNum": 2,
+       "weight": 110,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 146.7 (Weight PR — up from 8/22 top 105×10 e1RM 140, +4.8%); +5 lb at same reps",
+       "warmup": false
+      },
+      {
+       "setNum": 3,
+       "weight": 110,
+       "reps": 8,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 139.3 (Weight PR — vs 8/22 set 2 110×7 e1RM 136, +2.4%)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Cable Wide Grip Seated Row",
+     "sourceName": "Cable Wide Grip Seated Row",
+     "superset": false,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 90,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working top; e1RM 120.0 (Rep PR — vs 8/22 top 90×9 e1RM 117, +2.6%); matched load, +1 rep; no late-session fade despite heavier DL",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 90,
+       "reps": 7,
+       "rir": null,
+       "rpe": null,
+       "notes": "Working; e1RM 111.0 — matched 8/22 set 2 (90×7)",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "Overhead Tricep Extension",
+     "sourceName": "Dumbbell Tricep Extension",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ DB Incline Curl; Working; e1RM 42.0 — NEW baseline (per-arm DB extension); EZ-bar-to-DB conversion; 12 clean reps → try 35 lb next round",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 12,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 42.0 — matched set 1",
+       "warmup": false
+      }
+     ]
+    },
+    {
+     "name": "DB Incline Curl",
+     "sourceName": "Dumbbell Incline Bicep Curl",
+     "superset": true,
+     "sets": [
+      {
+       "setNum": 1,
+       "weight": 30,
+       "reps": 10,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET w/ DB Tricep Ext; Working; e1RM 40.0 (Weight PR — up from 8/22 top 30×10 e1RM 40 matched; PR vs 8/14 top 27.5×10 e1RM 37, +9%)",
+       "warmup": false
+      },
+      {
+       "setNum": 2,
+       "weight": 30,
+       "reps": 9,
+       "rir": null,
+       "rpe": null,
+       "notes": "SUPERSET; e1RM 39.0 (Rep PR — vs 8/22 set 2 30×8 e1RM 38, +2.6%, +1 rep at matched PR load)",
+       "warmup": false
+      }
+     ]
+    }
+   ],
+   "notes": ""
+  }
+ ]
+}
