@@ -1,6 +1,6 @@
 // Body Composition Tracker — Service Worker
 // Bump CACHE_VERSION to force a fresh cache after deploying new HTML/CSS/JS.
-const CACHE_VERSION = 'bc-v5';
+const CACHE_VERSION = 'bc-v6';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -41,6 +41,12 @@ self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
+
+  // /workout/ is a separate app with its own service worker (workout/sw.js).
+  // Stay out of it entirely: this worker's scope is '/', so without this it
+  // would cache workout assets in the dashboard's cache, and its HTML fallback
+  // below would answer a failed /workout/ navigation with the DASHBOARD page.
+  if (url.origin === location.origin && url.pathname.includes('/workout/')) return;
   const isHTML = req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html');
 
   if (isHTML) {
