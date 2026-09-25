@@ -137,9 +137,9 @@ export const ROUTINE = {
         rest: 180, increment: 10, ramp: true,
       },
       {
-        name: 'Front Squat',
+        // Replaced Front Squat on 2026-09-25: front-rack position wrecks Bobby's wrists.
+        name: 'Leg Press',
         sets: 3, repRange: [10], type: 'main',
-        alternatives: ['Front Squat', 'Leg Press'],
         rest: 150, increment: 10,
       },
       {

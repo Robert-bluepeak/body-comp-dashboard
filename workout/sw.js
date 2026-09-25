@@ -5,7 +5,7 @@
 // Scope is ./ relative to this file, i.e. /workout/ -- it deliberately does not
 // touch the dashboard's own service worker at the site root.
 
-const CACHE = 'workout-8467936e24bb';
+const CACHE = 'workout-a75133589c79';
 const PRECACHE = [
   "./",
   "./index.html",
