@@ -91,6 +91,18 @@ python workout/build.py
 2. Drag the whole `workout` folder in.
 3. Commit.
 
+> **The one trap.** There are two files named `index.html`: the dashboard
+> (~4.4 MB, at the repo root) and this app (~25 KB, at `workout/index.html`).
+> GitHub's uploader drops files into whatever folder you were browsing when you
+> clicked **Add file**, so uploading the dashboard while inside `workout/`
+> silently overwrites the app with the dashboard. The symptom is that
+> `/workout/` shows the dashboard, and its Log Workout button then 404s at
+> `/workout/workout/`.
+>
+> Before committing an upload, check the breadcrumb above the drop zone says the
+> folder you meant. After committing, check the file size in the repo: the
+> dashboard is megabytes, this app's `index.html` is kilobytes.
+
 Wait a minute for Pages to rebuild, then open `https://<your-pages-url>/workout/`
 in **Safari** on the iPhone → Share → **Add to Home Screen**. It installs as
 "Workout" with its own icon, separate from the "BodyComp" dashboard.
